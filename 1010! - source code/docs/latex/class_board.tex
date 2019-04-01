@@ -1,0 +1,245 @@
+\hypertarget{class_board}{}\section{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+The board where pieces are placed.  
+
+
+
+
+{\ttfamily \#include $<$board.\+h$>$}
+
+Inheritance diagram for Board\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_board_a97bd56f18a0b5820cb246068df0430c1}{set\+Color}} (const Uint8 \&r, const Uint8 \&g, const Uint8 \&b)
+\begin{DoxyCompactList}\small\item\em Set color of the whole board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_color}{Color}} \mbox{\hyperlink{class_board_a00ea631b424b3b7539d19cd0b9403c35}{get\+Unit\+Square\+Color}} (const int \&i, const int \&j) const
+\item 
+bool \mbox{\hyperlink{class_board_a1e345139edce45ab583780bd425a6fc3}{inside}} (const int \&mouse\+\_\+x, const int \&mouse\+\_\+y) const
+\begin{DoxyCompactList}\small\item\em Check whether the board is being pointed at. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape}{Shape}} $\ast$ \mbox{\hyperlink{class_board_ad1e07505d653391e9c0f474e198bec1b}{preview}} (const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, \mbox{\hyperlink{class_shape}{Shape}} piece) const
+\begin{DoxyCompactList}\small\item\em Preview the piece before it is placed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_aae2c049c36cbe5f07a1e9154a6a6932e}{collide\+Mouse}} (const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, const \mbox{\hyperlink{class_shape}{Shape}} $\ast$piece) const
+\begin{DoxyCompactList}\small\item\em Check whether the chosen piece can be placed at specific position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_a4e818e1e582bd7018353698cd2219dfd}{set}} (const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, \mbox{\hyperlink{class_shape}{Shape}} $\ast$piece, \mbox{\hyperlink{class_score}{Score}} $\ast$score)
+\begin{DoxyCompactList}\small\item\em Place the piece onto the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_board_a7a5e0f3151c694c1212e2b88eb51c57c}{can\+Set}} (const \mbox{\hyperlink{class_shape}{Shape}} $\ast$piece) const
+\begin{DoxyCompactList}\small\item\em Check whether the chosen piece can be placed onto the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_board_af74f0d4b43e5aa3faea16d7c6407b05e}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the board. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board}{Board}} $\ast$ \mbox{\hyperlink{class_board_adb5a66738afb0cc79313fac0a2dda590}{del}} ()
+\item 
+\mbox{\hyperlink{class_board}{Board}} $\ast$ \mbox{\hyperlink{class_board_a1de10b962518cea6081b3cb86d2bbf92}{recover}} ()
+\item 
+\mbox{\hyperlink{class_board_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em constructor with no description \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board_a8b614d73e9091d05a3e8b5a119bf509a}{Shape}} (const vector$<$ vector$<$ bool $>$ $>$ \&\+\_\+bitmap)
+\begin{DoxyCompactList}\small\item\em constructor for any shape \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_board_a37e0820a3b0346435b5fa57761480b32}{Shape}} (const unsigned int \&\+\_\+width, const unsigned int \&\+\_\+height)
+\begin{DoxyCompactList}\small\item\em constructor for filled rectangle \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The board where pieces are placed. 
+
+\mbox{\hyperlink{class_board}{Board}} is a derived class from \mbox{\hyperlink{class_shape}{Shape}}. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_board_a7a5e0f3151c694c1212e2b88eb51c57c}\label{class_board_a7a5e0f3151c694c1212e2b88eb51c57c}} 
+\index{Board@{Board}!can\+Set@{can\+Set}}
+\index{can\+Set@{can\+Set}!Board@{Board}}
+\subsubsection{\texorpdfstring{can\+Set()}{canSet()}}
+{\footnotesize\ttfamily bool Board\+::can\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_shape}{Shape}} $\ast$}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether the chosen piece can be placed onto the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & The chosen piece \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_board_af74f0d4b43e5aa3faea16d7c6407b05e}\label{class_board_af74f0d4b43e5aa3faea16d7c6407b05e}} 
+\index{Board@{Board}!clear@{clear}}
+\index{clear@{clear}!Board@{Board}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Board\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear the board. 
+
+\mbox{\Hypertarget{class_board_aae2c049c36cbe5f07a1e9154a6a6932e}\label{class_board_aae2c049c36cbe5f07a1e9154a6a6932e}} 
+\index{Board@{Board}!collide\+Mouse@{collide\+Mouse}}
+\index{collide\+Mouse@{collide\+Mouse}!Board@{Board}}
+\subsubsection{\texorpdfstring{collide\+Mouse()}{collideMouse()}}
+{\footnotesize\ttfamily bool Board\+::collide\+Mouse (\begin{DoxyParamCaption}\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y,  }\item[{const \mbox{\hyperlink{class_shape}{Shape}} $\ast$}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether the chosen piece can be placed at specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+x} & The x coordinate of the mouse \\
+\hline
+{\em mouse\+\_\+y} & The y coordinate of the mouse \\
+\hline
+{\em piece} & The chosen piece \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_board_adb5a66738afb0cc79313fac0a2dda590}\label{class_board_adb5a66738afb0cc79313fac0a2dda590}} 
+\index{Board@{Board}!del@{del}}
+\index{del@{del}!Board@{Board}}
+\subsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}}$\ast$ Board\+::del (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a592b3cd82e09faba98018ff8498dd411}{Shape\+::del()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_board_a00ea631b424b3b7539d19cd0b9403c35}\label{class_board_a00ea631b424b3b7539d19cd0b9403c35}} 
+\index{Board@{Board}!get\+Unit\+Square\+Color@{get\+Unit\+Square\+Color}}
+\index{get\+Unit\+Square\+Color@{get\+Unit\+Square\+Color}!Board@{Board}}
+\subsubsection{\texorpdfstring{get\+Unit\+Square\+Color()}{getUnitSquareColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_color}{Color}} Board\+::get\+Unit\+Square\+Color (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_board_a1e345139edce45ab583780bd425a6fc3}\label{class_board_a1e345139edce45ab583780bd425a6fc3}} 
+\index{Board@{Board}!inside@{inside}}
+\index{inside@{inside}!Board@{Board}}
+\subsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily bool Board\+::inside (\begin{DoxyParamCaption}\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether the board is being pointed at. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+x} & The x coordinate of the mouse \\
+\hline
+{\em mouse\+\_\+y} & The y coordinate of the mouse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_board_ad1e07505d653391e9c0f474e198bec1b}\label{class_board_ad1e07505d653391e9c0f474e198bec1b}} 
+\index{Board@{Board}!preview@{preview}}
+\index{preview@{preview}!Board@{Board}}
+\subsubsection{\texorpdfstring{preview()}{preview()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shape}{Shape}}$\ast$ Board\+::preview (\begin{DoxyParamCaption}\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y,  }\item[{\mbox{\hyperlink{class_shape}{Shape}}}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Preview the piece before it is placed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+x} & The x coordinate of the mouse \\
+\hline
+{\em mouse\+\_\+y} & The y coordinate of the mouse \\
+\hline
+{\em piece} & The chosen piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the piece with a view to rendering it 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_a1de10b962518cea6081b3cb86d2bbf92}\label{class_board_a1de10b962518cea6081b3cb86d2bbf92}} 
+\index{Board@{Board}!recover@{recover}}
+\index{recover@{recover}!Board@{Board}}
+\subsubsection{\texorpdfstring{recover()}{recover()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}}$\ast$ Board\+::recover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_aba906e02eb04a0b82caab679715204a7}{Shape\+::recover()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_board_a4e818e1e582bd7018353698cd2219dfd}\label{class_board_a4e818e1e582bd7018353698cd2219dfd}} 
+\index{Board@{Board}!set@{set}}
+\index{set@{set}!Board@{Board}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Board\+::set (\begin{DoxyParamCaption}\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y,  }\item[{\mbox{\hyperlink{class_shape}{Shape}} $\ast$}]{piece,  }\item[{\mbox{\hyperlink{class_score}{Score}} $\ast$}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Place the piece onto the board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+x} & The x coordinate of the mouse \\
+\hline
+{\em mouse\+\_\+y} & The y coordinate of the mouse \\
+\hline
+{\em piece} & The chosen piece \\
+\hline
+{\em score} & \mbox{\hyperlink{class_score}{Score}} being updated \\
+\hline
+\end{DoxyParams}
+Clear lines when they are completed \mbox{\Hypertarget{class_board_a97bd56f18a0b5820cb246068df0430c1}\label{class_board_a97bd56f18a0b5820cb246068df0430c1}} 
+\index{Board@{Board}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Board@{Board}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void Board\+::set\+Color (\begin{DoxyParamCaption}\item[{const Uint8 \&}]{r,  }\item[{const Uint8 \&}]{g,  }\item[{const Uint8 \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set color of the whole board. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a657c70819a01a52d56c68302f07ffad9}{Shape\+::set\+Color()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_board_a8b614d73e9091d05a3e8b5a119bf509a}\label{class_board_a8b614d73e9091d05a3e8b5a119bf509a}} 
+\index{Board@{Board}!Shape@{Shape}}
+\index{Shape@{Shape}!Board@{Board}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor for any shape 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+bitmap} & The bitmap representing the shape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ad539a5441a4aaa95349fd1bfc76043a1}{set\+Bit\+Map()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_board_a37e0820a3b0346435b5fa57761480b32}\label{class_board_a37e0820a3b0346435b5fa57761480b32}} 
+\index{Board@{Board}!Shape@{Shape}}
+\index{Shape@{Shape}!Board@{Board}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor for filled rectangle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+width} & The width of the rectangle \\
+\hline
+{\em \+\_\+height} & The height of the rectangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_board_aaa8d87171e65e0d8ba3c5459978992a7}\label{class_board_aaa8d87171e65e0d8ba3c5459978992a7}} 
+\index{Board@{Board}!Shape@{Shape}}
+\index{Shape@{Shape}!Board@{Board}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor with no description 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{board_8h}{board.\+h}}\end{DoxyCompactItemize}

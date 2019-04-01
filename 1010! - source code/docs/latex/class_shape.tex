@@ -1,0 +1,451 @@
+\hypertarget{class_shape}{}\section{Shape Class Reference}
+\label{class_shape}\index{Shape@{Shape}}
+
+
+A bitmap representing shape.  
+
+
+
+
+{\ttfamily \#include $<$shape.\+h$>$}
+
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_shape}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}} ()
+\begin{DoxyCompactList}\small\item\em constructor with no description \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape_a8b614d73e9091d05a3e8b5a119bf509a}{Shape}} (const vector$<$ vector$<$ bool $>$ $>$ \&\+\_\+bitmap)
+\begin{DoxyCompactList}\small\item\em constructor for any shape \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape_a37e0820a3b0346435b5fa57761480b32}{Shape}} (const unsigned int \&\+\_\+width, const unsigned int \&\+\_\+height)
+\begin{DoxyCompactList}\small\item\em constructor for filled rectangle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_ad539a5441a4aaa95349fd1bfc76043a1}{set\+Bit\+Map}} (const vector$<$ vector$<$ bool $>$ $>$ \&\+\_\+bitmap)
+\begin{DoxyCompactList}\small\item\em set bitmap of the shape \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_af3b265335667167ced81b3226b07dcb0}{set\+Bit}} (const int \&i, const int \&j, const bool \&k)
+\begin{DoxyCompactList}\small\item\em set bit at specific position \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a87f7e888ab40590dd3e4f73e13514152}{get\+Num\+Bit}} ()
+\begin{DoxyCompactList}\small\item\em Count the number of unit squares inside the shape. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}{get\+Bit}} (const int \&i, const int \&j) const
+\begin{DoxyCompactList}\small\item\em get bit at specific position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_aa743a709f100d8e17b3bb577d4697480}{set\+Pos}} (const int \&\+\_\+x, const int \&\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Set the position of the top-\/left corner of the shape. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_af604de36aa616c585bb30dedf5e5c68b}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Get the x coordinate of the shape. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a2e87ea4122381ffb83474f4b69247ded}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Get the y coordinate of the shape. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a657c70819a01a52d56c68302f07ffad9}{set\+Color}} (const Uint8 \&r, const Uint8 \&g, const Uint8 \&b)
+\begin{DoxyCompactList}\small\item\em Set the shape color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_color}{Color}} \mbox{\hyperlink{class_shape_a6ab685fc0e6aeec5d2e9743f5ecd66a4}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the shape color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a7891a1b03a0034b6a9f4c622902a071c}{set\+Unit\+Square\+Size}} (const unsigned int \&\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Set the unit square size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a85f4b751a60f6df5afdbfb5b530f6bc3}{get\+Unit\+Square\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the unit square size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_shape_a0d022da031906acd13be90c3fb3db643}{set\+Unit\+Square\+Img}} (const string \&path)
+\begin{DoxyCompactList}\small\item\em Set the path pointing to the image for unit square. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_shape_a392209d780a35dbf8e2311ce02121bde}{get\+Unit\+Square\+Img}} () const
+\begin{DoxyCompactList}\small\item\em Get the path pointing to the image for unit square. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a26c64aa551ac8d6d625ee74237157045}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Get the width int unit squares of the shape. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_ad81db3946b35eaeb9dcfbaaacb65c5f8}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Get the height in unit squares of the shape. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_ab01274fed67639da2080f73db0fc8f20}{get\+SizeX}} () const
+\begin{DoxyCompactList}\small\item\em Get the width in pixels of the shape. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a487dee28fa84cab6282eb16a95f91c68}{get\+SizeY}} () const
+\begin{DoxyCompactList}\small\item\em Get the height in pixels of the shape. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_shape_a4c01d871d08fae8b9ab27fa808f8056a}{inside}} (const int \&\+\_\+mouse\+\_\+x, const int \&\+\_\+mouse\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Check whether the shape is being pointed at. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_aef8956ea2a795d59df6fad328b0b85b8}{get\+MouseX}} () const
+\begin{DoxyCompactList}\small\item\em Get the x coordinate of the mouse with the origin at the top-\/left corner of the shape. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_shape_a7e4e469fca3e49bd2836a9a2798f14a1}{get\+MouseY}} () const
+\begin{DoxyCompactList}\small\item\em Get the y coordinate of the mouse with the origin at the top-\/left corner of the shape. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape}{Shape}} $\ast$ \mbox{\hyperlink{class_shape_a592b3cd82e09faba98018ff8498dd411}{del}} ()
+\item 
+\mbox{\hyperlink{class_shape}{Shape}} $\ast$ \mbox{\hyperlink{class_shape_aba906e02eb04a0b82caab679715204a7}{recover}} ()
+\item 
+bool \mbox{\hyperlink{class_shape_ab93f2288cad70553ecdaf61ae9b17533}{is\+Del}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A bitmap representing shape. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}\label{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor with no description 
+
+\mbox{\Hypertarget{class_shape_a8b614d73e9091d05a3e8b5a119bf509a}\label{class_shape_a8b614d73e9091d05a3e8b5a119bf509a}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{const vector$<$ vector$<$ bool $>$ $>$ \&}]{\+\_\+bitmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor for any shape 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+bitmap} & The bitmap representing the shape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ad539a5441a4aaa95349fd1bfc76043a1}{set\+Bit\+Map()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a37e0820a3b0346435b5fa57761480b32}\label{class_shape_a37e0820a3b0346435b5fa57761480b32}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{\+\_\+width,  }\item[{const unsigned int \&}]{\+\_\+height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor for filled rectangle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+width} & The width of the rectangle \\
+\hline
+{\em \+\_\+height} & The height of the rectangle \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shape_a592b3cd82e09faba98018ff8498dd411}\label{class_shape_a592b3cd82e09faba98018ff8498dd411}} 
+\index{Shape@{Shape}!del@{del}}
+\index{del@{del}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shape}{Shape}}$\ast$ Shape\+::del (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_aba906e02eb04a0b82caab679715204a7}{recover()}} 
+
+\mbox{\hyperlink{class_shape_ab93f2288cad70553ecdaf61ae9b17533}{is\+Del()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}\label{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}} 
+\index{Shape@{Shape}!get\+Bit@{get\+Bit}}
+\index{get\+Bit@{get\+Bit}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Bit()}{getBit()}}
+{\footnotesize\ttfamily bool Shape\+::get\+Bit (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get bit at specific position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The row containing the bit \\
+\hline
+{\em j} & The column containing the bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_af3b265335667167ced81b3226b07dcb0}{set\+Bit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a6ab685fc0e6aeec5d2e9743f5ecd66a4}\label{class_shape_a6ab685fc0e6aeec5d2e9743f5ecd66a4}} 
+\index{Shape@{Shape}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_color}{Color}} Shape\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the shape color. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a657c70819a01a52d56c68302f07ffad9}{set\+Color()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_ad81db3946b35eaeb9dcfbaaacb65c5f8}\label{class_shape_ad81db3946b35eaeb9dcfbaaacb65c5f8}} 
+\index{Shape@{Shape}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int Shape\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the height in unit squares of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a26c64aa551ac8d6d625ee74237157045}{get\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_aef8956ea2a795d59df6fad328b0b85b8}\label{class_shape_aef8956ea2a795d59df6fad328b0b85b8}} 
+\index{Shape@{Shape}!get\+MouseX@{get\+MouseX}}
+\index{get\+MouseX@{get\+MouseX}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Mouse\+X()}{getMouseX()}}
+{\footnotesize\ttfamily int Shape\+::get\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the x coordinate of the mouse with the origin at the top-\/left corner of the shape. 
+
+Always return 0 if whether the mouse pointer is inside the shape, has never been checked. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a4c01d871d08fae8b9ab27fa808f8056a}{inside()}} 
+
+\mbox{\hyperlink{class_shape_a7e4e469fca3e49bd2836a9a2798f14a1}{get\+Mouse\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a7e4e469fca3e49bd2836a9a2798f14a1}\label{class_shape_a7e4e469fca3e49bd2836a9a2798f14a1}} 
+\index{Shape@{Shape}!get\+MouseY@{get\+MouseY}}
+\index{get\+MouseY@{get\+MouseY}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Mouse\+Y()}{getMouseY()}}
+{\footnotesize\ttfamily int Shape\+::get\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the y coordinate of the mouse with the origin at the top-\/left corner of the shape. 
+
+Always return 0 if whether the mouse pointer is inside the shape, has never been checked. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a4c01d871d08fae8b9ab27fa808f8056a}{inside()}} 
+
+\mbox{\hyperlink{class_shape_aef8956ea2a795d59df6fad328b0b85b8}{get\+Mouse\+X()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a87f7e888ab40590dd3e4f73e13514152}\label{class_shape_a87f7e888ab40590dd3e4f73e13514152}} 
+\index{Shape@{Shape}!get\+Num\+Bit@{get\+Num\+Bit}}
+\index{get\+Num\+Bit@{get\+Num\+Bit}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Num\+Bit()}{getNumBit()}}
+{\footnotesize\ttfamily int Shape\+::get\+Num\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Count the number of unit squares inside the shape. 
+
+\mbox{\Hypertarget{class_shape_ab01274fed67639da2080f73db0fc8f20}\label{class_shape_ab01274fed67639da2080f73db0fc8f20}} 
+\index{Shape@{Shape}!get\+SizeX@{get\+SizeX}}
+\index{get\+SizeX@{get\+SizeX}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Size\+X()}{getSizeX()}}
+{\footnotesize\ttfamily int Shape\+::get\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the width in pixels of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a487dee28fa84cab6282eb16a95f91c68}{get\+Size\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a487dee28fa84cab6282eb16a95f91c68}\label{class_shape_a487dee28fa84cab6282eb16a95f91c68}} 
+\index{Shape@{Shape}!get\+SizeY@{get\+SizeY}}
+\index{get\+SizeY@{get\+SizeY}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Size\+Y()}{getSizeY()}}
+{\footnotesize\ttfamily int Shape\+::get\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the height in pixels of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ab01274fed67639da2080f73db0fc8f20}{get\+Size\+X()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a392209d780a35dbf8e2311ce02121bde}\label{class_shape_a392209d780a35dbf8e2311ce02121bde}} 
+\index{Shape@{Shape}!get\+Unit\+Square\+Img@{get\+Unit\+Square\+Img}}
+\index{get\+Unit\+Square\+Img@{get\+Unit\+Square\+Img}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Unit\+Square\+Img()}{getUnitSquareImg()}}
+{\footnotesize\ttfamily string Shape\+::get\+Unit\+Square\+Img (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the path pointing to the image for unit square. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a0d022da031906acd13be90c3fb3db643}{set\+Unit\+Square\+Img()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a85f4b751a60f6df5afdbfb5b530f6bc3}\label{class_shape_a85f4b751a60f6df5afdbfb5b530f6bc3}} 
+\index{Shape@{Shape}!get\+Unit\+Square\+Size@{get\+Unit\+Square\+Size}}
+\index{get\+Unit\+Square\+Size@{get\+Unit\+Square\+Size}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Unit\+Square\+Size()}{getUnitSquareSize()}}
+{\footnotesize\ttfamily int Shape\+::get\+Unit\+Square\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the unit square size. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a7891a1b03a0034b6a9f4c622902a071c}{set\+Unit\+Square\+Size()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a26c64aa551ac8d6d625ee74237157045}\label{class_shape_a26c64aa551ac8d6d625ee74237157045}} 
+\index{Shape@{Shape}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int Shape\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the width int unit squares of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ad81db3946b35eaeb9dcfbaaacb65c5f8}{get\+Height()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_af604de36aa616c585bb30dedf5e5c68b}\label{class_shape_af604de36aa616c585bb30dedf5e5c68b}} 
+\index{Shape@{Shape}!getX@{getX}}
+\index{getX@{getX}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Shape\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the x coordinate of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_aa743a709f100d8e17b3bb577d4697480}{set\+Pos()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a2e87ea4122381ffb83474f4b69247ded}\label{class_shape_a2e87ea4122381ffb83474f4b69247ded}} 
+\index{Shape@{Shape}!getY@{getY}}
+\index{getY@{getY}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Shape\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the y coordinate of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_aa743a709f100d8e17b3bb577d4697480}{set\+Pos()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a4c01d871d08fae8b9ab27fa808f8056a}\label{class_shape_a4c01d871d08fae8b9ab27fa808f8056a}} 
+\index{Shape@{Shape}!inside@{inside}}
+\index{inside@{inside}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily bool Shape\+::inside (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+mouse\+\_\+x,  }\item[{const int \&}]{\+\_\+mouse\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check whether the shape is being pointed at. 
+
+Simultaneously save the position of the mouse. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+mouse\+\_\+x} & The x coordinate of the mouse \\
+\hline
+{\em \+\_\+mouse\+\_\+y} & The y coordinate of the mouse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_shape_ab93f2288cad70553ecdaf61ae9b17533}\label{class_shape_ab93f2288cad70553ecdaf61ae9b17533}} 
+\index{Shape@{Shape}!is\+Del@{is\+Del}}
+\index{is\+Del@{is\+Del}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{is\+Del()}{isDel()}}
+{\footnotesize\ttfamily bool Shape\+::is\+Del (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a592b3cd82e09faba98018ff8498dd411}{del()}} 
+
+\mbox{\hyperlink{class_shape_aba906e02eb04a0b82caab679715204a7}{recover()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_aba906e02eb04a0b82caab679715204a7}\label{class_shape_aba906e02eb04a0b82caab679715204a7}} 
+\index{Shape@{Shape}!recover@{recover}}
+\index{recover@{recover}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{recover()}{recover()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_shape}{Shape}}$\ast$ Shape\+::recover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a592b3cd82e09faba98018ff8498dd411}{del()}} 
+
+\mbox{\hyperlink{class_shape_ab93f2288cad70553ecdaf61ae9b17533}{is\+Del()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_af3b265335667167ced81b3226b07dcb0}\label{class_shape_af3b265335667167ced81b3226b07dcb0}} 
+\index{Shape@{Shape}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Bit()}{setBit()}}
+{\footnotesize\ttfamily void Shape\+::set\+Bit (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j,  }\item[{const bool \&}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set bit at specific position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The row containing the bit \\
+\hline
+{\em j} & The column containing the bit \\
+\hline
+{\em k} & New value of the bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}{get\+Bit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_ad539a5441a4aaa95349fd1bfc76043a1}\label{class_shape_ad539a5441a4aaa95349fd1bfc76043a1}} 
+\index{Shape@{Shape}!set\+Bit\+Map@{set\+Bit\+Map}}
+\index{set\+Bit\+Map@{set\+Bit\+Map}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Bit\+Map()}{setBitMap()}}
+{\footnotesize\ttfamily void Shape\+::set\+Bit\+Map (\begin{DoxyParamCaption}\item[{const vector$<$ vector$<$ bool $>$ $>$ \&}]{\+\_\+bitmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set bitmap of the shape 
+
+\mbox{\Hypertarget{class_shape_a657c70819a01a52d56c68302f07ffad9}\label{class_shape_a657c70819a01a52d56c68302f07ffad9}} 
+\index{Shape@{Shape}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void Shape\+::set\+Color (\begin{DoxyParamCaption}\item[{const Uint8 \&}]{r,  }\item[{const Uint8 \&}]{g,  }\item[{const Uint8 \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the shape color. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a6ab685fc0e6aeec5d2e9743f5ecd66a4}{get\+Color()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_aa743a709f100d8e17b3bb577d4697480}\label{class_shape_aa743a709f100d8e17b3bb577d4697480}} 
+\index{Shape@{Shape}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Pos()}{setPos()}}
+{\footnotesize\ttfamily void Shape\+::set\+Pos (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+x,  }\item[{const int \&}]{\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the position of the top-\/left corner of the shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+x} & The x coordinate \\
+\hline
+{\em \+\_\+y} & The y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_af604de36aa616c585bb30dedf5e5c68b}{get\+X()}} 
+
+\mbox{\hyperlink{class_shape_a2e87ea4122381ffb83474f4b69247ded}{get\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a0d022da031906acd13be90c3fb3db643}\label{class_shape_a0d022da031906acd13be90c3fb3db643}} 
+\index{Shape@{Shape}!set\+Unit\+Square\+Img@{set\+Unit\+Square\+Img}}
+\index{set\+Unit\+Square\+Img@{set\+Unit\+Square\+Img}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Unit\+Square\+Img()}{setUnitSquareImg()}}
+{\footnotesize\ttfamily void Shape\+::set\+Unit\+Square\+Img (\begin{DoxyParamCaption}\item[{const string \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the path pointing to the image for unit square. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a392209d780a35dbf8e2311ce02121bde}{get\+Unit\+Square\+Img()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a7891a1b03a0034b6a9f4c622902a071c}\label{class_shape_a7891a1b03a0034b6a9f4c622902a071c}} 
+\index{Shape@{Shape}!set\+Unit\+Square\+Size@{set\+Unit\+Square\+Size}}
+\index{set\+Unit\+Square\+Size@{set\+Unit\+Square\+Size}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Unit\+Square\+Size()}{setUnitSquareSize()}}
+{\footnotesize\ttfamily void Shape\+::set\+Unit\+Square\+Size (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the unit square size. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a85f4b751a60f6df5afdbfb5b530f6bc3}{get\+Unit\+Square\+Size()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shape_8h}{shape.\+h}}\end{DoxyCompactItemize}

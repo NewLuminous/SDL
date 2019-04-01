@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1554019553 source:c:\users\admin\documents\github\sdl\1010!\main.cpp
+	"SDL_utils.h"
+
+1554028322 c:\users\admin\documents\github\sdl\1010!\sdl_utils.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<iostream>
+	"board.h"
+	"menu.h"
+
+1553965178 c:\users\admin\documents\github\sdl\1010!\figure.h
+	<vector>
+	<stdlib.h>
+	"color.h"
+
+1553953568 c:\users\admin\documents\github\sdl\1010!\board.h
+	"figure.h"
+	"score.h"
+
+1553968714 c:\users\admin\documents\github\sdl\1010!\color.h
+
+1553928529 c:\users\admin\documents\github\sdl\1010!\score.h
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<vector>
+
+1553976116 c:\users\admin\documents\github\sdl\1010!\menu.h
+	"button.h"
+	<vector>
+
+1553974050 c:\users\admin\documents\github\sdl\1010!\button.h
+	<stdlib.h>
+	"color.h"
+
+1554091846 source:c:\users\admin\documents\github\sdl\1010! - source code\main.cpp
+	"SDL_utils.h"
+
+1554110455 c:\users\admin\documents\github\sdl\1010! - source code\sdl_utils.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<iostream>
+	"board.h"
+	"menu.h"
+
+1554110312 c:\users\admin\documents\github\sdl\1010! - source code\board.h
+	"shape.h"
+	"score.h"
+
+1553965178 c:\users\admin\documents\github\sdl\1010! - source code\figure.h
+	<vector>
+	<stdlib.h>
+	"color.h"
+
+1554105098 c:\users\admin\documents\github\sdl\1010! - source code\color.h
+
+1554107596 c:\users\admin\documents\github\sdl\1010! - source code\score.h
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<vector>
+
+1554105078 c:\users\admin\documents\github\sdl\1010! - source code\menu.h
+	"button.h"
+	<vector>
+
+1554105086 c:\users\admin\documents\github\sdl\1010! - source code\button.h
+	<stdlib.h>
+	"color.h"
+
+1554035929 source:c:\users\admin\documents\github\sdl\1010! - source code\icon.rc
+
+1554110068 c:\users\admin\documents\github\sdl\1010! - source code\shape.h
+	<vector>
+	<stdlib.h>
+	"color.h"
+
