@@ -1,0 +1,109 @@
+\hypertarget{class_image_surface}{}\section{Image\+Surface Class Reference}
+\label{class_image_surface}\index{Image\+Surface@{Image\+Surface}}
+
+
+The surface loaded from an image.  
+
+
+
+
+{\ttfamily \#include $<$image\+\_\+surface.\+h$>$}
+
+Inheritance diagram for Image\+Surface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image_surface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_image_surface_ae19ffbda1d4279894b74f95b0afb81cb}{log\+Error}} (const std\+::string \&msg, const std\+::string \&error, bool fatal)
+\item 
+\mbox{\hyperlink{class_image_surface_aa0d6aea6a18bad9f802a5ec4a29585bf}{Image\+Surface}} (const \mbox{\hyperlink{class_image}{Image}} \&img)
+\item 
+virtual \mbox{\hyperlink{class_image_surface_a2e64cbd6f3d98f554bfdd43507e38412}{$\sim$\+Image\+Surface}} ()
+\item 
+virtual int \mbox{\hyperlink{class_image_surface_a6c503dc8cdc23ff1781309c430506e93}{get\+Num}} ()
+\item 
+virtual S\+D\+L\+\_\+\+Surface $\ast$ \mbox{\hyperlink{class_image_surface_a029eeccddbb6e028a4556a8c33756a56}{get}} (int i)
+\item 
+virtual S\+D\+L\+\_\+\+Rect $\ast$ \mbox{\hyperlink{class_image_surface_ac0367fc1d7f0936f5dc6e56118356fff}{get\+Size}} (int i)
+\item 
+virtual S\+D\+L\+\_\+\+Color \mbox{\hyperlink{class_image_surface_a241efe1b9a9cc78e5033f8beff36eb03}{get\+Color}} (int i)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The surface loaded from an image. 
+
+\mbox{\hyperlink{class_image_surface}{Image\+Surface}} is a class that implements \mbox{\hyperlink{class_i_surface}{I\+Surface}} 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_image_surface_aa0d6aea6a18bad9f802a5ec4a29585bf}\label{class_image_surface_aa0d6aea6a18bad9f802a5ec4a29585bf}} 
+\index{Image\+Surface@{Image\+Surface}!Image\+Surface@{Image\+Surface}}
+\index{Image\+Surface@{Image\+Surface}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{Image\+Surface()}{ImageSurface()}}
+{\footnotesize\ttfamily Image\+Surface\+::\+Image\+Surface (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{img }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_image_surface_a2e64cbd6f3d98f554bfdd43507e38412}\label{class_image_surface_a2e64cbd6f3d98f554bfdd43507e38412}} 
+\index{Image\+Surface@{Image\+Surface}!````~Image\+Surface@{$\sim$\+Image\+Surface}}
+\index{````~Image\+Surface@{$\sim$\+Image\+Surface}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{$\sim$\+Image\+Surface()}{~ImageSurface()}}
+{\footnotesize\ttfamily Image\+Surface\+::$\sim$\+Image\+Surface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_image_surface_a029eeccddbb6e028a4556a8c33756a56}\label{class_image_surface_a029eeccddbb6e028a4556a8c33756a56}} 
+\index{Image\+Surface@{Image\+Surface}!get@{get}}
+\index{get@{get}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Surface $\ast$ Image\+Surface\+::get (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_surface_a45bacb1ffa6f0835e3ece0123b90c4fc}{I\+Surface}}.
+
+\mbox{\Hypertarget{class_image_surface_a241efe1b9a9cc78e5033f8beff36eb03}\label{class_image_surface_a241efe1b9a9cc78e5033f8beff36eb03}} 
+\index{Image\+Surface@{Image\+Surface}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Color Image\+Surface\+::get\+Color (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_surface_adf609edb8f871bf37ed9aaf8fe0d2695}{I\+Surface}}.
+
+\mbox{\Hypertarget{class_image_surface_a6c503dc8cdc23ff1781309c430506e93}\label{class_image_surface_a6c503dc8cdc23ff1781309c430506e93}} 
+\index{Image\+Surface@{Image\+Surface}!get\+Num@{get\+Num}}
+\index{get\+Num@{get\+Num}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{get\+Num()}{getNum()}}
+{\footnotesize\ttfamily int Image\+Surface\+::get\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_surface_a1553f92deac310771e6fe63d62fc1d95}{I\+Surface}}.
+
+\mbox{\Hypertarget{class_image_surface_ac0367fc1d7f0936f5dc6e56118356fff}\label{class_image_surface_ac0367fc1d7f0936f5dc6e56118356fff}} 
+\index{Image\+Surface@{Image\+Surface}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Rect $\ast$ Image\+Surface\+::get\+Size (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_surface_ae0b5040cd0eaa1897f61f994f7b2eacf}{I\+Surface}}.
+
+\mbox{\Hypertarget{class_image_surface_ae19ffbda1d4279894b74f95b0afb81cb}\label{class_image_surface_ae19ffbda1d4279894b74f95b0afb81cb}} 
+\index{Image\+Surface@{Image\+Surface}!log\+Error@{log\+Error}}
+\index{log\+Error@{log\+Error}!Image\+Surface@{Image\+Surface}}
+\subsubsection{\texorpdfstring{log\+Error()}{logError()}}
+{\footnotesize\ttfamily void Image\+Surface\+::log\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg,  }\item[{const std\+::string \&}]{error,  }\item[{bool}]{fatal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{image__surface_8h}{image\+\_\+surface.\+h}}\item 
+\mbox{\hyperlink{image__surface_8cpp}{image\+\_\+surface.\+cpp}}\end{DoxyCompactItemize}

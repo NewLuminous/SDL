@@ -1,0 +1,102 @@
+\hypertarget{class_s_d_l_utils}{}\section{S\+D\+L\+Utils Class Reference}
+\label{class_s_d_l_utils}\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+
+
+A window displaying textures.  
+
+
+
+
+{\ttfamily \#include $<$S\+D\+L\+\_\+utils.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_s_d_l_utils_a53e5b8a0018c3d96af3ad413b2272f3d}{S\+D\+L\+Utils}} (const int \&screen\+Width, const int \&screen\+Height, const std\+::string \&window\+Title)
+\begin{DoxyCompactList}\small\item\em Constructor creating window. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_s_d_l_utils_a4530f05f7fdf2495a63ff1e9fc553680}{$\sim$\+S\+D\+L\+Utils}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_d_l_utils_a8dfdc8f41938c2c53ac5121c10eb1638}{del}} (S\+D\+L\+\_\+\+Rect rect)
+\begin{DoxyCompactList}\small\item\em Delete image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_d_l_utils_a8a30592df5e936b71f27283538e4cece}{render}} (\mbox{\hyperlink{class_i_surface}{I\+Surface}} $\ast$surface)
+\begin{DoxyCompactList}\small\item\em Render image. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_s_d_l_utils_a0e9c4b007ae61772a1c41592877b30ab}{present}} ()
+\begin{DoxyCompactList}\small\item\em Update the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A window displaying textures. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_d_l_utils_a53e5b8a0018c3d96af3ad413b2272f3d}\label{class_s_d_l_utils_a53e5b8a0018c3d96af3ad413b2272f3d}} 
+\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}!S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}!S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+\subsubsection{\texorpdfstring{S\+D\+L\+Utils()}{SDLUtils()}}
+{\footnotesize\ttfamily S\+D\+L\+Utils\+::\+S\+D\+L\+Utils (\begin{DoxyParamCaption}\item[{const int \&}]{screen\+Width,  }\item[{const int \&}]{screen\+Height,  }\item[{const std\+::string \&}]{window\+Title }\end{DoxyParamCaption})}
+
+
+
+Constructor creating window. 
+
+\begin{DoxySeeAlso}{See also}
+S\+D\+L\+\_\+\+Create\+Window() 
+
+S\+D\+L\+\_\+\+Create\+Renderer() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_s_d_l_utils_a4530f05f7fdf2495a63ff1e9fc553680}\label{class_s_d_l_utils_a4530f05f7fdf2495a63ff1e9fc553680}} 
+\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}!````~S\+D\+L\+Utils@{$\sim$\+S\+D\+L\+Utils}}
+\index{````~S\+D\+L\+Utils@{$\sim$\+S\+D\+L\+Utils}!S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+\subsubsection{\texorpdfstring{$\sim$\+S\+D\+L\+Utils()}{~SDLUtils()}}
+{\footnotesize\ttfamily S\+D\+L\+Utils\+::$\sim$\+S\+D\+L\+Utils (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_d_l_utils_a8dfdc8f41938c2c53ac5121c10eb1638}\label{class_s_d_l_utils_a8dfdc8f41938c2c53ac5121c10eb1638}} 
+\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}!del@{del}}
+\index{del@{del}!S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+\subsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily void S\+D\+L\+Utils\+::del (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Rect}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Delete image. 
+
+\mbox{\Hypertarget{class_s_d_l_utils_a0e9c4b007ae61772a1c41592877b30ab}\label{class_s_d_l_utils_a0e9c4b007ae61772a1c41592877b30ab}} 
+\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}!present@{present}}
+\index{present@{present}!S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+\subsubsection{\texorpdfstring{present()}{present()}}
+{\footnotesize\ttfamily void S\+D\+L\+Utils\+::present (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the window. 
+
+\begin{DoxySeeAlso}{See also}
+S\+D\+L\+\_\+\+Render\+Present() 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_s_d_l_utils_a8a30592df5e936b71f27283538e4cece}\label{class_s_d_l_utils_a8a30592df5e936b71f27283538e4cece}} 
+\index{S\+D\+L\+Utils@{S\+D\+L\+Utils}!render@{render}}
+\index{render@{render}!S\+D\+L\+Utils@{S\+D\+L\+Utils}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void S\+D\+L\+Utils\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_surface}{I\+Surface}} $\ast$}]{surface }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Render image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em surface} & \mbox{\hyperlink{class_i_surface}{I\+Surface}} object where the image is rendered from\\
+\hline
+\end{DoxyParams}
+warning\+: surface will be destroyed afterward 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_d_l__utils_8h}{S\+D\+L\+\_\+utils.\+h}}\item 
+\mbox{\hyperlink{_s_d_l__utils_8cpp}{S\+D\+L\+\_\+utils.\+cpp}}\end{DoxyCompactItemize}

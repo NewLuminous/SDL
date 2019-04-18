@@ -1,0 +1,136 @@
+\hypertarget{class_game1010}{}\section{Game1010 Class Reference}
+\label{class_game1010}\index{Game1010@{Game1010}}
+
+
+The game itself.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game1010_a0a0688219844edbe8f4a44c11a13e32a}{Game1010}} ()
+\begin{DoxyCompactList}\small\item\em constructor initializing the game \end{DoxyCompactList}\item 
+pair$<$ vector$<$ vector$<$ bool $>$ $>$, \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} $>$ \mbox{\hyperlink{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}{rand\+Shape}} ()
+\begin{DoxyCompactList}\small\item\em Get a random piece from pieces\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game1010_a9576170947a355682c922cb648432b9e}{gen\+\_\+piece}} ()
+\begin{DoxyCompactList}\small\item\em Generate new ones when all pieces are in place. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game1010_a99d6f53c3073861fe37ef67caa073840}{show\+\_\+menu}} (\mbox{\hyperlink{class_menu}{Menu}} $\ast$menu)
+\item 
+void \mbox{\hyperlink{class_game1010_a3bc296b7ba6bffeda3baceb1240190b6}{game\+Over}} ()
+\begin{DoxyCompactList}\small\item\em G\+A\+ME O\+V\+ER menu shows up when placing any piece on the board is not possible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game1010_afa18a3a81b8966417a228459a5bebf53}{play}} ()
+\begin{DoxyCompactList}\small\item\em Play the game! \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The game itself. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game1010_a0a0688219844edbe8f4a44c11a13e32a}\label{class_game1010_a0a0688219844edbe8f4a44c11a13e32a}} 
+\index{Game1010@{Game1010}!Game1010@{Game1010}}
+\index{Game1010@{Game1010}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{Game1010()}{Game1010()}}
+{\footnotesize\ttfamily Game1010\+::\+Game1010 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+constructor initializing the game 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a9576170947a355682c922cb648432b9e}{gen\+\_\+piece()}} 
+
+S\+D\+L\+Utils\+::draw() 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game1010_a3bc296b7ba6bffeda3baceb1240190b6}\label{class_game1010_a3bc296b7ba6bffeda3baceb1240190b6}} 
+\index{Game1010@{Game1010}!game\+Over@{game\+Over}}
+\index{game\+Over@{game\+Over}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{game\+Over()}{gameOver()}}
+{\footnotesize\ttfamily void Game1010\+::game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+G\+A\+ME O\+V\+ER menu shows up when placing any piece on the board is not possible. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a99d6f53c3073861fe37ef67caa073840}{show\+\_\+menu()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_game1010_a9576170947a355682c922cb648432b9e}\label{class_game1010_a9576170947a355682c922cb648432b9e}} 
+\index{Game1010@{Game1010}!gen\+\_\+piece@{gen\+\_\+piece}}
+\index{gen\+\_\+piece@{gen\+\_\+piece}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{gen\+\_\+piece()}{gen\_piece()}}
+{\footnotesize\ttfamily void Game1010\+::gen\+\_\+piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generate new ones when all pieces are in place. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}{rand\+Shape()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_game1010_afa18a3a81b8966417a228459a5bebf53}\label{class_game1010_afa18a3a81b8966417a228459a5bebf53}} 
+\index{Game1010@{Game1010}!play@{play}}
+\index{play@{play}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Game1010\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Play the game! 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a9576170947a355682c922cb648432b9e}{gen\+\_\+piece()}} 
+
+Board\+::set() 
+
+\mbox{\hyperlink{class_game1010_a3bc296b7ba6bffeda3baceb1240190b6}{game\+Over()}} 
+\end{DoxySeeAlso}
+Check whether any piece is chosen.
+
+Return the chosen piece to the list if it does not fit.
+
+Otherwise, place it on the board,
+
+Update high score.
+
+Generate new ones when all pieces are in place.
+
+G\+A\+ME O\+V\+ER menu shows up when placing any piece on the board is not possible. \mbox{\Hypertarget{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}\label{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}} 
+\index{Game1010@{Game1010}!rand\+Shape@{rand\+Shape}}
+\index{rand\+Shape@{rand\+Shape}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{rand\+Shape()}{randShape()}}
+{\footnotesize\ttfamily pair$<$vector$<$vector$<$bool$>$ $>$, \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}}$>$ Game1010\+::rand\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a random piece from pieces\mbox{[}\mbox{]}. 
+
+\mbox{\Hypertarget{class_game1010_a99d6f53c3073861fe37ef67caa073840}\label{class_game1010_a99d6f53c3073861fe37ef67caa073840}} 
+\index{Game1010@{Game1010}!show\+\_\+menu@{show\+\_\+menu}}
+\index{show\+\_\+menu@{show\+\_\+menu}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{show\+\_\+menu()}{show\_menu()}}
+{\footnotesize\ttfamily void Game1010\+::show\+\_\+menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}} $\ast$}]{menu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Remove the current board from the screen. Minimize and put it back into the screen.
+
+Remove the remaining pieces from the screen. Put them under the minimized board to make space for menu.
+
+Show menu.
+
+Clicking on the \char`\"{}\+Retry\char`\"{} button restarts the game\+:
+
+Set current score to 0,
+
+Clear the board,
+
+Generate new pieces
+
+Clicking on the \char`\"{}\+Sound\char`\"{} button turn on/off game sounds.
+
+Highlight button that is being pointed at.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8cpp}{main.\+cpp}}\end{DoxyCompactItemize}

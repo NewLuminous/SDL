@@ -1,0 +1,158 @@
+\hypertarget{class_encrypted_num}{}\section{Encrypted\+Num Class Reference}
+\label{class_encrypted_num}\index{Encrypted\+Num@{Encrypted\+Num}}
+
+
+A class that encrypts number.  
+
+
+
+
+{\ttfamily \#include $<$encrypted\+\_\+num.\+h$>$}
+
+Inheritance diagram for Encrypted\+Num\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_encrypted_num}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_encrypted_num_1_1impl}{impl}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_encrypted_num_ab53b1c8adf7c2b2770f00e88fe98f270}{Encrypted\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Constructor with value set at 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_encrypted_num_aeb560ce38d13963932a5247917d2bb7b}{Encrypted\+Num}} (const unsigned int \&v)
+\begin{DoxyCompactList}\small\item\em Constructor with specific value. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_encrypted_num_a795b635aeef60427532e1a8f26db8cdd}{$\sim$\+Encrypted\+Num}} ()
+\item 
+virtual int \mbox{\hyperlink{class_encrypted_num_a3cb78d22a4bbb6bd3199bcf10de04366}{val}} () const
+\item 
+virtual void \mbox{\hyperlink{class_encrypted_num_a4469ba057a691e6edacc25022596d1fa}{set\+Val}} (const unsigned int \&v)
+\item 
+virtual int \mbox{\hyperlink{class_encrypted_num_aec63be923f5ce470e63b78c9e70704b5}{cmp}} (const \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$b) const
+\begin{DoxyCompactList}\small\item\em Compare two number. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_encrypted_num_a838b2db3fc304aca318d0bc22a906c52}{inc}} (int inc\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Increase the number. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}{save}} (std\+::string path=D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH)
+\begin{DoxyCompactList}\small\item\em Encrypt the number and save it to a file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}{load}} (std\+::string path=D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH)
+\begin{DoxyCompactList}\small\item\em Load number from a file and decrypt it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that encrypts number. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_encrypted_num_ab53b1c8adf7c2b2770f00e88fe98f270}\label{class_encrypted_num_ab53b1c8adf7c2b2770f00e88fe98f270}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!Encrypted\+Num@{Encrypted\+Num}}
+\index{Encrypted\+Num@{Encrypted\+Num}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{Encrypted\+Num()}{EncryptedNum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Encrypted\+Num\+::\+Encrypted\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor with value set at 0. 
+
+\mbox{\Hypertarget{class_encrypted_num_aeb560ce38d13963932a5247917d2bb7b}\label{class_encrypted_num_aeb560ce38d13963932a5247917d2bb7b}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!Encrypted\+Num@{Encrypted\+Num}}
+\index{Encrypted\+Num@{Encrypted\+Num}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{Encrypted\+Num()}{EncryptedNum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Encrypted\+Num\+::\+Encrypted\+Num (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Constructor with specific value. 
+
+\mbox{\Hypertarget{class_encrypted_num_a795b635aeef60427532e1a8f26db8cdd}\label{class_encrypted_num_a795b635aeef60427532e1a8f26db8cdd}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!````~Encrypted\+Num@{$\sim$\+Encrypted\+Num}}
+\index{````~Encrypted\+Num@{$\sim$\+Encrypted\+Num}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{$\sim$\+Encrypted\+Num()}{~EncryptedNum()}}
+{\footnotesize\ttfamily Encrypted\+Num\+::$\sim$\+Encrypted\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_encrypted_num_aec63be923f5ce470e63b78c9e70704b5}\label{class_encrypted_num_aec63be923f5ce470e63b78c9e70704b5}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!cmp@{cmp}}
+\index{cmp@{cmp}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{cmp()}{cmp()}}
+{\footnotesize\ttfamily int Encrypted\+Num\+::cmp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare two number. 
+
+\mbox{\Hypertarget{class_encrypted_num_a838b2db3fc304aca318d0bc22a906c52}\label{class_encrypted_num_a838b2db3fc304aca318d0bc22a906c52}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!inc@{inc}}
+\index{inc@{inc}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{inc()}{inc()}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::inc (\begin{DoxyParamCaption}\item[{int}]{inc\+\_\+val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Increase the number. 
+
+\mbox{\Hypertarget{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}\label{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!load@{load}}
+\index{load@{load}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{path = {\ttfamily DEFAULT\+\_\+FILE\+\_\+PATH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Load number from a file and decrypt it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & pointing to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}{save()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}\label{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!save@{save}}
+\index{save@{save}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{path = {\ttfamily DEFAULT\+\_\+FILE\+\_\+PATH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Encrypt the number and save it to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & pointing to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}{load()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_encrypted_num_a4469ba057a691e6edacc25022596d1fa}\label{class_encrypted_num_a4469ba057a691e6edacc25022596d1fa}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!set\+Val@{set\+Val}}
+\index{set\+Val@{set\+Val}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{set\+Val()}{setVal()}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::set\+Val (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_encrypted_num_a3cb78d22a4bbb6bd3199bcf10de04366}{val()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_encrypted_num_a3cb78d22a4bbb6bd3199bcf10de04366}\label{class_encrypted_num_a3cb78d22a4bbb6bd3199bcf10de04366}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!val@{val}}
+\index{val@{val}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{val()}{val()}}
+{\footnotesize\ttfamily int Encrypted\+Num\+::val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_encrypted_num_a4469ba057a691e6edacc25022596d1fa}{set\+Val()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{encrypted__num_8h}{encrypted\+\_\+num.\+h}}\item 
+\mbox{\hyperlink{encrypted__num_8cpp}{encrypted\+\_\+num.\+cpp}}\end{DoxyCompactItemize}

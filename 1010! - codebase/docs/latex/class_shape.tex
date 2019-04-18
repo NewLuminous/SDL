@@ -1,0 +1,202 @@
+\hypertarget{class_shape}{}\section{Shape Class Reference}
+\label{class_shape}\index{Shape@{Shape}}
+
+
+A bitmap representing shape.  
+
+
+
+
+{\ttfamily \#include $<$shape.\+h$>$}
+
+Inheritance diagram for Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_shape}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_shape_a935afc9e576015f967d90de56977167d}{$\sim$\+Shape}} ()
+\item 
+\mbox{\hyperlink{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}{Shape}} ()
+\item 
+\mbox{\hyperlink{class_shape_adb7c908a72cc99aee8c23ff0d4c6173a}{Shape}} (const unsigned int \&row, const unsigned int \&col)
+\begin{DoxyCompactList}\small\item\em constructor for filled rectangle \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_shape_a9004eb6a22e2f005aed9aac83aa7377b}{Shape}} (const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&bitmap)
+\begin{DoxyCompactList}\small\item\em constructor for any shape \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_shape_a285a0848e8bc19b0e76e2661d63bb1a1}{fill\+Bit\+Map}} (const unsigned int \&row, const unsigned int \&col)
+\item 
+virtual void \mbox{\hyperlink{class_shape_ae79ee483d0f48a426d1a544fd22fd8e5}{set\+Bit\+Map}} (const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&bitmap)
+\item 
+virtual int \mbox{\hyperlink{class_shape_a87f7e888ab40590dd3e4f73e13514152}{get\+Num\+Bit}} ()
+\begin{DoxyCompactList}\small\item\em Count the number of unit squares inside the shape. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_shape_af3b265335667167ced81b3226b07dcb0}{set\+Bit}} (const int \&i, const int \&j, const bool \&k)
+\begin{DoxyCompactList}\small\item\em set bit at specific position \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}{get\+Bit}} (const int \&i, const int \&j) const
+\begin{DoxyCompactList}\small\item\em get bit at specific position \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_shape_a7f6887a6b1b1dfa6b7471edb4a582731}{get\+Col\+Num}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of columns of the shape. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_shape_a849c13a51a231c2ecb364efc3ff3f1ae}{get\+Row\+Num}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of rows of the shape. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_shape_a7f336c18e4bbd3035542037862d0eec7}{del}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A bitmap representing shape. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_shape_a935afc9e576015f967d90de56977167d}\label{class_shape_a935afc9e576015f967d90de56977167d}} 
+\index{Shape@{Shape}!````~Shape@{$\sim$\+Shape}}
+\index{````~Shape@{$\sim$\+Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{$\sim$\+Shape()}{~Shape()}}
+{\footnotesize\ttfamily Shape\+::$\sim$\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}\label{class_shape_aaa8d87171e65e0d8ba3c5459978992a7}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_shape_adb7c908a72cc99aee8c23ff0d4c6173a}\label{class_shape_adb7c908a72cc99aee8c23ff0d4c6173a}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{row,  }\item[{const unsigned int \&}]{col }\end{DoxyParamCaption})}
+
+
+
+constructor for filled rectangle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The number of rows of the rectangle \\
+\hline
+{\em col} & The number of columns of the rectangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_shape_a9004eb6a22e2f005aed9aac83aa7377b}\label{class_shape_a9004eb6a22e2f005aed9aac83aa7377b}} 
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{Shape()}{Shape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Shape\+::\+Shape (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&}]{bitmap }\end{DoxyParamCaption})}
+
+
+
+constructor for any shape 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap representing the shape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ae79ee483d0f48a426d1a544fd22fd8e5}{set\+Bit\+Map()}} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_shape_a7f336c18e4bbd3035542037862d0eec7}\label{class_shape_a7f336c18e4bbd3035542037862d0eec7}} 
+\index{Shape@{Shape}!del@{del}}
+\index{del@{del}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily void Shape\+::del (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_shape_a285a0848e8bc19b0e76e2661d63bb1a1}\label{class_shape_a285a0848e8bc19b0e76e2661d63bb1a1}} 
+\index{Shape@{Shape}!fill\+Bit\+Map@{fill\+Bit\+Map}}
+\index{fill\+Bit\+Map@{fill\+Bit\+Map}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{fill\+Bit\+Map()}{fillBitMap()}}
+{\footnotesize\ttfamily void Shape\+::fill\+Bit\+Map (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{row,  }\item[{const unsigned int \&}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}\label{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}} 
+\index{Shape@{Shape}!get\+Bit@{get\+Bit}}
+\index{get\+Bit@{get\+Bit}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Bit()}{getBit()}}
+{\footnotesize\ttfamily bool Shape\+::get\+Bit (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+get bit at specific position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The row containing the bit \\
+\hline
+{\em j} & The column containing the bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_af3b265335667167ced81b3226b07dcb0}{set\+Bit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a7f6887a6b1b1dfa6b7471edb4a582731}\label{class_shape_a7f6887a6b1b1dfa6b7471edb4a582731}} 
+\index{Shape@{Shape}!get\+Col\+Num@{get\+Col\+Num}}
+\index{get\+Col\+Num@{get\+Col\+Num}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Col\+Num()}{getColNum()}}
+{\footnotesize\ttfamily int Shape\+::get\+Col\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of columns of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a849c13a51a231c2ecb364efc3ff3f1ae}{get\+Row\+Num()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_a87f7e888ab40590dd3e4f73e13514152}\label{class_shape_a87f7e888ab40590dd3e4f73e13514152}} 
+\index{Shape@{Shape}!get\+Num\+Bit@{get\+Num\+Bit}}
+\index{get\+Num\+Bit@{get\+Num\+Bit}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Num\+Bit()}{getNumBit()}}
+{\footnotesize\ttfamily int Shape\+::get\+Num\+Bit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Count the number of unit squares inside the shape. 
+
+\mbox{\Hypertarget{class_shape_a849c13a51a231c2ecb364efc3ff3f1ae}\label{class_shape_a849c13a51a231c2ecb364efc3ff3f1ae}} 
+\index{Shape@{Shape}!get\+Row\+Num@{get\+Row\+Num}}
+\index{get\+Row\+Num@{get\+Row\+Num}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{get\+Row\+Num()}{getRowNum()}}
+{\footnotesize\ttfamily int Shape\+::get\+Row\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of rows of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_a7f6887a6b1b1dfa6b7471edb4a582731}{get\+Col\+Num()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_af3b265335667167ced81b3226b07dcb0}\label{class_shape_af3b265335667167ced81b3226b07dcb0}} 
+\index{Shape@{Shape}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Bit()}{setBit()}}
+{\footnotesize\ttfamily void Shape\+::set\+Bit (\begin{DoxyParamCaption}\item[{const int \&}]{i,  }\item[{const int \&}]{j,  }\item[{const bool \&}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set bit at specific position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The row containing the bit \\
+\hline
+{\em j} & The column containing the bit \\
+\hline
+{\em k} & New value of the bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ab486d732a49d49cbbc4fadf1f23c379e}{get\+Bit()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_shape_ae79ee483d0f48a426d1a544fd22fd8e5}\label{class_shape_ae79ee483d0f48a426d1a544fd22fd8e5}} 
+\index{Shape@{Shape}!set\+Bit\+Map@{set\+Bit\+Map}}
+\index{set\+Bit\+Map@{set\+Bit\+Map}!Shape@{Shape}}
+\subsubsection{\texorpdfstring{set\+Bit\+Map()}{setBitMap()}}
+{\footnotesize\ttfamily void Shape\+::set\+Bit\+Map (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&}]{bitmap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{shape_8h}{shape.\+h}}\item 
+\mbox{\hyperlink{shape_8cpp}{shape.\+cpp}}\end{DoxyCompactItemize}

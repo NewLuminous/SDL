@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['del',['del',['../class_board.html#adb5a66738afb0cc79313fac0a2dda590',1,'Board::del()'],['../class_button.html#a83d4a76946aa8896173c010e5846f74c',1,'Button::del()'],['../class_menu.html#a51548806948f9617dc6b66080eec0ca5',1,'Menu::del()'],['../class_shape.html#a592b3cd82e09faba98018ff8498dd411',1,'Shape::del()']]],
-  ['draw',['draw',['../class_s_d_l_utils.html#ae7645c69b8b5104833729bec7f44163b',1,'SDLUtils::draw(const string &amp;path, const int &amp;x, const int &amp;y, const int &amp;w, const int &amp;h)'],['../class_s_d_l_utils.html#a7b92fdc75a680aea20f240d4a98f44fb',1,'SDLUtils::draw(const Board *board)'],['../class_s_d_l_utils.html#adcc5697aa0fa642fe3e4fa148f23ebb4',1,'SDLUtils::draw(const Shape *shape)'],['../class_s_d_l_utils.html#a7a7ae5762a5e1b178d9ffa94645cfcdc',1,'SDLUtils::draw(const Score *score, const int &amp;num_digits)'],['../class_s_d_l_utils.html#a2a500a3fe7aa85ddc32ec86afdd8edb2',1,'SDLUtils::draw(Button *button)'],['../class_s_d_l_utils.html#aab6c9aceff31b61a79b4dd7fc13f7473',1,'SDLUtils::draw(Menu *menu)']]]
-];

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="1010!" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/1010!" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/1010!" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="SDL_utils.cpp" />
+		<Unit filename="SDL_utils.h" />
+		<Unit filename="board.cpp" />
+		<Unit filename="board.h" />
+		<Unit filename="board_surface.cpp" />
+		<Unit filename="board_surface.h" />
+		<Unit filename="button.cpp" />
+		<Unit filename="button.h" />
+		<Unit filename="button_surface.cpp" />
+		<Unit filename="button_surface.h" />
+		<Unit filename="encrypted_num.cpp" />
+		<Unit filename="encrypted_num.h" />
+		<Unit filename="font.cpp" />
+		<Unit filename="font.h" />
+		<Unit filename="font_surface.cpp" />
+		<Unit filename="font_surface.h" />
+		<Unit filename="icon.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="image.cpp" />
+		<Unit filename="image.h" />
+		<Unit filename="image_surface.cpp" />
+		<Unit filename="image_surface.h" />
+		<Unit filename="isurface.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.h" />
+		<Unit filename="menu_surface.cpp" />
+		<Unit filename="menu_surface.h" />
+		<Unit filename="rgb_color.cpp" />
+		<Unit filename="rgb_color.h" />
+		<Unit filename="shape.cpp" />
+		<Unit filename="shape.h" />
+		<Unit filename="visible_encrypted_num.cpp" />
+		<Unit filename="visible_encrypted_num.h" />
+		<Unit filename="visible_encrypted_num_surface.cpp" />
+		<Unit filename="visible_encrypted_num_surface.h" />
+		<Unit filename="visible_shape.cpp" />
+		<Unit filename="visible_shape.h" />
+		<Unit filename="visible_shape_surface.cpp" />
+		<Unit filename="visible_shape_surface.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,243 @@
+# depslib dependency file v1.0
+1554019553 source:c:\users\admin\documents\github\sdl\1010!\main.cpp
+	"SDL_utils.h"
+
+1554028322 c:\users\admin\documents\github\sdl\1010!\sdl_utils.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<iostream>
+	"board.h"
+	"menu.h"
+
+1553965178 c:\users\admin\documents\github\sdl\1010!\figure.h
+	<vector>
+	<stdlib.h>
+	"color.h"
+
+1553953568 c:\users\admin\documents\github\sdl\1010!\board.h
+	"figure.h"
+	"score.h"
+
+1553968714 c:\users\admin\documents\github\sdl\1010!\color.h
+
+1553928529 c:\users\admin\documents\github\sdl\1010!\score.h
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<vector>
+
+1553976116 c:\users\admin\documents\github\sdl\1010!\menu.h
+	"button.h"
+	<vector>
+
+1553974050 c:\users\admin\documents\github\sdl\1010!\button.h
+	<stdlib.h>
+	"color.h"
+
+1554091846 source:c:\users\admin\documents\github\sdl\1010! - source code\main.cpp
+	"SDL_utils.h"
+
+1554110455 c:\users\admin\documents\github\sdl\1010! - source code\sdl_utils.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<iostream>
+	"board.h"
+	"menu.h"
+
+1554110312 c:\users\admin\documents\github\sdl\1010! - source code\board.h
+	"shape.h"
+	"score.h"
+
+1553965178 c:\users\admin\documents\github\sdl\1010! - source code\figure.h
+	<vector>
+	<stdlib.h>
+	"color.h"
+
+1554105098 c:\users\admin\documents\github\sdl\1010! - source code\color.h
+
+1554107596 c:\users\admin\documents\github\sdl\1010! - source code\score.h
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<vector>
+
+1554105078 c:\users\admin\documents\github\sdl\1010! - source code\menu.h
+	"button.h"
+	<vector>
+
+1554105086 c:\users\admin\documents\github\sdl\1010! - source code\button.h
+	<stdlib.h>
+	"color.h"
+
+1554035929 source:c:\users\admin\documents\github\sdl\1010! - source code\icon.rc
+
+1554110068 c:\users\admin\documents\github\sdl\1010! - source code\shape.h
+	<vector>
+	<stdlib.h>
+	"color.h"
+
+1554035929 source:c:\users\admin\documents\github\sdl\1010! - codebase\icon.rc
+
+1555627553 source:c:\users\admin\documents\github\sdl\1010! - codebase\main.cpp
+	"SDL_utils.h"
+	"board_surface.h"
+	"menu_surface.h"
+	"visible_encrypted_num_surface.h"
+	"visible_shape_surface.h"
+
+1555621164 c:\users\admin\documents\github\sdl\1010! - codebase\sdl_utils.h
+	"isurface.h"
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_ttf.h>
+	<iostream>
+	<cstdlib>
+
+1555628268 c:\users\admin\documents\github\sdl\1010! - codebase\board.h
+	"visible_shape.h"
+	"encrypted_num.h"
+
+1555620768 c:\users\admin\documents\github\sdl\1010! - codebase\shape.h
+	<vector>
+
+1554105098 c:\users\admin\documents\github\sdl\1010! - codebase\color.h
+
+1554107596 c:\users\admin\documents\github\sdl\1010! - codebase\score.h
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	<vector>
+
+1555624562 c:\users\admin\documents\github\sdl\1010! - codebase\menu.h
+	"button.h"
+	<vector>
+
+1555615387 c:\users\admin\documents\github\sdl\1010! - codebase\button.h
+	"image.h"
+	"font.h"
+
+1555623481 source:c:\users\admin\documents\github\sdl\1010! - codebase\board.cpp
+	"board.h"
+
+1555618101 c:\users\admin\documents\github\sdl\1010! - codebase\visible_shape.h
+	"shape.h"
+	"image.h"
+	"rgb_color.h"
+
+1555612794 c:\users\admin\documents\github\sdl\1010! - codebase\image.h
+	"rgb_color.h"
+	<string>
+
+1555438113 c:\users\admin\documents\github\sdl\1010! - codebase\rgb_color.h
+
+1555518008 c:\users\admin\documents\github\sdl\1010! - codebase\encrypted_num.h
+	<memory>
+	<string>
+
+1555611469 source:c:\users\admin\documents\github\sdl\1010! - codebase\board_surface.cpp
+	"board_surface.h"
+
+1555611192 c:\users\admin\documents\github\sdl\1010! - codebase\board_surface.h
+	"image_surface.h"
+	"board.h"
+	<vector>
+
+1555610280 c:\users\admin\documents\github\sdl\1010! - codebase\image_surface.h
+	"isurface.h"
+	"image.h"
+	<vector>
+
+1555610258 c:\users\admin\documents\github\sdl\1010! - codebase\isurface.h
+	<SDL.h>
+
+1555615395 source:c:\users\admin\documents\github\sdl\1010! - codebase\button.cpp
+	"button.h"
+
+1555490824 c:\users\admin\documents\github\sdl\1010! - codebase\font.h
+	"rgb_color.h"
+	<string>
+
+1555610801 source:c:\users\admin\documents\github\sdl\1010! - codebase\button_surface.cpp
+	"button_surface.h"
+
+1555610738 c:\users\admin\documents\github\sdl\1010! - codebase\button_surface.h
+	"image_surface.h"
+	"font_surface.h"
+	"button.h"
+
+1555610452 c:\users\admin\documents\github\sdl\1010! - codebase\font_surface.h
+	"isurface.h"
+	"font.h"
+	<vector>
+
+1555495363 source:c:\users\admin\documents\github\sdl\1010! - codebase\encrypted_num.cpp
+	<fstream>
+	<stdlib.h>
+	<time.h>
+	"encrypted_num.h"
+
+1555600316 source:c:\users\admin\documents\github\sdl\1010! - codebase\font.cpp
+	"font.h"
+
+1555610458 source:c:\users\admin\documents\github\sdl\1010! - codebase\font_surface.cpp
+	"font_surface.h"
+	<SDL_ttf.h>
+	<iostream>
+	<cstdlib>
+
+1555612911 source:c:\users\admin\documents\github\sdl\1010! - codebase\image.cpp
+	"image.h"
+
+1555610391 source:c:\users\admin\documents\github\sdl\1010! - codebase\image_surface.cpp
+	"image_surface.h"
+	<SDL_image.h>
+	<iostream>
+	<cstdlib>
+
+1555624588 source:c:\users\admin\documents\github\sdl\1010! - codebase\menu.cpp
+	"menu.h"
+
+1555625237 source:c:\users\admin\documents\github\sdl\1010! - codebase\menu_surface.cpp
+	"menu_surface.h"
+
+1555610667 c:\users\admin\documents\github\sdl\1010! - codebase\menu_surface.h
+	"button_surface.h"
+	"menu.h"
+
+1555414181 source:c:\users\admin\documents\github\sdl\1010! - codebase\rgb_color.cpp
+	"rgb_color.h"
+
+1555621297 source:c:\users\admin\documents\github\sdl\1010! - codebase\sdl_utils.cpp
+	"SDL_utils.h"
+
+1555620976 source:c:\users\admin\documents\github\sdl\1010! - codebase\shape.cpp
+	"shape.h"
+
+1555615413 source:c:\users\admin\documents\github\sdl\1010! - codebase\visible_encrypted_num.cpp
+	"visible_encrypted_num.h"
+
+1555614798 c:\users\admin\documents\github\sdl\1010! - codebase\visible_encrypted_num.h
+	"encrypted_num.h"
+	"image.h"
+
+1555616141 source:c:\users\admin\documents\github\sdl\1010! - codebase\visible_encrypted_num_surface.cpp
+	"visible_encrypted_num_surface.h"
+
+1555616397 c:\users\admin\documents\github\sdl\1010! - codebase\visible_encrypted_num_surface.h
+	"image_surface.h"
+	"visible_encrypted_num.h"
+	<vector>
+
+1555618311 source:c:\users\admin\documents\github\sdl\1010! - codebase\visible_shape.cpp
+	"visible_shape.h"
+
+1555616641 source:c:\users\admin\documents\github\sdl\1010! - codebase\visible_shape_surface.cpp
+	"visible_shape_surface.h"
+
+1555610509 c:\users\admin\documents\github\sdl\1010! - codebase\visible_shape_surface.h
+	"image_surface.h"
+	"visible_shape.h"
+	<vector>
+

@@ -1,0 +1,254 @@
+\hypertarget{class_button}{}\section{Button Class Reference}
+\label{class_button}\index{Button@{Button}}
+
+
+A class that defines button including icon and text.  
+
+
+
+
+{\ttfamily \#include $<$button.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_a3b36df1ae23c58aedb9e15a713159459}{Button}} ()
+\item 
+\mbox{\hyperlink{class_button_a0afd720661614d65ec8f59a20ba2e1d0}{Button}} (const \mbox{\hyperlink{class_image}{Image}} \&icon, \mbox{\hyperlink{class_font}{Font}} title=\mbox{\hyperlink{class_font}{Font}}(\char`\"{}\char`\"{}, \char`\"{}\char`\"{}))
+\item 
+\mbox{\hyperlink{class_button_aeec07db7dcdbf546a152b2056c167a4a}{Button}} (const \mbox{\hyperlink{class_font}{Font}} \&title)
+\item 
+virtual \mbox{\hyperlink{class_button_a2a001eb9c3cc8ae54768a850dd345002}{$\sim$\+Button}} ()
+\item 
+virtual void \mbox{\hyperlink{class_button_aabe6ae612c78c4e49d6c4de222e3dcb2}{set\+Icon}} (const \mbox{\hyperlink{class_image}{Image}} \&icon)
+\item 
+virtual \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_button_afc946623026b3f18de86af8e4cc2921e}{get\+Icon}} () const
+\item 
+virtual void \mbox{\hyperlink{class_button_aca4632ad68e021d147966c8782917f83}{set\+Title}} (const \mbox{\hyperlink{class_font}{Font}} \&title)
+\item 
+virtual \mbox{\hyperlink{class_font}{Font}} \mbox{\hyperlink{class_button_afd5d30f0dc6aba866c45072c59ee06f8}{get\+Title}} () const
+\item 
+virtual void \mbox{\hyperlink{class_button_a87418f0a2d9ecbff822627e4e728728e}{set\+Color}} (const \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the color of the title. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} \mbox{\hyperlink{class_button_a3388931e8e8cef41336f973578304c8a}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the color of the title. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_button_a808e7d56490172fdeab84afb01fc4bde}{set\+Coordinate}} (const int \&x, const int \&y)
+\begin{DoxyCompactList}\small\item\em Set the coordinate of the top-\/left corner of the button. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_button_a05c6aae1cf037ad66e3821963fe72988}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Get the x coordinate of the button. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_button_a3acf216100c43b999e38047bfdf99ee7}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Get the y coordinate of the button. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_button_a6b048681f073eae03631251ddee96b17}{set\+Height}} (const unsigned int \&height)
+\item 
+virtual int \mbox{\hyperlink{class_button_ab4e3a35e683df269eb4b178632694dbf}{get\+Height}} () const
+\item 
+virtual void \mbox{\hyperlink{class_button_a77d90f51ba19a275e9d662cbb081049f}{set\+Width}} (const unsigned int \&width)
+\item 
+virtual int \mbox{\hyperlink{class_button_a75acf94e1d23db5a64830c8ea7280c0a}{get\+Width}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_button_ac2449ee251bb58bb505b3b6c825d4129}{inside}} (const int \&x, const int \&y)
+\begin{DoxyCompactList}\small\item\em Check whether the mouse currently points at the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that defines button including icon and text. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_button_a3b36df1ae23c58aedb9e15a713159459}\label{class_button_a3b36df1ae23c58aedb9e15a713159459}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\subsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_button_a0afd720661614d65ec8f59a20ba2e1d0}\label{class_button_a0afd720661614d65ec8f59a20ba2e1d0}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\subsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{icon,  }\item[{\mbox{\hyperlink{class_font}{Font}}}]{title = {\ttfamily \mbox{\hyperlink{class_font}{Font}}(\char`\"{}\char`\"{},~\char`\"{}\char`\"{})} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_button_aeec07db7dcdbf546a152b2056c167a4a}\label{class_button_aeec07db7dcdbf546a152b2056c167a4a}} 
+\index{Button@{Button}!Button@{Button}}
+\index{Button@{Button}!Button@{Button}}
+\subsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Button\+::\+Button (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_font}{Font}} \&}]{title }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_button_a2a001eb9c3cc8ae54768a850dd345002}\label{class_button_a2a001eb9c3cc8ae54768a850dd345002}} 
+\index{Button@{Button}!````~Button@{$\sim$\+Button}}
+\index{````~Button@{$\sim$\+Button}!Button@{Button}}
+\subsubsection{\texorpdfstring{$\sim$\+Button()}{~Button()}}
+{\footnotesize\ttfamily Button\+::$\sim$\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_button_a3388931e8e8cef41336f973578304c8a}\label{class_button_a3388931e8e8cef41336f973578304c8a}} 
+\index{Button@{Button}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} Button\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the color of the title. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a87418f0a2d9ecbff822627e4e728728e}{set\+Color()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_ab4e3a35e683df269eb4b178632694dbf}\label{class_button_ab4e3a35e683df269eb4b178632694dbf}} 
+\index{Button@{Button}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int Button\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a6b048681f073eae03631251ddee96b17}{set\+Height()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_afc946623026b3f18de86af8e4cc2921e}\label{class_button_afc946623026b3f18de86af8e4cc2921e}} 
+\index{Button@{Button}!get\+Icon@{get\+Icon}}
+\index{get\+Icon@{get\+Icon}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+Icon()}{getIcon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}} Button\+::get\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_aabe6ae612c78c4e49d6c4de222e3dcb2}{set\+Icon()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_afd5d30f0dc6aba866c45072c59ee06f8}\label{class_button_afd5d30f0dc6aba866c45072c59ee06f8}} 
+\index{Button@{Button}!get\+Title@{get\+Title}}
+\index{get\+Title@{get\+Title}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+Title()}{getTitle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_font}{Font}} Button\+::get\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_aca4632ad68e021d147966c8782917f83}{set\+Title()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a75acf94e1d23db5a64830c8ea7280c0a}\label{class_button_a75acf94e1d23db5a64830c8ea7280c0a}} 
+\index{Button@{Button}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int Button\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a77d90f51ba19a275e9d662cbb081049f}{set\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a05c6aae1cf037ad66e3821963fe72988}\label{class_button_a05c6aae1cf037ad66e3821963fe72988}} 
+\index{Button@{Button}!getX@{getX}}
+\index{getX@{getX}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Button\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the x coordinate of the button. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a808e7d56490172fdeab84afb01fc4bde}{set\+Coordinate()}}; 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a3acf216100c43b999e38047bfdf99ee7}\label{class_button_a3acf216100c43b999e38047bfdf99ee7}} 
+\index{Button@{Button}!getY@{getY}}
+\index{getY@{getY}!Button@{Button}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Button\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the y coordinate of the button. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a808e7d56490172fdeab84afb01fc4bde}{set\+Coordinate()}}; 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_ac2449ee251bb58bb505b3b6c825d4129}\label{class_button_ac2449ee251bb58bb505b3b6c825d4129}} 
+\index{Button@{Button}!inside@{inside}}
+\index{inside@{inside}!Button@{Button}}
+\subsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily bool Button\+::inside (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check whether the mouse currently points at the button. 
+
+Always return false if the size of the button has never been set before 
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the mouse \\
+\hline
+{\em y} & The y coordinate of the mouse \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a6b048681f073eae03631251ddee96b17}{set\+Height()}} 
+
+\mbox{\hyperlink{class_button_a77d90f51ba19a275e9d662cbb081049f}{set\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a87418f0a2d9ecbff822627e4e728728e}\label{class_button_a87418f0a2d9ecbff822627e4e728728e}} 
+\index{Button@{Button}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Button@{Button}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void Button\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the color of the title. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a3388931e8e8cef41336f973578304c8a}{get\+Color()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a808e7d56490172fdeab84afb01fc4bde}\label{class_button_a808e7d56490172fdeab84afb01fc4bde}} 
+\index{Button@{Button}!set\+Coordinate@{set\+Coordinate}}
+\index{set\+Coordinate@{set\+Coordinate}!Button@{Button}}
+\subsubsection{\texorpdfstring{set\+Coordinate()}{setCoordinate()}}
+{\footnotesize\ttfamily void Button\+::set\+Coordinate (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the coordinate of the top-\/left corner of the button. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a05c6aae1cf037ad66e3821963fe72988}{get\+X()}} 
+
+\mbox{\hyperlink{class_button_a3acf216100c43b999e38047bfdf99ee7}{get\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a6b048681f073eae03631251ddee96b17}\label{class_button_a6b048681f073eae03631251ddee96b17}} 
+\index{Button@{Button}!set\+Height@{set\+Height}}
+\index{set\+Height@{set\+Height}!Button@{Button}}
+\subsubsection{\texorpdfstring{set\+Height()}{setHeight()}}
+{\footnotesize\ttfamily void Button\+::set\+Height (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_ab4e3a35e683df269eb4b178632694dbf}{get\+Height()}} 
+
+\mbox{\hyperlink{class_button_a77d90f51ba19a275e9d662cbb081049f}{set\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_aabe6ae612c78c4e49d6c4de222e3dcb2}\label{class_button_aabe6ae612c78c4e49d6c4de222e3dcb2}} 
+\index{Button@{Button}!set\+Icon@{set\+Icon}}
+\index{set\+Icon@{set\+Icon}!Button@{Button}}
+\subsubsection{\texorpdfstring{set\+Icon()}{setIcon()}}
+{\footnotesize\ttfamily void Button\+::set\+Icon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{icon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_afc946623026b3f18de86af8e4cc2921e}{get\+Icon()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_aca4632ad68e021d147966c8782917f83}\label{class_button_aca4632ad68e021d147966c8782917f83}} 
+\index{Button@{Button}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!Button@{Button}}
+\subsubsection{\texorpdfstring{set\+Title()}{setTitle()}}
+{\footnotesize\ttfamily void Button\+::set\+Title (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_font}{Font}} \&}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_afd5d30f0dc6aba866c45072c59ee06f8}{get\+Title()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_button_a77d90f51ba19a275e9d662cbb081049f}\label{class_button_a77d90f51ba19a275e9d662cbb081049f}} 
+\index{Button@{Button}!set\+Width@{set\+Width}}
+\index{set\+Width@{set\+Width}!Button@{Button}}
+\subsubsection{\texorpdfstring{set\+Width()}{setWidth()}}
+{\footnotesize\ttfamily void Button\+::set\+Width (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_button_a75acf94e1d23db5a64830c8ea7280c0a}{get\+Width()}} 
+
+\mbox{\hyperlink{class_button_a6b048681f073eae03631251ddee96b17}{set\+Height()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{button_8h}{button.\+h}}\item 
+\mbox{\hyperlink{button_8cpp}{button.\+cpp}}\end{DoxyCompactItemize}

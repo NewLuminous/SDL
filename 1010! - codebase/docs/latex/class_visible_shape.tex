@@ -1,0 +1,315 @@
+\hypertarget{class_visible_shape}{}\section{Visible\+Shape Class Reference}
+\label{class_visible_shape}\index{Visible\+Shape@{Visible\+Shape}}
+
+
+A class that defines visible shape.  
+
+
+
+
+{\ttfamily \#include $<$visible\+\_\+shape.\+h$>$}
+
+Inheritance diagram for Visible\+Shape\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_visible_shape}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_visible_shape_a280deeca2a39d227887ff2e13b009c0a}{Visible\+Shape}} ()
+\item 
+\mbox{\hyperlink{class_visible_shape_adc9d11f72af8b96fdb379330fd9de592}{Visible\+Shape}} (const unsigned int \&row, const unsigned int \&col)
+\begin{DoxyCompactList}\small\item\em constructor for filled rectangle \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_visible_shape_a0efa89e218acbaeaf4f2453467d54cc9}{Visible\+Shape}} (const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&bitmap)
+\begin{DoxyCompactList}\small\item\em constructor for any shape \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_visible_shape_a3cf57d96e1b85f8cda8bedefcc23ec45}{$\sim$\+Visible\+Shape}} ()
+\item 
+virtual void \mbox{\hyperlink{class_visible_shape_ae0b09cac51ba9af744cddce67fe0180a}{set\+Unit\+Square\+Img}} (\mbox{\hyperlink{class_image}{Image}} img)
+\item 
+virtual \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_visible_shape_ab62a8320e8084bfdcc43b5c3cf072cd3}{get\+Unit\+Square\+Img}} () const
+\item 
+virtual void \mbox{\hyperlink{class_visible_shape_a350f7faac22e405df7c4012fe9d03fac}{set\+Coordinate}} (const int \&x, const int \&y)
+\begin{DoxyCompactList}\small\item\em Set the coordinate of the top-\/left corner of the shape. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_a623ee2bd2e408da908ec5b210347b36e}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Get the x coordinate of the shape. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_ace747d31bf685044d815b6fa1944055e}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Get the y coordinate of the shape. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_visible_shape_a69ae0940d090fec376bee8dc6861b8dc}{set\+Color}} (const \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the shape color. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} \mbox{\hyperlink{class_visible_shape_a80fe773d65776d9402be26068564882d}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the shape color. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_visible_shape_a52308c3c9134514fb6782c6f0e149914}{set\+Unit\+Square\+Size}} (const unsigned int \&\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Set the unit square size. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_a76955574eac9a5e205a2746b1343deb4}{get\+Unit\+Square\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Get the unit square size. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_a667b81608efd869c907bd342397f3eb5}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the shape. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_a1ce25935c729146932d649f88215ffbe}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the shape. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_visible_shape_aab5199578030849314f0c6a339aa4281}{inside}} (const int \&mouse\+\_\+x, const int \&mouse\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Check whether the shape is being pointed at. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_a53dd71f6cee05f9707d899c4e1434070}{get\+MouseX}} () const
+\begin{DoxyCompactList}\small\item\em Get the x coordinate of the mouse with the origin at the top-\/left corner of the shape. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_visible_shape_a6b0536f0437e514ba1bda6927becb603}{get\+MouseY}} () const
+\begin{DoxyCompactList}\small\item\em Get the y coordinate of the mouse with the origin at the top-\/left corner of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that defines visible shape. 
+
+\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} is a derived class from \mbox{\hyperlink{class_shape}{Shape}}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_visible_shape_a280deeca2a39d227887ff2e13b009c0a}\label{class_visible_shape_a280deeca2a39d227887ff2e13b009c0a}} 
+\index{Visible\+Shape@{Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\index{Visible\+Shape@{Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_visible_shape_adc9d11f72af8b96fdb379330fd9de592}\label{class_visible_shape_adc9d11f72af8b96fdb379330fd9de592}} 
+\index{Visible\+Shape@{Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\index{Visible\+Shape@{Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{row,  }\item[{const unsigned int \&}]{col }\end{DoxyParamCaption})}
+
+
+
+constructor for filled rectangle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The number of rows of the rectangle \\
+\hline
+{\em col} & The number of columns of the rectangle \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_visible_shape_a0efa89e218acbaeaf4f2453467d54cc9}\label{class_visible_shape_a0efa89e218acbaeaf4f2453467d54cc9}} 
+\index{Visible\+Shape@{Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\index{Visible\+Shape@{Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ bool $>$ $>$ \&}]{bitmap }\end{DoxyParamCaption})}
+
+
+
+constructor for any shape 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bitmap} & The bitmap representing the shape. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_shape_ae79ee483d0f48a426d1a544fd22fd8e5}{set\+Bit\+Map()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a3cf57d96e1b85f8cda8bedefcc23ec45}\label{class_visible_shape_a3cf57d96e1b85f8cda8bedefcc23ec45}} 
+\index{Visible\+Shape@{Visible\+Shape}!````~Visible\+Shape@{$\sim$\+Visible\+Shape}}
+\index{````~Visible\+Shape@{$\sim$\+Visible\+Shape}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{$\sim$\+Visible\+Shape()}{~VisibleShape()}}
+{\footnotesize\ttfamily Visible\+Shape\+::$\sim$\+Visible\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_visible_shape_a80fe773d65776d9402be26068564882d}\label{class_visible_shape_a80fe773d65776d9402be26068564882d}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} Visible\+Shape\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the shape color. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a69ae0940d090fec376bee8dc6861b8dc}{set\+Color()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a1ce25935c729146932d649f88215ffbe}\label{class_visible_shape_a1ce25935c729146932d649f88215ffbe}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the height of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a667b81608efd869c907bd342397f3eb5}{get\+Width()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a53dd71f6cee05f9707d899c4e1434070}\label{class_visible_shape_a53dd71f6cee05f9707d899c4e1434070}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+MouseX@{get\+MouseX}}
+\index{get\+MouseX@{get\+MouseX}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Mouse\+X()}{getMouseX()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::get\+MouseX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the x coordinate of the mouse with the origin at the top-\/left corner of the shape. 
+
+Always return 0 if whether the mouse pointer is inside the shape, has never been checked. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_aab5199578030849314f0c6a339aa4281}{inside()}} 
+
+\mbox{\hyperlink{class_visible_shape_a6b0536f0437e514ba1bda6927becb603}{get\+Mouse\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a6b0536f0437e514ba1bda6927becb603}\label{class_visible_shape_a6b0536f0437e514ba1bda6927becb603}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+MouseY@{get\+MouseY}}
+\index{get\+MouseY@{get\+MouseY}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Mouse\+Y()}{getMouseY()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::get\+MouseY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the y coordinate of the mouse with the origin at the top-\/left corner of the shape. 
+
+Always return 0 if whether the mouse pointer is inside the shape, has never been checked. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_aab5199578030849314f0c6a339aa4281}{inside()}} 
+
+\mbox{\hyperlink{class_visible_shape_a53dd71f6cee05f9707d899c4e1434070}{get\+Mouse\+X()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_ab62a8320e8084bfdcc43b5c3cf072cd3}\label{class_visible_shape_ab62a8320e8084bfdcc43b5c3cf072cd3}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+Unit\+Square\+Img@{get\+Unit\+Square\+Img}}
+\index{get\+Unit\+Square\+Img@{get\+Unit\+Square\+Img}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Unit\+Square\+Img()}{getUnitSquareImg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_image}{Image}} Visible\+Shape\+::get\+Unit\+Square\+Img (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_ae0b09cac51ba9af744cddce67fe0180a}{set\+Unit\+Square\+Img()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a76955574eac9a5e205a2746b1343deb4}\label{class_visible_shape_a76955574eac9a5e205a2746b1343deb4}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+Unit\+Square\+Size@{get\+Unit\+Square\+Size}}
+\index{get\+Unit\+Square\+Size@{get\+Unit\+Square\+Size}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Unit\+Square\+Size()}{getUnitSquareSize()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::get\+Unit\+Square\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the unit square size. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a52308c3c9134514fb6782c6f0e149914}{set\+Unit\+Square\+Size()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a667b81608efd869c907bd342397f3eb5}\label{class_visible_shape_a667b81608efd869c907bd342397f3eb5}} 
+\index{Visible\+Shape@{Visible\+Shape}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the width of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a1ce25935c729146932d649f88215ffbe}{get\+Height()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a623ee2bd2e408da908ec5b210347b36e}\label{class_visible_shape_a623ee2bd2e408da908ec5b210347b36e}} 
+\index{Visible\+Shape@{Visible\+Shape}!getX@{getX}}
+\index{getX@{getX}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the x coordinate of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a350f7faac22e405df7c4012fe9d03fac}{set\+Coordinate()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_ace747d31bf685044d815b6fa1944055e}\label{class_visible_shape_ace747d31bf685044d815b6fa1944055e}} 
+\index{Visible\+Shape@{Visible\+Shape}!getY@{getY}}
+\index{getY@{getY}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Visible\+Shape\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the y coordinate of the shape. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a350f7faac22e405df7c4012fe9d03fac}{set\+Coordinate()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_aab5199578030849314f0c6a339aa4281}\label{class_visible_shape_aab5199578030849314f0c6a339aa4281}} 
+\index{Visible\+Shape@{Visible\+Shape}!inside@{inside}}
+\index{inside@{inside}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{inside()}{inside()}}
+{\footnotesize\ttfamily bool Visible\+Shape\+::inside (\begin{DoxyParamCaption}\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check whether the shape is being pointed at. 
+
+Simultaneously save the position of the mouse. 
+\begin{DoxyParams}{Parameters}
+{\em mouse\+\_\+x} & The x coordinate of the mouse \\
+\hline
+{\em mouse\+\_\+y} & The y coordinate of the mouse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_visible_shape_a69ae0940d090fec376bee8dc6861b8dc}\label{class_visible_shape_a69ae0940d090fec376bee8dc6861b8dc}} 
+\index{Visible\+Shape@{Visible\+Shape}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void Visible\+Shape\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the shape color. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a80fe773d65776d9402be26068564882d}{get\+Color()}} 
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{class_board_afa3fa04776e43db38f3f1dd9bba28e6e}{Board}}.
+
+\mbox{\Hypertarget{class_visible_shape_a350f7faac22e405df7c4012fe9d03fac}\label{class_visible_shape_a350f7faac22e405df7c4012fe9d03fac}} 
+\index{Visible\+Shape@{Visible\+Shape}!set\+Coordinate@{set\+Coordinate}}
+\index{set\+Coordinate@{set\+Coordinate}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{set\+Coordinate()}{setCoordinate()}}
+{\footnotesize\ttfamily void Visible\+Shape\+::set\+Coordinate (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the coordinate of the top-\/left corner of the shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate \\
+\hline
+{\em y} & The y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a623ee2bd2e408da908ec5b210347b36e}{get\+X()}} 
+
+\mbox{\hyperlink{class_visible_shape_ace747d31bf685044d815b6fa1944055e}{get\+Y()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_ae0b09cac51ba9af744cddce67fe0180a}\label{class_visible_shape_ae0b09cac51ba9af744cddce67fe0180a}} 
+\index{Visible\+Shape@{Visible\+Shape}!set\+Unit\+Square\+Img@{set\+Unit\+Square\+Img}}
+\index{set\+Unit\+Square\+Img@{set\+Unit\+Square\+Img}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{set\+Unit\+Square\+Img()}{setUnitSquareImg()}}
+{\footnotesize\ttfamily void Visible\+Shape\+::set\+Unit\+Square\+Img (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}}}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_ab62a8320e8084bfdcc43b5c3cf072cd3}{get\+Unit\+Square\+Img()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_visible_shape_a52308c3c9134514fb6782c6f0e149914}\label{class_visible_shape_a52308c3c9134514fb6782c6f0e149914}} 
+\index{Visible\+Shape@{Visible\+Shape}!set\+Unit\+Square\+Size@{set\+Unit\+Square\+Size}}
+\index{set\+Unit\+Square\+Size@{set\+Unit\+Square\+Size}!Visible\+Shape@{Visible\+Shape}}
+\subsubsection{\texorpdfstring{set\+Unit\+Square\+Size()}{setUnitSquareSize()}}
+{\footnotesize\ttfamily void Visible\+Shape\+::set\+Unit\+Square\+Size (\begin{DoxyParamCaption}\item[{const unsigned int \&}]{\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the unit square size. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_visible_shape_a76955574eac9a5e205a2746b1343deb4}{get\+Unit\+Square\+Size()}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{visible__shape_8h}{visible\+\_\+shape.\+h}}\item 
+\mbox{\hyperlink{visible__shape_8cpp}{visible\+\_\+shape.\+cpp}}\end{DoxyCompactItemize}
