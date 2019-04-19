@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="1010!.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">1010! (SDL)
-   &#160;<span id="projectnumber">1.0.1</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A puzzle game using Simple DirectMedia Layer ver 2.0.9</div>
   </td>
@@ -143,9 +143,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6403c0a5182a07188fd0011748f27e9c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a6403c0a5182a07188fd0011748f27e9c">placeMouse</a> (<a class="el" href="class_visible_shape.html">VisibleShape</a> *piece, const int &amp;mouse_x, const int &amp;mouse_y, <a class="el" href="class_encrypted_num.html">EncryptedNum</a> *score)</td></tr>
 <tr class="memdesc:a6403c0a5182a07188fd0011748f27e9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Place the piece onto the board by mouse and update the score.  <a href="#a6403c0a5182a07188fd0011748f27e9c">More...</a><br /></td></tr>
 <tr class="separator:a6403c0a5182a07188fd0011748f27e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb77e0ffe02e8402d3e14367141830a5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_visible_shape.html">VisibleShape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#adb77e0ffe02e8402d3e14367141830a5">preview</a> (<a class="el" href="class_visible_shape.html">VisibleShape</a> piece, const int &amp;mouse_x, const int &amp;mouse_y) const</td></tr>
-<tr class="memdesc:adb77e0ffe02e8402d3e14367141830a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preview the piece before it is placed.  <a href="#adb77e0ffe02e8402d3e14367141830a5">More...</a><br /></td></tr>
-<tr class="separator:adb77e0ffe02e8402d3e14367141830a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f08756175c14dd36acfcdf3b9ea356"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_visible_shape.html">VisibleShape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a51f08756175c14dd36acfcdf3b9ea356">preview</a> (<a class="el" href="class_visible_shape.html">VisibleShape</a> piece, const int &amp;mouse_x, const int &amp;mouse_y, const std::string &amp;path_reverse) const</td></tr>
+<tr class="memdesc:a51f08756175c14dd36acfcdf3b9ea356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preview the piece before it is placed.  <a href="#a51f08756175c14dd36acfcdf3b9ea356">More...</a><br /></td></tr>
+<tr class="separator:a51f08756175c14dd36acfcdf3b9ea356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a280deeca2a39d227887ff2e13b009c0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#a280deeca2a39d227887ff2e13b009c0a">VisibleShape</a> ()</td></tr>
 <tr class="separator:a280deeca2a39d227887ff2e13b009c0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9d11f72af8b96fdb379330fd9de592"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_board.html#adc9d11f72af8b96fdb379330fd9de592">VisibleShape</a> (const unsigned int &amp;row, const unsigned int &amp;col)</td></tr>
@@ -639,8 +639,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adb77e0ffe02e8402d3e14367141830a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb77e0ffe02e8402d3e14367141830a5">&#9670;&nbsp;</a></span>preview()</h2>
+<a id="a51f08756175c14dd36acfcdf3b9ea356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f08756175c14dd36acfcdf3b9ea356">&#9670;&nbsp;</a></span>preview()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -664,7 +664,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const int &amp;&#160;</td>
-          <td class="paramname"><em>mouse_y</em>&#160;</td>
+          <td class="paramname"><em>mouse_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path_reverse</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

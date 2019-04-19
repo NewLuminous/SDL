@@ -42,7 +42,8 @@ int VisibleShape::getHeight() const {return getUnitSquareSize() * getRowNum();}
 bool VisibleShape::inside(const int &mouse_x, const int &mouse_y) {
     mmouse_x = mouse_x - getX();
     mmouse_y = mouse_y - getY();
-    return (0 <= mmouse_y && mmouse_y < getHeight() && 0 <= mmouse_x && mmouse_x < getWidth()
+    return (-getUnitSquareSize() / 2 <= mmouse_y && mmouse_y < getHeight() + getUnitSquareSize() / 2
+            && -getUnitSquareSize() / 2 <= mmouse_x && mmouse_x < getWidth() + getUnitSquareSize() / 2
             && getBit(mmouse_y / getUnitSquareSize(), mmouse_x / getUnitSquareSize()));
 }
 

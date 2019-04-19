@@ -40,7 +40,7 @@ virtual bool \mbox{\hyperlink{class_board_aa4001c8b1e2338fa0dfed7df6f5dcb6b}{can
 \begin{DoxyCompactList}\small\item\em Check whether the chosen piece can be placed with mouse at specific coordinate. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_board_a6403c0a5182a07188fd0011748f27e9c}{place\+Mouse}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$score)
 \begin{DoxyCompactList}\small\item\em Place the piece onto the board by mouse and update the score. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} \mbox{\hyperlink{class_board_adb77e0ffe02e8402d3e14367141830a5}{preview}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y) const
+virtual \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} \mbox{\hyperlink{class_board_a51f08756175c14dd36acfcdf3b9ea356}{preview}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, const std\+::string \&path\+\_\+reverse) const
 \begin{DoxyCompactList}\small\item\em Preview the piece before it is placed. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_board_a280deeca2a39d227887ff2e13b009c0a}{Visible\+Shape}} ()
 \item 
@@ -201,11 +201,11 @@ Place the piece onto the board by mouse and update the score.
 {\em score} & Score being updated \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_board_adb77e0ffe02e8402d3e14367141830a5}\label{class_board_adb77e0ffe02e8402d3e14367141830a5}} 
+\mbox{\Hypertarget{class_board_a51f08756175c14dd36acfcdf3b9ea356}\label{class_board_a51f08756175c14dd36acfcdf3b9ea356}} 
 \index{Board@{Board}!preview@{preview}}
 \index{preview@{preview}!Board@{Board}}
 \subsubsection{\texorpdfstring{preview()}{preview()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} Board\+::preview (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}}}]{piece,  }\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} Board\+::preview (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}}}]{piece,  }\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y,  }\item[{const std\+::string \&}]{path\+\_\+reverse }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 

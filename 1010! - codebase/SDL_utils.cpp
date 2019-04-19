@@ -35,9 +35,9 @@ SDLUtils::~SDLUtils() {
 
 void SDLUtils::del(SDL_Rect rect) {SDL_RenderFillRect(mrenderer, &rect);}
 
-void SDLUtils::render(ISurface* surface) {
+void SDLUtils::render(ISurface* surface, bool delBeforeRender) {
     for (int i = 0; i < surface->getNum(); ++i) {
-        del(*surface->getSize(i));
+        if (delBeforeRender) del(*surface->getSize(i));
         SDL_SetColorKey(surface->get(i), SDL_TRUE, SDL_MapRGB(surface->get(i)->format, COLOR_KEY_R, COLOR_KEY_G, COLOR_KEY_B));
         SDL_Texture* texture = SDL_CreateTextureFromSurface(mrenderer, surface->get(i));
         if (texture == nullptr) logError("CreateTextureFromSurface", SDL_GetError(), true);

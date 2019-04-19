@@ -102,7 +102,7 @@ class Board: public VisibleShape {
             \param      mouse_y The y coordinate of the mouse
             \return     A pointer to the piece with a view to rendering it
         */
-        virtual VisibleShape preview(VisibleShape piece, const int &mouse_x, const int &mouse_y) const;
+        virtual VisibleShape preview(VisibleShape piece, const int &mouse_x, const int &mouse_y, const std::string &path_reverse) const;
 };
 
 #endif

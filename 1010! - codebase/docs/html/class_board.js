@@ -9,7 +9,7 @@ var class_board =
     [ "isAnySpacePlaceable", "class_board.html#a0bf419d10b557cd2119ba7f2fcec7471", null ],
     [ "place", "class_board.html#a759fee79a5c0da27101adc909c352b62", null ],
     [ "placeMouse", "class_board.html#a6403c0a5182a07188fd0011748f27e9c", null ],
-    [ "preview", "class_board.html#adb77e0ffe02e8402d3e14367141830a5", null ],
+    [ "preview", "class_board.html#a51f08756175c14dd36acfcdf3b9ea356", null ],
     [ "setColor", "class_board.html#afa3fa04776e43db38f3f1dd9bba28e6e", null ],
     [ "setUnitSquareColor", "class_board.html#a9c8fc3e645f56bec246a27459f5c75ec", null ],
     [ "VisibleShape", "class_board.html#adc9d11f72af8b96fdb379330fd9de592", null ],

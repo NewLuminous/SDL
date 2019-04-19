@@ -94,8 +94,9 @@ void Board::placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse
     place(piece, pos.first, pos.second, score);
 }
 
-VisibleShape Board::preview(VisibleShape piece, const int &mouse_x, const int &mouse_y) const {
+VisibleShape Board::preview(VisibleShape piece, const int &mouse_x, const int &mouse_y, const std::string &path_reverse) const {
     std::pair<int, int> pos = getUnitSquarePos(mouse_x, mouse_y, &piece);
+    piece.setUnitSquareImg(Image("", "", path_reverse));
     piece.setCoordinate(getX() + pos.second * getUnitSquareSize(), getY() + pos.first * getUnitSquareSize());
     piece.setUnitSquareSize(getUnitSquareSize());
     return piece;

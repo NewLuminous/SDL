@@ -2,7 +2,7 @@
 
 				1010! (SDL)
 
-				Version 1.0.1
+				Version 1.1.0
 
 ---
 1010! is a puzzle game using Simple DirectMedia Layer ver 2.0.9 which is a cross-platform development library.

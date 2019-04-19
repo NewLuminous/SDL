@@ -53,7 +53,7 @@ class SDLUtils {
             \param      surface ISurface object where the image is rendered from
             \details    warning: surface will be destroyed afterward
         */
-        virtual void render(ISurface* surface);
+        virtual void render(ISurface* surface, bool delBeforeRender = true);
 
         /*!
             \brief      Update the window.
