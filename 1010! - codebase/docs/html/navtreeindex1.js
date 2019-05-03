@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"functions_0x7e.html":[0,3,0,15],
+"functions_c.html":[0,3,0,1],
 "functions_d.html":[0,3,0,2],
 "functions_e.html":[0,3,0,3],
 "functions_f.html":[0,3,0,4],

@@ -129,6 +129,8 @@ class VisibleShape: public Shape {
             \sa         getMouseX()
         */
         virtual int getMouseY() const;
+
+        virtual VisibleShape clone(const int &mouse_x, const int &mouse_y) const;
 };
 
 #endif

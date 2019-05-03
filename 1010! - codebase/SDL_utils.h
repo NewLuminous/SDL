@@ -51,9 +51,10 @@ class SDLUtils {
         /*!
             \brief      Render image
             \param      surface ISurface object where the image is rendered from
+            \param      delBeforeRender del the previous rendered image
             \details    warning: surface will be destroyed afterward
         */
-        virtual void render(ISurface* surface, bool delBeforeRender = true);
+        virtual SDL_Rect render(ISurface* surface, bool delBeforeRender = true);
 
         /*!
             \brief      Update the window.

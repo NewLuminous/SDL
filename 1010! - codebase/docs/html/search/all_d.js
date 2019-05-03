@@ -25,5 +25,6 @@ var searchData=
   ['shape',['Shape',['../class_shape.html',1,'Shape'],['../class_shape.html#aaa8d87171e65e0d8ba3c5459978992a7',1,'Shape::Shape()'],['../class_shape.html#adb7c908a72cc99aee8c23ff0d4c6173a',1,'Shape::Shape(const unsigned int &amp;row, const unsigned int &amp;col)'],['../class_shape.html#a9004eb6a22e2f005aed9aac83aa7377b',1,'Shape::Shape(const std::vector&lt; std::vector&lt; bool &gt; &gt; &amp;bitmap)']]],
   ['shape_2ecpp',['shape.cpp',['../shape_8cpp.html',1,'']]],
   ['shape_2eh',['shape.h',['../shape_8h.html',1,'']]],
-  ['show_5fmenu',['show_menu',['../class_game1010.html#a99d6f53c3073861fe37ef67caa073840',1,'Game1010']]]
+  ['show_5fmenu',['show_menu',['../class_game1010.html#a99d6f53c3073861fe37ef67caa073840',1,'Game1010']]],
+  ['sub',['sub',['../class_board.html#aeff7b135ffeea47ce26da75ce670807a',1,'Board']]]
 ];

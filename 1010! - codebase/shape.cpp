@@ -52,7 +52,9 @@ void Shape::setBit(const int &i, const int &j, const bool &k) {
     mbitmap[i][j] = k;
 }
 
-bool Shape::getBit(const int &i, const int &j) const {return mbitmap[i][j];}
+bool Shape::getBit(const int &i, const int &j) const {
+    if (i < mrow && j < mcol) return mbitmap[i][j]; else return false;
+}
 
 int Shape::getColNum() const {return mcol;}
 

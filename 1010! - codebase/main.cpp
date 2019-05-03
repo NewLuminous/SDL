@@ -2,8 +2,8 @@
     \file       main.cpp
     \brief      This file starts the game.
     \author     Nguyen Minh Tan
-    \version    1.1.0
-    \date       19/04/2019
+    \version    1.2.0
+    \date       04/05/2019
     \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf.
                 Then search directories: Compiler for include\SDL2\ folder and Linker for lib\ folder.
 */
@@ -335,12 +335,20 @@ class Game1010 {
         */
         void play() {
             int chosen_piece = -1;
-            int mouse_motion_x = -1, mouse_motion_y = -1;
+            SDL_Rect last_rendered = {-1, -1, 0, 0};
             SDL_Event e;
             while (!quit) {
                 while (SDL_PollEvent(&e)) {
                     int mouse_x, mouse_y;
                     SDL_GetMouseState(&mouse_x, &mouse_y);
+                    /*!
+                        Redraw pieces in case the chosen piece overlaps them
+                    */
+                    if (chosen_piece >= 0) {
+                        window.del({last_rendered.x, last_rendered.y, last_rendered.w, last_rendered.h});
+                        for (int i = 0; i < NUM_FIGURE; ++i)
+                            if (i != chosen_piece) window.render(new VisibleShapeSurface(piece_list[i]), false);
+                    }
                     switch (e.type) {
                         case SDL_QUIT:
                             quit = true;
@@ -352,7 +360,7 @@ class Game1010 {
                             for (int i = 0; i < NUM_FIGURE; ++i)
                                 if (piece_list[i].inside(mouse_x, mouse_y)) {
                                     chosen_piece = i;
-                                    window.del({piece_list[i].getX(), piece_list[i].getY(), piece_list[i].getWidth(), piece_list[i].getHeight()});
+                                    last_rendered = {piece_list[i].getX(), piece_list[i].getY(), piece_list[i].getWidth(), piece_list[i].getHeight()};
                                 }
                             break;
                         case SDL_MOUSEBUTTONUP:
@@ -379,26 +387,17 @@ class Game1010 {
                                     if (!can_continue) gameOver();                      //!GAME OVER menu shows up when placing any piece on the board is not possible.
                                 }
                                 chosen_piece = -1;
-                                window.del({gameboard.getX(), gameboard.getY(), gameboard.getWidth(), gameboard.getHeight()});
-                                window.render(new BoardSurface(gameboard), false);
+                                window.render(new BoardSurface(gameboard));
                             }
                             break;
                         case SDL_MOUSEMOTION:
                             if (chosen_piece >= 0) {
+                                window.render(new BoardSurface(gameboard.sub(last_rendered.x, last_rendered.y, last_rendered.w, last_rendered.h)), false);
                                 if (gameboard.inside(mouse_x, mouse_y)) {               //!Preview the position of the shape if it is placed
-                                    VisibleShape vs = gameboard.preview(piece_list[chosen_piece], mouse_x, mouse_y, IMG_GRID_SOURCE);
-                                    if (vs.getX() != mouse_motion_x || vs.getY() != mouse_motion_y) {
-                                        window.del({gameboard.getX(), gameboard.getY(), gameboard.getWidth(), gameboard.getHeight()});
-                                        window.render(new BoardSurface(gameboard), false);
-                                        window.render(new VisibleShapeSurface(gameboard.preview(piece_list[chosen_piece], mouse_x, mouse_y, IMG_GRID_REVERSE_SOURCE)), false);
-                                        mouse_motion_x = vs.getX(); mouse_motion_y = vs.getY();
-                                    }
+                                    last_rendered = window.render(new VisibleShapeSurface(gameboard.preview(piece_list[chosen_piece], mouse_x, mouse_y, IMG_GRID_REVERSE_SOURCE)), false);
                                 }
-                                else if (mouse_motion_x >= 0) {
-                                    window.del({gameboard.getX(), gameboard.getY(), gameboard.getWidth(), gameboard.getHeight()});
-                                    window.render(new BoardSurface(gameboard), false);
-                                    mouse_motion_x = -1;
-                                }
+                                else
+                                    if (mouse_x >= gameboard.getX()) last_rendered = window.render(new VisibleShapeSurface(piece_list[chosen_piece].clone(mouse_x, mouse_y)), false);
                             }
                             break;
                     }

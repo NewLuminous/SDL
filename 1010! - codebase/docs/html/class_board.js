@@ -12,7 +12,8 @@ var class_board =
     [ "preview", "class_board.html#a51f08756175c14dd36acfcdf3b9ea356", null ],
     [ "setColor", "class_board.html#afa3fa04776e43db38f3f1dd9bba28e6e", null ],
     [ "setUnitSquareColor", "class_board.html#a9c8fc3e645f56bec246a27459f5c75ec", null ],
-    [ "VisibleShape", "class_board.html#adc9d11f72af8b96fdb379330fd9de592", null ],
+    [ "sub", "class_board.html#aeff7b135ffeea47ce26da75ce670807a", null ],
+    [ "VisibleShape", "class_board.html#a280deeca2a39d227887ff2e13b009c0a", null ],
     [ "VisibleShape", "class_board.html#a0efa89e218acbaeaf4f2453467d54cc9", null ],
-    [ "VisibleShape", "class_board.html#a280deeca2a39d227887ff2e13b009c0a", null ]
+    [ "VisibleShape", "class_board.html#adc9d11f72af8b96fdb379330fd9de592", null ]
 ];

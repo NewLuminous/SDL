@@ -35,8 +35,13 @@ SDLUtils::~SDLUtils() {
 
 void SDLUtils::del(SDL_Rect rect) {SDL_RenderFillRect(mrenderer, &rect);}
 
-void SDLUtils::render(ISurface* surface, bool delBeforeRender) {
+SDL_Rect SDLUtils::render(ISurface* surface, bool delBeforeRender) {
+    SDL_Rect rect = {INT_MAX, INT_MAX, INT_MIN, INT_MIN};
     for (int i = 0; i < surface->getNum(); ++i) {
+        rect.x = std::min(rect.x, (*surface->getSize(i)).x);
+        rect.y = std::min(rect.y, (*surface->getSize(i)).y);
+        rect.w = std::max(rect.w, (*surface->getSize(i)).x + (*surface->getSize(i)).w - 1);
+        rect.h = std::max(rect.h, (*surface->getSize(i)).y + (*surface->getSize(i)).h - 1);
         if (delBeforeRender) del(*surface->getSize(i));
         SDL_SetColorKey(surface->get(i), SDL_TRUE, SDL_MapRGB(surface->get(i)->format, COLOR_KEY_R, COLOR_KEY_G, COLOR_KEY_B));
         SDL_Texture* texture = SDL_CreateTextureFromSurface(mrenderer, surface->get(i));
@@ -47,6 +52,9 @@ void SDLUtils::render(ISurface* surface, bool delBeforeRender) {
         texture = nullptr;
     }
     delete surface;
+    rect.w -= rect.x - 1;
+    rect.h -= rect.y - 1;
+    return rect;
 }
 
 void SDLUtils::present() {SDL_RenderPresent(mrenderer);}

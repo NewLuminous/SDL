@@ -42,6 +42,8 @@ virtual void \mbox{\hyperlink{class_board_a6403c0a5182a07188fd0011748f27e9c}{pla
 \begin{DoxyCompactList}\small\item\em Place the piece onto the board by mouse and update the score. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} \mbox{\hyperlink{class_board_a51f08756175c14dd36acfcdf3b9ea356}{preview}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, const std\+::string \&path\+\_\+reverse) const
 \begin{DoxyCompactList}\small\item\em Preview the piece before it is placed. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_board_aeff7b135ffeea47ce26da75ce670807a}{sub}} (const int \&x, const int \&y, const int \&w, const int \&h) const
+\begin{DoxyCompactList}\small\item\em Get a part of the board. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_board_a280deeca2a39d227887ff2e13b009c0a}{Visible\+Shape}} ()
 \item 
 \mbox{\hyperlink{class_board_adc9d11f72af8b96fdb379330fd9de592}{Visible\+Shape}} (const unsigned int \&row, const unsigned int \&col)
@@ -219,6 +221,8 @@ Preview the piece before it is placed.
 \hline
 {\em mouse\+\_\+y} & The y coordinate of the mouse \\
 \hline
+{\em path\+\_\+reverse} & The path pointing to the border image \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A pointer to the piece with a view to rendering it 
@@ -249,23 +253,22 @@ Reimplemented from \mbox{\hyperlink{class_visible_shape_a69ae0940d090fec376bee8d
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_board_a6e6a947ec66c09bff4559fd9650b9b1d}{get\+Unit\+Square\+Color()}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_board_adc9d11f72af8b96fdb379330fd9de592}\label{class_board_adc9d11f72af8b96fdb379330fd9de592}} 
+\mbox{\Hypertarget{class_board_aeff7b135ffeea47ce26da75ce670807a}\label{class_board_aeff7b135ffeea47ce26da75ce670807a}} 
+\index{Board@{Board}!sub@{sub}}
+\index{sub@{sub}!Board@{Board}}
+\subsubsection{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}} Board\+::sub (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y,  }\item[{const int \&}]{w,  }\item[{const int \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a part of the board. 
+
+\mbox{\Hypertarget{class_board_a280deeca2a39d227887ff2e13b009c0a}\label{class_board_a280deeca2a39d227887ff2e13b009c0a}} 
 \index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
 \index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
 \subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape}
 
-
-
-constructor for filled rectangle 
-
-
-\begin{DoxyParams}{Parameters}
-{\em row} & The number of rows of the rectangle \\
-\hline
-{\em col} & The number of columns of the rectangle \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_board_a0efa89e218acbaeaf4f2453467d54cc9}\label{class_board_a0efa89e218acbaeaf4f2453467d54cc9}} 
 \index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
 \index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
@@ -284,12 +287,23 @@ constructor for any shape
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_shape_ae79ee483d0f48a426d1a544fd22fd8e5}{set\+Bit\+Map()}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_board_a280deeca2a39d227887ff2e13b009c0a}\label{class_board_a280deeca2a39d227887ff2e13b009c0a}} 
+\mbox{\Hypertarget{class_board_adc9d11f72af8b96fdb379330fd9de592}\label{class_board_adc9d11f72af8b96fdb379330fd9de592}} 
 \index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
 \index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
 \subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape}
 
+
+
+constructor for filled rectangle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The number of rows of the rectangle \\
+\hline
+{\em col} & The number of columns of the rectangle \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

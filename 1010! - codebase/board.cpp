@@ -27,7 +27,6 @@ void Board::clear() {
 
 bool Board::canPlaceShapeAtPos(const Shape* piece, const int &i_origin, const int &j_origin) const {
     if (piece->getRowNum() == 0 || piece->getColNum() == 0) return false;
-    if (i_origin + piece->getRowNum() > getRowNum() || j_origin + piece->getColNum() > getColNum()) return false;
     for (int i = 0; i < piece->getRowNum(); ++i)
         for (int j = 0; j < piece->getColNum(); ++j)
             if (piece->getBit(i, j) && mplacement[i_origin + i][j_origin + j]) return false;
@@ -100,4 +99,20 @@ VisibleShape Board::preview(VisibleShape piece, const int &mouse_x, const int &m
     piece.setCoordinate(getX() + pos.second * getUnitSquareSize(), getY() + pos.first * getUnitSquareSize());
     piece.setUnitSquareSize(getUnitSquareSize());
     return piece;
+}
+
+Board Board::sub(const int &x, const int &y, const int &w, const int &h) const {
+    std::pair<int, int> pos1 = {(y - getY()) / getUnitSquareSize(), (x - getX()) / getUnitSquareSize()};
+    pos1.first = std::min(std::max(pos1.first, 0), getRowNum() - 1);
+    pos1.second = std::min(std::max(pos1.second, 0), getColNum() - 1);
+    std::pair<int, int> pos2 = {(y + h - 1 - getY()) / getUnitSquareSize(), (x + w - 1 - getX()) / getUnitSquareSize()};
+    pos2.first = std::min(std::max(pos2.first, 0), getRowNum() - 1);
+    pos2.second = std::min(std::max(pos2.second, 0), getColNum() - 1);
+    Board res(pos2.first - pos1.first + 1, pos2.second - pos1.second + 1);
+    res.setCoordinate(getX() + pos1.second * getUnitSquareSize(), getY() + pos1.first * getUnitSquareSize());
+    res.setUnitSquareImg(getUnitSquareImg());
+    res.setUnitSquareSize(getUnitSquareSize());
+    for (int i = pos1.first; i <= pos2.first; ++i)
+        for (int j = pos1.second; j <= pos2.second; ++j) res.setUnitSquareColor(i - pos1.first, j - pos1.second, getUnitSquareColor(i, j));
+    return res;
 }

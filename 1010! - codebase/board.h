@@ -100,9 +100,15 @@ class Board: public VisibleShape {
             \param      piece The chosen piece
             \param      mouse_x The x coordinate of the mouse
             \param      mouse_y The y coordinate of the mouse
+            \param      path_reverse The path pointing to the border image
             \return     A pointer to the piece with a view to rendering it
         */
         virtual VisibleShape preview(VisibleShape piece, const int &mouse_x, const int &mouse_y, const std::string &path_reverse) const;
+
+        /*!
+            \brief      Get a part of the board
+        */
+        virtual Board sub(const int &x, const int &y, const int &w, const int &h) const;
 };
 
 #endif

@@ -4,6 +4,7 @@ var class_visible_shape =
     [ "VisibleShape", "class_visible_shape.html#adc9d11f72af8b96fdb379330fd9de592", null ],
     [ "VisibleShape", "class_visible_shape.html#a0efa89e218acbaeaf4f2453467d54cc9", null ],
     [ "~VisibleShape", "class_visible_shape.html#a3cf57d96e1b85f8cda8bedefcc23ec45", null ],
+    [ "clone", "class_visible_shape.html#a312fc3d9e5d7f648082d6f633f980fda", null ],
     [ "getColor", "class_visible_shape.html#a80fe773d65776d9402be26068564882d", null ],
     [ "getHeight", "class_visible_shape.html#a1ce25935c729146932d649f88215ffbe", null ],
     [ "getMouseX", "class_visible_shape.html#a53dd71f6cee05f9707d899c4e1434070", null ],

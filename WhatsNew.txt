@@ -1,0 +1,16 @@
+
+This is a list of major changes in 1010!'s version history.
+
+---------------------------------------------------------------------------
+1.1.0:
+---------------------------------------------------------------------------
+
+* The preview of the piece before placing it onto the board now shows its border instead.
+This indicates whether the chosen piece overlaps other placed pieces.
+* Increase the pick range
+
+---------------------------------------------------------------------------
+1.2.0:
+---------------------------------------------------------------------------
+
+* The chosen piece now sticks to the cursor instead of disappearing.

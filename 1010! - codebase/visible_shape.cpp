@@ -50,3 +50,9 @@ bool VisibleShape::inside(const int &mouse_x, const int &mouse_y) {
 int VisibleShape::getMouseX() const {return mmouse_x;}
 
 int VisibleShape::getMouseY() const {return mmouse_y;}
+
+VisibleShape VisibleShape::clone(const int &mouse_x, const int &mouse_y) const {
+    VisibleShape res = *this;
+    res.setCoordinate(mouse_x - getMouseX(), mouse_y - getMouseY());
+    return res;
+}
