@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="1010!.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">1010! (SDL)
-   &#160;<span id="projectnumber">1.3.0</span>
+   &#160;<span id="projectnumber">1.4.0</span>
    </div>
    <div id="projectbrief">A puzzle game using Simple DirectMedia Layer ver 2.0.9</div>
   </td>
@@ -136,12 +136,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a838b2db3fc304aca318d0bc22a906c52"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encrypted_num.html#a838b2db3fc304aca318d0bc22a906c52">inc</a> (int inc_val)</td></tr>
 <tr class="memdesc:a838b2db3fc304aca318d0bc22a906c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the number.  <a href="#a838b2db3fc304aca318d0bc22a906c52">More...</a><br /></td></tr>
 <tr class="separator:a838b2db3fc304aca318d0bc22a906c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33cddaaa96d51dbe29f0f99278c287dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encrypted_num.html#a33cddaaa96d51dbe29f0f99278c287dc">save</a> (std::string path=DEFAULT_FILE_PATH)</td></tr>
-<tr class="memdesc:a33cddaaa96d51dbe29f0f99278c287dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt the number and save it to a file.  <a href="#a33cddaaa96d51dbe29f0f99278c287dc">More...</a><br /></td></tr>
-<tr class="separator:a33cddaaa96d51dbe29f0f99278c287dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb5f15f13ecd4fd79511164c42448433"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encrypted_num.html#adb5f15f13ecd4fd79511164c42448433">load</a> (std::string path=DEFAULT_FILE_PATH)</td></tr>
-<tr class="memdesc:adb5f15f13ecd4fd79511164c42448433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load number from a file and decrypt it.  <a href="#adb5f15f13ecd4fd79511164c42448433">More...</a><br /></td></tr>
-<tr class="separator:adb5f15f13ecd4fd79511164c42448433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27cca0eb4cf9f19035741be2a56d96a7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encrypted_num.html#a27cca0eb4cf9f19035741be2a56d96a7">setPath</a> (std::string path)</td></tr>
+<tr class="memdesc:a27cca0eb4cf9f19035741be2a56d96a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set where the number is saved to.  <a href="#a27cca0eb4cf9f19035741be2a56d96a7">More...</a><br /></td></tr>
+<tr class="separator:a27cca0eb4cf9f19035741be2a56d96a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd733c5a8b818c02cc00e1af57cbe76b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encrypted_num.html#abd733c5a8b818c02cc00e1af57cbe76b">save</a> ()</td></tr>
+<tr class="memdesc:abd733c5a8b818c02cc00e1af57cbe76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt the number and save it to a file.  <a href="#abd733c5a8b818c02cc00e1af57cbe76b">More...</a><br /></td></tr>
+<tr class="separator:abd733c5a8b818c02cc00e1af57cbe76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4591dbc5b9980f497f4de894a614447"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encrypted_num.html#ab4591dbc5b9980f497f4de894a614447">load</a> ()</td></tr>
+<tr class="memdesc:ab4591dbc5b9980f497f4de894a614447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load number from a file and decrypt it.  <a href="#ab4591dbc5b9980f497f4de894a614447">More...</a><br /></td></tr>
+<tr class="separator:ab4591dbc5b9980f497f4de894a614447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class that encrypts number. </p>
@@ -267,8 +270,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="adb5f15f13ecd4fd79511164c42448433"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb5f15f13ecd4fd79511164c42448433">&#9670;&nbsp;</a></span>load()</h2>
+<a id="ab4591dbc5b9980f497f4de894a614447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4591dbc5b9980f497f4de894a614447">&#9670;&nbsp;</a></span>load()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,8 +282,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void EncryptedNum::load </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>path</em> = <code>DEFAULT_FILE_PATH</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -292,18 +294,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Load number from a file and decrypt it. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>pointing to the file </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_encrypted_num.html#a33cddaaa96d51dbe29f0f99278c287dc" title="Encrypt the number and save it to a file. ">save()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_encrypted_num.html#abd733c5a8b818c02cc00e1af57cbe76b" title="Encrypt the number and save it to a file. ">save()</a> </dd></dl>
 
 </div>
 </div>
-<a id="a33cddaaa96d51dbe29f0f99278c287dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33cddaaa96d51dbe29f0f99278c287dc">&#9670;&nbsp;</a></span>save()</h2>
+<a id="abd733c5a8b818c02cc00e1af57cbe76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd733c5a8b818c02cc00e1af57cbe76b">&#9670;&nbsp;</a></span>save()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,8 +310,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void EncryptedNum::save </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>path</em> = <code>DEFAULT_FILE_PATH</code></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -327,13 +322,35 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Encrypt the number and save it to a file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>pointing to the file </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_encrypted_num.html#adb5f15f13ecd4fd79511164c42448433" title="Load number from a file and decrypt it. ">load()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_encrypted_num.html#ab4591dbc5b9980f497f4de894a614447" title="Load number from a file and decrypt it. ">load()</a> </dd></dl>
+
+</div>
+</div>
+<a id="a27cca0eb4cf9f19035741be2a56d96a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27cca0eb4cf9f19035741be2a56d96a7">&#9670;&nbsp;</a></span>setPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EncryptedNum::setPath </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set where the number is saved to. </p>
 
 </div>
 </div>

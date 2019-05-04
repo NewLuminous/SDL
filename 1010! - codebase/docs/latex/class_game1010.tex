@@ -8,10 +8,26 @@ The game itself.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+int \mbox{\hyperlink{class_game1010_a3dbbf957de5309f1e7f3d6008f948176}{load\+Data}} ()
+\item 
+void \mbox{\hyperlink{class_game1010_a72900d1043c4d40f953c584a9d9cb6c8}{save\+Data}} (int val)
+\item 
+void \mbox{\hyperlink{class_game1010_aee1b07231495b0a78a77b6f04c07a848}{init\+Gameboard}} ()
+\item 
+void \mbox{\hyperlink{class_game1010_a90378af973c32816055e49bacc59a7de}{init\+Score}} ()
+\item 
+void \mbox{\hyperlink{class_game1010_a510e064a35ea16a5582ebe311a0131a7}{init\+Pieces}} ()
+\item 
+void \mbox{\hyperlink{class_game1010_a94c89079a87b30e7f4813d40283dd4ad}{init\+Buttons}} ()
+\item 
+void \mbox{\hyperlink{class_game1010_a3726442b01642369347347eff645830e}{init\+Images}} ()
+\item 
+void \mbox{\hyperlink{class_game1010_a995a153a4f9639b989d605078f6c1ac2}{init\+Sounds}} ()
+\item 
 \mbox{\hyperlink{class_game1010_a0a0688219844edbe8f4a44c11a13e32a}{Game1010}} ()
 \begin{DoxyCompactList}\small\item\em constructor initializing the game \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_game1010_abcdf29a3fb425ad389e247f241ee4ed5}{$\sim$\+Game1010}} ()
-\begin{DoxyCompactList}\small\item\em destructor deleting pointers \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em destructor which saves data and deletes pointers \end{DoxyCompactList}\item 
 pair$<$ vector$<$ vector$<$ bool $>$ $>$, \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} $>$ \mbox{\hyperlink{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}{rand\+Shape}} ()
 \begin{DoxyCompactList}\small\item\em Get a random piece from pieces\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game1010_a9576170947a355682c922cb648432b9e}{gen\+\_\+piece}} ()
@@ -53,7 +69,7 @@ S\+D\+L\+Utils\+::draw()
 
 
 
-destructor deleting pointers 
+destructor which saves data and deletes pointers 
 
 
 
@@ -92,6 +108,51 @@ Generate new ones when all pieces are in place.
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}{rand\+Shape()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_game1010_a94c89079a87b30e7f4813d40283dd4ad}\label{class_game1010_a94c89079a87b30e7f4813d40283dd4ad}} 
+\index{Game1010@{Game1010}!init\+Buttons@{init\+Buttons}}
+\index{init\+Buttons@{init\+Buttons}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{init\+Buttons()}{initButtons()}}
+{\footnotesize\ttfamily void Game1010\+::init\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_game1010_aee1b07231495b0a78a77b6f04c07a848}\label{class_game1010_aee1b07231495b0a78a77b6f04c07a848}} 
+\index{Game1010@{Game1010}!init\+Gameboard@{init\+Gameboard}}
+\index{init\+Gameboard@{init\+Gameboard}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{init\+Gameboard()}{initGameboard()}}
+{\footnotesize\ttfamily void Game1010\+::init\+Gameboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_game1010_a3726442b01642369347347eff645830e}\label{class_game1010_a3726442b01642369347347eff645830e}} 
+\index{Game1010@{Game1010}!init\+Images@{init\+Images}}
+\index{init\+Images@{init\+Images}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{init\+Images()}{initImages()}}
+{\footnotesize\ttfamily void Game1010\+::init\+Images (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_game1010_a510e064a35ea16a5582ebe311a0131a7}\label{class_game1010_a510e064a35ea16a5582ebe311a0131a7}} 
+\index{Game1010@{Game1010}!init\+Pieces@{init\+Pieces}}
+\index{init\+Pieces@{init\+Pieces}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{init\+Pieces()}{initPieces()}}
+{\footnotesize\ttfamily void Game1010\+::init\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_game1010_a90378af973c32816055e49bacc59a7de}\label{class_game1010_a90378af973c32816055e49bacc59a7de}} 
+\index{Game1010@{Game1010}!init\+Score@{init\+Score}}
+\index{init\+Score@{init\+Score}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{init\+Score()}{initScore()}}
+{\footnotesize\ttfamily void Game1010\+::init\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_game1010_a995a153a4f9639b989d605078f6c1ac2}\label{class_game1010_a995a153a4f9639b989d605078f6c1ac2}} 
+\index{Game1010@{Game1010}!init\+Sounds@{init\+Sounds}}
+\index{init\+Sounds@{init\+Sounds}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{init\+Sounds()}{initSounds()}}
+{\footnotesize\ttfamily void Game1010\+::init\+Sounds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_game1010_a3dbbf957de5309f1e7f3d6008f948176}\label{class_game1010_a3dbbf957de5309f1e7f3d6008f948176}} 
+\index{Game1010@{Game1010}!load\+Data@{load\+Data}}
+\index{load\+Data@{load\+Data}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{load\+Data()}{loadData()}}
+{\footnotesize\ttfamily int Game1010\+::load\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a72900d1043c4d40f953c584a9d9cb6c8}{save\+Data()}} 
 \end{DoxySeeAlso}
 \mbox{\Hypertarget{class_game1010_afa18a3a81b8966417a228459a5bebf53}\label{class_game1010_afa18a3a81b8966417a228459a5bebf53}} 
 \index{Game1010@{Game1010}!play@{play}}
@@ -134,6 +195,15 @@ Preview the position of the shape if it is placed \mbox{\Hypertarget{class_game1
 
 Get a random piece from pieces\mbox{[}\mbox{]}. 
 
+\mbox{\Hypertarget{class_game1010_a72900d1043c4d40f953c584a9d9cb6c8}\label{class_game1010_a72900d1043c4d40f953c584a9d9cb6c8}} 
+\index{Game1010@{Game1010}!save\+Data@{save\+Data}}
+\index{save\+Data@{save\+Data}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{save\+Data()}{saveData()}}
+{\footnotesize\ttfamily void Game1010\+::save\+Data (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a3dbbf957de5309f1e7f3d6008f948176}{load\+Data()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_game1010_a99d6f53c3073861fe37ef67caa073840}\label{class_game1010_a99d6f53c3073861fe37ef67caa073840}} 
 \index{Game1010@{Game1010}!show\+\_\+menu@{show\+\_\+menu}}
 \index{show\+\_\+menu@{show\+\_\+menu}!Game1010@{Game1010}}

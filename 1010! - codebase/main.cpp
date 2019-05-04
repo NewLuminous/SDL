@@ -2,8 +2,8 @@
     \file       main.cpp
     \brief      This file starts the game.
     \author     Nguyen Minh Tan
-    \version    1.3.0
-    \date       04/05/2019
+    \version    1.4.0
+    \date       05/05/2019
     \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer.
                 Then search directories: Compiler for include\SDL2\ folder and Linker for lib\ folder.
 */
@@ -13,6 +13,7 @@
 #include "menu_surface.h"
 #include "visible_encrypted_num_surface.h"
 #include "visible_shape_surface.h"
+#include <time.h>
 
 using namespace std;
 
@@ -35,6 +36,7 @@ class Game1010 {
         const string ICON_TYPE = "png";
         const string SOUND_SOURCE = "sound/";
         const string SOUND_TYPE = "wav";
+        const string DATA_SOURCE = "data/";
         const RGBColor BOARD_COLOR = {96, 96, 96};
 
         vector<string> buttons {"Retry", "Sound ON", "Sound OFF", "Resume"};
@@ -135,35 +137,98 @@ class Game1010 {
         Mix_Music *game_over_sound;
         bool quit = false, sound_mode = true;
         int num_piece = NUM_FIGURE;
+
+        /*!
+            \brief  convert int to string
+        */
+        string to_string(int x) {
+            string res = "";
+            for (; x; x /= 10) res = char('0' + x % 10) + res;
+            return res;
+        }
+
+        string getNextDataPath(bool reset = false) {
+            static int num_data = 0;
+            if (reset) num_data = -1;
+            return DATA_SOURCE + "data" + to_string(++num_data) + ".dat";
+        }
     public:
         /*!
-            \brief  constructor initializing the game
-            \sa     gen_piece()
-            \sa     SDLUtils::draw()
+            \sa     saveData()
         */
-        Game1010() {
+        int loadData() {
+            EncryptedNum data;
+            data.setPath(getNextDataPath());
+            data.load();
+            return data.val();
+        }
+
+        /*!
+            \sa     loadData()
+        */
+        void saveData(int val) {
+            EncryptedNum data;
+            data.setVal(val);
+            data.setPath(getNextDataPath());
+            data.save();
+        }
+
+        void initGameboard() {
+            VisibleShape shape_tmp;
+            EncryptedNum num_tmp;
+
             gameboard.setUnitSquareImg(Image("", "", IMG_GRID_SOURCE));
             gameboard.setUnitSquareSize(SCREEN_HEIGHT / (BOARD_HEIGHT + 2));
             gameboard.setCoordinate((SCREEN_WIDTH - gameboard.getWidth()) / 2, (SCREEN_HEIGHT - gameboard.getHeight()) / 2);
             gameboard.setColor(BOARD_COLOR); //Gray
+            for (int i = 0; i < BOARD_HEIGHT; ++i)
+                for (int j = 0; j < BOARD_HEIGHT; ++j)
+                    if (loadData()) {
+                        shape_tmp.fillBitMap(1, 1);
+                        shape_tmp.setColor({loadData(), loadData(), loadData()});
+                        gameboard.place(&shape_tmp, i, j, &num_tmp);
+                    }
+            window.render(new BoardSurface(gameboard), false);
+        }
 
+        void initScore() {
             current_score.setType(IMG_DIGIT_TYPE);
             current_score.setLocation(IMG_DIGIT_SOURCE);
             current_score.setDWidth(44);
             current_score.setDHeight(46);
             current_score.setCoordinate((gameboard.getX() - current_score.getDWidth() * SCORE_DIGITS) / 2, SCREEN_HEIGHT * 3 / 4 + gameboard.getX() / 7 - current_score.getDHeight() / 2);
+            current_score.setVal(loadData());
+            window.render(new VisibleEncryptedNumSurface(current_score), false);
 
             high_score.setType(IMG_DIGIT_TYPE);
             high_score.setLocation(IMG_DIGIT_SOURCE);
             high_score.setDWidth(44);
             high_score.setDHeight(46);
-            high_score.load();
-            high_score.save();
             high_score.setCoordinate((gameboard.getX() - high_score.getDWidth() * SCORE_DIGITS) / 2, SCREEN_HEIGHT / 4 + gameboard.getX() / 6 - high_score.getDHeight() / 2);
+            high_score.setVal(loadData());
+            window.render(new VisibleEncryptedNumSurface(high_score), false);
+        }
 
+        void initPieces() {
             for (int i = 1; i < (int)pieces_rates.size(); ++i) pieces_rates[i] += pieces_rates[i - 1];
-            gen_piece();
+            num_piece = NUM_FIGURE;
+            for (int i = 0; i < NUM_FIGURE; ++i) {
+                int tmp = loadData();
+                piece_list[i].fillBitMap(tmp, loadData());
+                if (tmp == 0) --num_piece;
+                for (int u = 0; u < piece_list[i].getRowNum(); ++u)
+                    for (int v = 0; v < piece_list[i].getColNum(); ++v) piece_list[i].setBit(u, v, loadData());
+                piece_list[i].setColor({loadData(), loadData(), loadData()});
+                piece_list[i].setUnitSquareSize(SCREEN_HEIGHT / (MAX_FIGURE_HEIGHT * NUM_FIGURE + NUM_FIGURE + 1));
+                piece_list[i].setUnitSquareImg(Image("", "", IMG_GRID_SOURCE));
+                piece_list[i].setCoordinate(SCREEN_WIDTH - (gameboard.getX() - piece_list[i].getWidth()) / 2 - piece_list[i].getWidth(),
+                                            (SCREEN_HEIGHT - (piece_list[i].getUnitSquareSize() * MAX_FIGURE_HEIGHT * NUM_FIGURE)) * (i + 1) / (NUM_FIGURE + 1)
+                                            + piece_list[i].getUnitSquareSize() * (MAX_FIGURE_HEIGHT * (2 * i + 1) - piece_list[i].getRowNum()) / 2);
+            }
+            for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]));
+        }
 
+        void initButtons() {
             for (int i = 0; i < (int)buttons.size(); ++i) {
                 button_list[i].setTitle(Font(FONT_SOURCE, buttons[i]));
                 button_list[i].setIcon(Image(ICON_TYPE, buttons[i], ICON_SOURCE));
@@ -173,22 +238,20 @@ class Game1010 {
             pause_button.setWidth(ICON_SIZE);
             pause_button.setCoordinate(SCREEN_WIDTH - ICON_SIZE * 3 / 2 + 1, ICON_SIZE / 2);
             window.render(new ButtonSurface(pause_button));
+        }
 
+        void initImages() {
             Image logo("", "", IMG_LOGO_SOURCE);
             logo.setCoordinate(0, -gameboard.getX() / 4);
             logo.setSize(gameboard.getX(), gameboard.getX());
             window.render(new ImageSurface(logo), false);
-            window.render(new VisibleEncryptedNumSurface(high_score), false);
             Image cup("", "", IMG_CUP_SOURCE);
             cup.setCoordinate(gameboard.getX() / 4, SCREEN_HEIGHT / 2 - gameboard.getX() / 10);
             cup.setSize(gameboard.getX() / 2, gameboard.getX() / 2);
             window.render(new ImageSurface(cup), false);
-            window.render(new VisibleEncryptedNumSurface(current_score), false);
-            window.render(new BoardSurface(gameboard), false);
+        }
 
-            for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]));
-            window.present();
-
+        void initSounds() {
             click_menu_sound = Mix_LoadWAV((SOUND_SOURCE + "click_menu." + SOUND_TYPE).c_str());
             if (click_menu_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
             complete_line_sound = Mix_LoadWAV((SOUND_SOURCE + "complete_line." + SOUND_TYPE).c_str());
@@ -207,9 +270,46 @@ class Game1010 {
         }
 
         /*!
-            \brief  destructor deleting pointers
+            \brief  constructor initializing the game
+            \sa     gen_piece()
+            \sa     SDLUtils::draw()
+        */
+        Game1010() {
+            srand(time(NULL));
+            initGameboard();
+            initScore();
+            initPieces();
+            initButtons();
+            initImages();
+            window.present();
+            initSounds();
+        }
+
+        /*!
+            \brief  destructor which saves data and deletes pointers
         */
         ~Game1010() {
+            VisibleShape shape_tmp(1, 1);
+            getNextDataPath(true);
+            for (int i = 0; i < BOARD_HEIGHT; ++i)
+                for (int j = 0; j < BOARD_HEIGHT; ++j)
+                    if (!gameboard.canPlaceShapeAtPos(&shape_tmp, i, j)) {
+                        saveData(1);
+                        saveData(gameboard.getUnitSquareColor(i, j).getR());
+                        saveData(gameboard.getUnitSquareColor(i, j).getG());
+                        saveData(gameboard.getUnitSquareColor(i, j).getB());
+                    } else saveData(0);
+            saveData(current_score.val());
+            saveData(high_score.val());
+            for (int i = 0; i < NUM_FIGURE; ++i) {
+                saveData(piece_list[i].getRowNum());
+                saveData(piece_list[i].getColNum());
+                for (int u = 0; u < piece_list[i].getRowNum(); ++u)
+                    for (int v = 0; v < piece_list[i].getColNum(); ++v) saveData(piece_list[i].getBit(u, v));
+                saveData(piece_list[i].getColor().getR());
+                saveData(piece_list[i].getColor().getG());
+                saveData(piece_list[i].getColor().getB());
+            }
             Mix_FreeChunk(click_menu_sound);
             Mix_FreeChunk(complete_line_sound);
             Mix_FreeChunk(new_game_sound);
@@ -233,11 +333,10 @@ class Game1010 {
             \sa     randShape()
         */
         void gen_piece() {
+            num_piece = NUM_FIGURE;
             for (int i = 0; i < NUM_FIGURE; ++i) {
                 pair<vector<vector<bool> >, RGBColor> tmp = randShape();
                 piece_list[i].setBitMap(tmp.first);
-                piece_list[i].setUnitSquareSize(SCREEN_HEIGHT / (MAX_FIGURE_HEIGHT * NUM_FIGURE + NUM_FIGURE + 1));
-                piece_list[i].setUnitSquareImg(Image("", "", IMG_GRID_SOURCE));
                 piece_list[i].setCoordinate(SCREEN_WIDTH - (gameboard.getX() - piece_list[i].getWidth()) / 2 - piece_list[i].getWidth(),
                                             (SCREEN_HEIGHT - (piece_list[i].getUnitSquareSize() * MAX_FIGURE_HEIGHT * NUM_FIGURE)) * (i + 1) / (NUM_FIGURE + 1)
                                             + piece_list[i].getUnitSquareSize() * (MAX_FIGURE_HEIGHT * (2 * i + 1) - piece_list[i].getRowNum()) / 2);
@@ -312,7 +411,6 @@ class Game1010 {
                                     current_score.setVal(0);    //!Set current score to 0,
                                     window.render(new VisibleEncryptedNumSurface(current_score));
                                     gameboard.clear();          //!Clear the board,
-                                    num_piece = NUM_FIGURE;
                                     gen_piece();                //!Generate new pieces
                                     for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]), false);
                                     return;
@@ -465,11 +563,9 @@ class Game1010 {
                                     if (current_score.cmp(&high_score) > 0) {           //!Update high score.
                                         high_score.setVal(current_score.val());
                                         window.render(new VisibleEncryptedNumSurface(high_score));
-                                        high_score.save();
                                     }
                                     if (--num_piece == 0) {
                                         if (sound_mode) Mix_PlayChannel(-1, new_pieces_sound, 0);
-                                        num_piece = NUM_FIGURE;
                                         gen_piece();                                    //!Generate new ones when all pieces are in place.
                                         for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]), false);
                                     }

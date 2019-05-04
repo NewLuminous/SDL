@@ -13,7 +13,7 @@ This indicates whether the chosen piece overlaps other placed pieces.
 1.2.0:
 ---------------------------------------------------------------------------
 
-* The chosen piece now sticks to the cursor instead of disappearing.
+* The chosen piece sticks to the cursor instead of disappearing.
 
 ---------------------------------------------------------------------------
 1.3.0:
@@ -21,3 +21,11 @@ This indicates whether the chosen piece overlaps other placed pieces.
 
 * Add audio and option to turn if off.
 * Add pause menu.
+
+---------------------------------------------------------------------------
+1.4.0:
+---------------------------------------------------------------------------
+
+* The current score and game status are now saved before the game being closed.
+The player can continue the game by reopening it.
+* Fix bug where new pieces are not randomly generated.

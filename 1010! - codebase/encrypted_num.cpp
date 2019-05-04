@@ -18,7 +18,7 @@ class EncryptedNum::impl {
         static const int HIDE_LENGTH;
         static const int HIDE_POS;
 
-        std::string mval;
+        std::string mval, mpath = DEFAULT_FILE_PATH;
 
         void encode(int val);
 
@@ -78,18 +78,19 @@ int EncryptedNum::cmp(const EncryptedNum* b) const {return val() - b->val();}
 
 void EncryptedNum::inc(int inc_val) {pimpl->encode(pimpl->decode() + inc_val);}
 
-void EncryptedNum::save(std::string path) {
-    std::ofstream file(path);
-    srand(time(NULL));
+void EncryptedNum::setPath(std::string path) {pimpl->mpath = path;}
+
+void EncryptedNum::save() {
+    std::ofstream file(pimpl->mpath);
     for (int i = 1; i < pimpl->HIDE_POS; ++i) file << char(pimpl->MIN + rand() % pimpl->MOD);
     file << pimpl->mval;
     for (int i = pimpl->HIDE_POS + pimpl->VAL_SIZE; i <= pimpl->HIDE_LENGTH - pimpl->VAL_SIZE; ++i) file << char(pimpl->MIN + rand() % pimpl->MOD);
     file << pimpl->encode2(pimpl->decode());
 }
 
-void EncryptedNum::load(std::string path) {
-    std::ifstream file(path);
-    if (!file) save(path);
+void EncryptedNum::load() {
+    std::ifstream file(pimpl->mpath);
+    if (!file) save();
     else {
         std::string s;
         getline(file, s);

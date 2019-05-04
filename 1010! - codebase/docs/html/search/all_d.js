@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['save',['save',['../class_encrypted_num.html#a33cddaaa96d51dbe29f0f99278c287dc',1,'EncryptedNum']]],
+  ['save',['save',['../class_encrypted_num.html#abd733c5a8b818c02cc00e1af57cbe76b',1,'EncryptedNum']]],
+  ['savedata',['saveData',['../class_game1010.html#a72900d1043c4d40f953c584a9d9cb6c8',1,'Game1010']]],
   ['sdl_5futils_2ecpp',['SDL_utils.cpp',['../_s_d_l__utils_8cpp.html',1,'']]],
   ['sdl_5futils_2eh',['SDL_utils.h',['../_s_d_l__utils_8h.html',1,'']]],
   ['sdlutils',['SDLUtils',['../class_s_d_l_utils.html',1,'SDLUtils'],['../class_s_d_l_utils.html#a53e5b8a0018c3d96af3ad413b2272f3d',1,'SDLUtils::SDLUtils()']]],
@@ -14,6 +15,7 @@ var searchData=
   ['setheight',['setHeight',['../class_button.html#a6b048681f073eae03631251ddee96b17',1,'Button::setHeight()'],['../class_font.html#adc672745b542873f41cd3e13c3b05da3',1,'Font::setHeight()'],['../class_menu.html#a54f1e7a7bb1cd809477f8e8b2e578366',1,'Menu::setHeight()']]],
   ['seticon',['setIcon',['../class_button.html#aabe6ae612c78c4e49d6c4de222e3dcb2',1,'Button']]],
   ['setlocation',['setLocation',['../class_visible_encrypted_num.html#a67e9d05edbbb67a3881123e99523f9c1',1,'VisibleEncryptedNum']]],
+  ['setpath',['setPath',['../class_encrypted_num.html#a27cca0eb4cf9f19035741be2a56d96a7',1,'EncryptedNum']]],
   ['setsize',['setSize',['../class_image.html#a9e801a7da9c0a032f767dbc362757349',1,'Image']]],
   ['settitle',['setTitle',['../class_button.html#aca4632ad68e021d147966c8782917f83',1,'Button::setTitle()'],['../class_menu.html#a5ec641fded3a140c8a5522ad689a301c',1,'Menu::setTitle()']]],
   ['settype',['setType',['../class_visible_encrypted_num.html#abca1e8c379a3eba175937c7152ba298e',1,'VisibleEncryptedNum']]],

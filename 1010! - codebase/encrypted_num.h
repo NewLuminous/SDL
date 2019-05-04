@@ -52,18 +52,21 @@ class EncryptedNum {
         virtual void inc(int inc_val);
 
         /*!
+            \brief Set where the number is saved to
+        */
+        virtual void setPath(std::string path);
+
+        /*!
             \brief  Encrypt the number and save it to a file
-            \param  path pointing to the file
             \sa     load()
         */
-        virtual void save(std::string path = DEFAULT_FILE_PATH);
+        virtual void save();
 
         /*!
             \brief  Load number from a file and decrypt it
-            \param  path pointing to the file
             \sa     save()
         */
-        virtual void load(std::string path = DEFAULT_FILE_PATH);
+        virtual void load();
 };
 
 #endif

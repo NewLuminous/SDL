@@ -37,9 +37,11 @@ virtual int \mbox{\hyperlink{class_encrypted_num_aec63be923f5ce470e63b78c9e70704
 \begin{DoxyCompactList}\small\item\em Compare two number. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_encrypted_num_a838b2db3fc304aca318d0bc22a906c52}{inc}} (int inc\+\_\+val)
 \begin{DoxyCompactList}\small\item\em Increase the number. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}{save}} (std\+::string path=D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH)
+virtual void \mbox{\hyperlink{class_encrypted_num_a27cca0eb4cf9f19035741be2a56d96a7}{set\+Path}} (std\+::string path)
+\begin{DoxyCompactList}\small\item\em Set where the number is saved to. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_encrypted_num_abd733c5a8b818c02cc00e1af57cbe76b}{save}} ()
 \begin{DoxyCompactList}\small\item\em Encrypt the number and save it to a file. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}{load}} (std\+::string path=D\+E\+F\+A\+U\+L\+T\+\_\+\+F\+I\+L\+E\+\_\+\+P\+A\+TH)
+virtual void \mbox{\hyperlink{class_encrypted_num_ab4591dbc5b9980f497f4de894a614447}{load}} ()
 \begin{DoxyCompactList}\small\item\em Load number from a file and decrypt it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -96,42 +98,42 @@ Compare two number.
 
 Increase the number. 
 
-\mbox{\Hypertarget{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}\label{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}} 
+\mbox{\Hypertarget{class_encrypted_num_ab4591dbc5b9980f497f4de894a614447}\label{class_encrypted_num_ab4591dbc5b9980f497f4de894a614447}} 
 \index{Encrypted\+Num@{Encrypted\+Num}!load@{load}}
 \index{load@{load}!Encrypted\+Num@{Encrypted\+Num}}
 \subsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily void Encrypted\+Num\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{path = {\ttfamily DEFAULT\+\_\+FILE\+\_\+PATH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Load number from a file and decrypt it. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em path} & pointing to the file \\
-\hline
-\end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}{save()}} 
+\mbox{\hyperlink{class_encrypted_num_abd733c5a8b818c02cc00e1af57cbe76b}{save()}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}\label{class_encrypted_num_a33cddaaa96d51dbe29f0f99278c287dc}} 
+\mbox{\Hypertarget{class_encrypted_num_abd733c5a8b818c02cc00e1af57cbe76b}\label{class_encrypted_num_abd733c5a8b818c02cc00e1af57cbe76b}} 
 \index{Encrypted\+Num@{Encrypted\+Num}!save@{save}}
 \index{save@{save}!Encrypted\+Num@{Encrypted\+Num}}
 \subsubsection{\texorpdfstring{save()}{save()}}
-{\footnotesize\ttfamily void Encrypted\+Num\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{path = {\ttfamily DEFAULT\+\_\+FILE\+\_\+PATH} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 Encrypt the number and save it to a file. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em path} & pointing to the file \\
-\hline
-\end{DoxyParams}
 \begin{DoxySeeAlso}{See also}
-\mbox{\hyperlink{class_encrypted_num_adb5f15f13ecd4fd79511164c42448433}{load()}} 
+\mbox{\hyperlink{class_encrypted_num_ab4591dbc5b9980f497f4de894a614447}{load()}} 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_encrypted_num_a27cca0eb4cf9f19035741be2a56d96a7}\label{class_encrypted_num_a27cca0eb4cf9f19035741be2a56d96a7}} 
+\index{Encrypted\+Num@{Encrypted\+Num}!set\+Path@{set\+Path}}
+\index{set\+Path@{set\+Path}!Encrypted\+Num@{Encrypted\+Num}}
+\subsubsection{\texorpdfstring{set\+Path()}{setPath()}}
+{\footnotesize\ttfamily void Encrypted\+Num\+::set\+Path (\begin{DoxyParamCaption}\item[{std\+::string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set where the number is saved to. 
+
 \mbox{\Hypertarget{class_encrypted_num_a4469ba057a691e6edacc25022596d1fa}\label{class_encrypted_num_a4469ba057a691e6edacc25022596d1fa}} 
 \index{Encrypted\+Num@{Encrypted\+Num}!set\+Val@{set\+Val}}
 \index{set\+Val@{set\+Val}!Encrypted\+Num@{Encrypted\+Num}}
