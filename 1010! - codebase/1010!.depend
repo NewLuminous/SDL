@@ -80,22 +80,23 @@
 
 1554035929 source:c:\users\admin\documents\github\sdl\1010! - codebase\icon.rc
 
-1556908109 source:c:\users\admin\documents\github\sdl\1010! - codebase\main.cpp
+1556961610 source:c:\users\admin\documents\github\sdl\1010! - codebase\main.cpp
 	"SDL_utils.h"
 	"board_surface.h"
 	"menu_surface.h"
 	"visible_encrypted_num_surface.h"
 	"visible_shape_surface.h"
 
-1556908847 c:\users\admin\documents\github\sdl\1010! - codebase\sdl_utils.h
+1556948291 c:\users\admin\documents\github\sdl\1010! - codebase\sdl_utils.h
 	"isurface.h"
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
+	<SDL_mixer.h>
 	<iostream>
 	<cstdlib>
 
-1556908744 c:\users\admin\documents\github\sdl\1010! - codebase\board.h
+1556951077 c:\users\admin\documents\github\sdl\1010! - codebase\board.h
 	"visible_shape.h"
 	"encrypted_num.h"
 
@@ -110,7 +111,7 @@
 	<time.h>
 	<vector>
 
-1555624562 c:\users\admin\documents\github\sdl\1010! - codebase\menu.h
+1556961247 c:\users\admin\documents\github\sdl\1010! - codebase\menu.h
 	"button.h"
 	<vector>
 
@@ -118,7 +119,7 @@
 	"image.h"
 	"font.h"
 
-1556902448 source:c:\users\admin\documents\github\sdl\1010! - codebase\board.cpp
+1556951177 source:c:\users\admin\documents\github\sdl\1010! - codebase\board.cpp
 	"board.h"
 
 1556904115 c:\users\admin\documents\github\sdl\1010! - codebase\visible_shape.h
@@ -159,7 +160,7 @@
 	"rgb_color.h"
 	<string>
 
-1555610801 source:c:\users\admin\documents\github\sdl\1010! - codebase\button_surface.cpp
+1556958091 source:c:\users\admin\documents\github\sdl\1010! - codebase\button_surface.cpp
 	"button_surface.h"
 
 1555610738 c:\users\admin\documents\github\sdl\1010! - codebase\button_surface.h
@@ -196,7 +197,7 @@
 	<iostream>
 	<cstdlib>
 
-1555624588 source:c:\users\admin\documents\github\sdl\1010! - codebase\menu.cpp
+1556961462 source:c:\users\admin\documents\github\sdl\1010! - codebase\menu.cpp
 	"menu.h"
 
 1555625237 source:c:\users\admin\documents\github\sdl\1010! - codebase\menu_surface.cpp
@@ -209,7 +210,7 @@
 1555628192 source:c:\users\admin\documents\github\sdl\1010! - codebase\rgb_color.cpp
 	"rgb_color.h"
 
-1556902314 source:c:\users\admin\documents\github\sdl\1010! - codebase\sdl_utils.cpp
+1556949961 source:c:\users\admin\documents\github\sdl\1010! - codebase\sdl_utils.cpp
 	"SDL_utils.h"
 
 1556885431 source:c:\users\admin\documents\github\sdl\1010! - codebase\shape.cpp

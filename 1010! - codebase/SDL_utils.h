@@ -1,7 +1,7 @@
 /*!
     \file       SDL_utils.h
     \brief      Include file for creating window and rendering textures.
-    \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf.
+    \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer.
                 Then search directories: Compiler for include\SDL2\ folder and Linker for lib\ folder.
 */
 
@@ -12,6 +12,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <iostream>
 #include <cstdlib>
 
@@ -28,9 +29,12 @@ class SDLUtils {
         SDL_Window* mwindow = nullptr;
         SDL_Renderer* mrenderer = nullptr;
 
+    public:
+        /*!
+            \brief      Report errors and exit the program if necessary
+        */
         void logError(const std::string &msg, const std::string &error, bool fatal);
 
-    public:
         /*!
             \brief      Constructor creating window.
             \sa         SDL_CreateWindow()

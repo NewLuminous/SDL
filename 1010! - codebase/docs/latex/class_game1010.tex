@@ -10,11 +10,15 @@ The game itself.
 \item 
 \mbox{\hyperlink{class_game1010_a0a0688219844edbe8f4a44c11a13e32a}{Game1010}} ()
 \begin{DoxyCompactList}\small\item\em constructor initializing the game \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game1010_abcdf29a3fb425ad389e247f241ee4ed5}{$\sim$\+Game1010}} ()
+\begin{DoxyCompactList}\small\item\em destructor deleting pointers \end{DoxyCompactList}\item 
 pair$<$ vector$<$ vector$<$ bool $>$ $>$, \mbox{\hyperlink{class_r_g_b_color}{R\+G\+B\+Color}} $>$ \mbox{\hyperlink{class_game1010_a9b86f7bf4ad3af111014ad33a781ffe5}{rand\+Shape}} ()
 \begin{DoxyCompactList}\small\item\em Get a random piece from pieces\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game1010_a9576170947a355682c922cb648432b9e}{gen\+\_\+piece}} ()
 \begin{DoxyCompactList}\small\item\em Generate new ones when all pieces are in place. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game1010_a99d6f53c3073861fe37ef67caa073840}{show\+\_\+menu}} (\mbox{\hyperlink{class_menu}{Menu}} $\ast$menu)
+\item 
+void \mbox{\hyperlink{class_game1010_ab9c6def8a07ae00b55bd9b51f407eecd}{game\+Paused}} ()
 \item 
 void \mbox{\hyperlink{class_game1010_a3bc296b7ba6bffeda3baceb1240190b6}{game\+Over}} ()
 \begin{DoxyCompactList}\small\item\em G\+A\+ME O\+V\+ER menu shows up when placing any piece on the board is not possible. \end{DoxyCompactList}\item 
@@ -41,6 +45,16 @@ constructor initializing the game
 
 S\+D\+L\+Utils\+::draw() 
 \end{DoxySeeAlso}
+\mbox{\Hypertarget{class_game1010_abcdf29a3fb425ad389e247f241ee4ed5}\label{class_game1010_abcdf29a3fb425ad389e247f241ee4ed5}} 
+\index{Game1010@{Game1010}!````~Game1010@{$\sim$\+Game1010}}
+\index{````~Game1010@{$\sim$\+Game1010}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{$\sim$\+Game1010()}{~Game1010()}}
+{\footnotesize\ttfamily Game1010\+::$\sim$\+Game1010 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+destructor deleting pointers 
+
 
 
 \subsection{Member Function Documentation}
@@ -53,6 +67,15 @@ S\+D\+L\+Utils\+::draw()
 
 
 G\+A\+ME O\+V\+ER menu shows up when placing any piece on the board is not possible. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_game1010_a99d6f53c3073861fe37ef67caa073840}{show\+\_\+menu()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_game1010_ab9c6def8a07ae00b55bd9b51f407eecd}\label{class_game1010_ab9c6def8a07ae00b55bd9b51f407eecd}} 
+\index{Game1010@{Game1010}!game\+Paused@{game\+Paused}}
+\index{game\+Paused@{game\+Paused}!Game1010@{Game1010}}
+\subsubsection{\texorpdfstring{game\+Paused()}{gamePaused()}}
+{\footnotesize\ttfamily void Game1010\+::game\+Paused (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_game1010_a99d6f53c3073861fe37ef67caa073840}{show\+\_\+menu()}} 
@@ -89,7 +112,7 @@ Board\+::set()
 \end{DoxySeeAlso}
 Redraw pieces in case the chosen piece overlaps them
 
-Check whether any piece is chosen.
+Check whether player pauses the game. If not, check whether any piece is chosen.
 
 Return the chosen piece to the list if it does not fit.
 
@@ -122,6 +145,8 @@ Remove the current board from the screen. Minimize and put it back into the scre
 Remove the remaining pieces from the screen. Put them under the minimized board to make space for menu.
 
 Show menu.
+
+Clicking on the \char`\"{}\+Resume\char`\"{} button resume the game\+:
 
 Clicking on the \char`\"{}\+Retry\char`\"{} button restarts the game\+:
 

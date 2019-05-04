@@ -66,8 +66,9 @@ class Board: public VisibleShape {
             \param      i_origin  The topmost row being placed onto
             \param      j_origin  The leftmost column begin placed onto
             \param      score Score being updated
+            \return     true if at least one line has been completed
         */
-        virtual void place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score);
+        virtual bool place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score);
 
         /*!
             \brief      Find the top-left unit square being overlapped by the piece.
@@ -92,8 +93,9 @@ class Board: public VisibleShape {
             \param      mouse_x The x coordinate of the mouse
             \param      mouse_y The y coordinate of the mouse
             \param      score Score being updated
+            \return     true if at least one line has been completed
         */
-        virtual void placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score);
+        virtual bool placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score);
 
         /*!
             \brief      Preview the piece before it is placed.

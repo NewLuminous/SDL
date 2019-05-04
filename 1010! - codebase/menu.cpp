@@ -43,13 +43,14 @@ int Menu::getWidth() const {return mw;}
 void Menu::setButtonCoordinate(const int &_x, const int &_y) {mlist_x = getX() + _x; mlist_y = getY() + _y;}
 
 void Menu::pushButton(Button button) {
+    button_title_max = std::max(button_title_max, (int)button.getTitle().getText().size());
     button.setTitle(Font(mtitle.getSource(), button.getTitle().getText(), mtitle.getFontSize()));
     button.setColor(mtitle.getColor());
-    button.setWidth(mw);
     mlist.push_back(button);
     button.setHeight((getY() + mh - mlist_y - 1) / (numButton() * 2 - 1));
     for (int i = 0; i < numButton(); ++i) {
         mlist[i].setHeight(button.getHeight());
+        mlist[i].setWidth((mw - button.getHeight() * 2) * mlist[i].getTitle().getText().size() / button_title_max + button.getHeight() * 2);
         mlist[i].setCoordinate(mlist_x, mlist_y + button.getHeight() * i * 2);
     }
 }

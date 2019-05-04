@@ -19,6 +19,7 @@ class Menu {
         int mw = 0, mh = 0;
         std::vector<Button> mlist;
         int mlist_x = 0, mlist_y = 0;
+        int button_title_max = 0;
     public:
         /*!
             \details Buttons will have the same font as the title even if it is not set

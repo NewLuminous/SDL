@@ -15,6 +15,7 @@ SDLUtils::SDLUtils(const int &screenWidth, const int &screenHeight, const std::s
     int flags = IMG_INIT_PNG | IMG_INIT_JPG;
     if (IMG_Init(flags) != flags) logError("IMG_Init", IMG_GetError(), true);
     if (TTF_Init() == -1) logError("TTF_Init", TTF_GetError(), true);
+    if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) logError("Mix_OpenAudio", Mix_GetError(), true);
     mwindow = SDL_CreateWindow(windowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
     if (mwindow == nullptr) logError("CreateWindow", SDL_GetError(), true);
     mrenderer = SDL_CreateRenderer(mwindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
@@ -28,6 +29,7 @@ SDLUtils::~SDLUtils() {
     SDL_DestroyWindow(mwindow);
     mrenderer = nullptr;
     mwindow = nullptr;
+    Mix_Quit();
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();

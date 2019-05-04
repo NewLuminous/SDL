@@ -40,7 +40,7 @@ bool Board::isAnySpacePlaceable(const Shape* piece) const {
     return false;
 }
 
-void Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score) {
+bool Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score) {
     for (int i = 0; i < piece->getRowNum(); ++i)
         for (int j = 0; j < piece->getColNum(); ++j)
             if (piece->getBit(i, j)) {
@@ -50,6 +50,7 @@ void Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin,
             }
     score->inc(piece->getNumBit());
     //!Clear lines when they are completed
+    int completed_line_count = 0;
     for (int i = i_origin; i < i_origin + piece->getRowNum(); ++i)
         if (mrow[i] == getColNum()) {
             mrow[i] = 0;
@@ -58,6 +59,7 @@ void Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin,
                 setUnitSquareColor(i, j, getColor());
                 if (mcol[j] < getRowNum()) --mcol[j];
             }
+            ++completed_line_count;
         }
     for (int j = j_origin; j < j_origin + piece->getColNum(); ++j)
         if (mcol[j] == getRowNum()) {
@@ -67,8 +69,10 @@ void Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin,
                 setUnitSquareColor(i, j, getColor());
                 if (mrow[i]) --mrow[i];
             }
+            ++completed_line_count;
         }
     piece->del();
+    return (completed_line_count > 0);
 }
 
 std::pair<int, int> Board::getUnitSquarePos(int mouse_x, int mouse_y, const VisibleShape* piece) const {
@@ -88,9 +92,9 @@ bool Board::canPlaceShapeAtCoordinate(const VisibleShape* piece, const int &mous
     return canPlaceShapeAtPos(piece, pos.first, pos.second);
 }
 
-void Board::placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score) {
+bool Board::placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score) {
     std::pair<int, int> pos = getUnitSquarePos(mouse_x, mouse_y, piece);
-    place(piece, pos.first, pos.second, score);
+    return place(piece, pos.first, pos.second, score);
 }
 
 VisibleShape Board::preview(VisibleShape piece, const int &mouse_x, const int &mouse_y, const std::string &path_reverse) const {

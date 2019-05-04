@@ -10,13 +10,17 @@ ButtonSurface::ButtonSurface(const Button &button) {
     msurface.push_back(micon->get(0));
     mrect.push_back(micon->getSize(0));
 
-    mtitle = new FontSurface(button.getTitle());
-    msurface.push_back(mtitle->get(0));
-    mrect.push_back(mtitle->getSize(0));
+    if (button.getTitle().getText().size()) {
+        mtitle = new FontSurface(button.getTitle());
+        msurface.push_back(mtitle->get(0));
+        mrect.push_back(mtitle->getSize(0));
+    }
+    else mtitle = nullptr;
 }
 
 ButtonSurface::~ButtonSurface() {
-    delete micon; delete mtitle;
+    delete micon;
+    if (mtitle != nullptr) delete mtitle;
 }
 
 int ButtonSurface::getNum() {return msurface.size();}

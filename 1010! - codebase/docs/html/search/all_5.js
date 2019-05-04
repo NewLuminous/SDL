@@ -2,6 +2,7 @@ var searchData=
 [
   ['game1010',['Game1010',['../class_game1010.html',1,'Game1010'],['../class_game1010.html#a0a0688219844edbe8f4a44c11a13e32a',1,'Game1010::Game1010()']]],
   ['gameover',['gameOver',['../class_game1010.html#a3bc296b7ba6bffeda3baceb1240190b6',1,'Game1010']]],
+  ['gamepaused',['gamePaused',['../class_game1010.html#ab9c6def8a07ae00b55bd9b51f407eecd',1,'Game1010']]],
   ['gen_5fpiece',['gen_piece',['../class_game1010.html#a9576170947a355682c922cb648432b9e',1,'Game1010']]],
   ['get',['get',['../class_board_surface.html#a1f70650bc36f591b9a2f44576da4c77c',1,'BoardSurface::get()'],['../class_button_surface.html#a296e13e3b1e7b0d52cfb67f6627d6f91',1,'ButtonSurface::get()'],['../class_font_surface.html#a611d81ba179c87aef331d8b5dbef2eb6',1,'FontSurface::get()'],['../class_image_surface.html#a029eeccddbb6e028a4556a8c33756a56',1,'ImageSurface::get()'],['../class_i_surface.html#a45bacb1ffa6f0835e3ece0123b90c4fc',1,'ISurface::get()'],['../class_menu_surface.html#a450caa8462abbc0202e2242f1fdd0816',1,'MenuSurface::get()'],['../class_visible_encrypted_num_surface.html#a36866f967b78c3fadd234ee4ec0c9195',1,'VisibleEncryptedNumSurface::get()'],['../class_visible_shape_surface.html#a200885c58c30916f61eebdb6c179030d',1,'VisibleShapeSurface::get()']]],
   ['getb',['getB',['../class_r_g_b_color.html#a55500b063148c853e65eb5b420eb4887',1,'RGBColor']]],

@@ -6,6 +6,7 @@ var searchData=
   ['_7ebuttonsurface',['~ButtonSurface',['../class_button_surface.html#aabb7a64d5690fe392b8e3ca645640701',1,'ButtonSurface']]],
   ['_7eencryptednum',['~EncryptedNum',['../class_encrypted_num.html#a795b635aeef60427532e1a8f26db8cdd',1,'EncryptedNum']]],
   ['_7efontsurface',['~FontSurface',['../class_font_surface.html#a0b009ae8b96cc763e70e31c2c76a0807',1,'FontSurface']]],
+  ['_7egame1010',['~Game1010',['../class_game1010.html#abcdf29a3fb425ad389e247f241ee4ed5',1,'Game1010']]],
   ['_7eimagesurface',['~ImageSurface',['../class_image_surface.html#a2e64cbd6f3d98f554bfdd43507e38412',1,'ImageSurface']]],
   ['_7eisurface',['~ISurface',['../class_i_surface.html#a72497ade5e82ef16d2a3c9dfde51428a',1,'ISurface']]],
   ['_7emenusurface',['~MenuSurface',['../class_menu_surface.html#a1659d1832a1406905f4217143da5ca4f',1,'MenuSurface']]],

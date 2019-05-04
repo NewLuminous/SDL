@@ -14,3 +14,10 @@ This indicates whether the chosen piece overlaps other placed pieces.
 ---------------------------------------------------------------------------
 
 * The chosen piece now sticks to the cursor instead of disappearing.
+
+---------------------------------------------------------------------------
+1.3.0:
+---------------------------------------------------------------------------
+
+* Add audio and option to turn if off.
+* Add pause menu.

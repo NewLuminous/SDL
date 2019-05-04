@@ -2,9 +2,9 @@
     \file       main.cpp
     \brief      This file starts the game.
     \author     Nguyen Minh Tan
-    \version    1.2.0
+    \version    1.3.0
     \date       04/05/2019
-    \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf.
+    \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer.
                 Then search directories: Compiler for include\SDL2\ folder and Linker for lib\ folder.
 */
 
@@ -22,7 +22,7 @@ using namespace std;
 */
 class Game1010 {
     private:
-        const int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 720, NUM_FIGURE = 3, MAX_FIGURE_HEIGHT = 5, BOARD_HEIGHT = 10, SCORE_DIGITS = 6, FONT_SIZE = 72;
+        const int SCREEN_WIDTH = 1280, SCREEN_HEIGHT = 720, NUM_FIGURE = 3, MAX_FIGURE_HEIGHT = 5, BOARD_HEIGHT = 10, SCORE_DIGITS = 6, FONT_SIZE = 72, ICON_SIZE = 30;
         const string GAME_TITLE = "1010!";
         const string IMG_DIGIT_SOURCE = "img/digits/default-";
         const string IMG_DIGIT_TYPE = "png";
@@ -33,9 +33,11 @@ class Game1010 {
         const string FONT_SOURCE = "font/zorque.ttf";
         const string ICON_SOURCE = "icons/";
         const string ICON_TYPE = "png";
+        const string SOUND_SOURCE = "sound/";
+        const string SOUND_TYPE = "wav";
         const RGBColor BOARD_COLOR = {96, 96, 96};
 
-        vector<string> buttons {"Retry", "Sound ON ", "Sound OFF"};
+        vector<string> buttons {"Retry", "Sound ON", "Sound OFF", "Resume"};
         vector<vector<vector<bool> > > pieces {
                                                 {
                                                     {1}},
@@ -128,7 +130,10 @@ class Game1010 {
         SDLUtils window = SDLUtils(SCREEN_WIDTH, SCREEN_HEIGHT, GAME_TITLE);
         vector<VisibleShape> piece_list = vector<VisibleShape>(NUM_FIGURE);
         vector<Button> button_list = vector<Button>(buttons.size());
-        bool quit = false;
+        Button pause_button;
+        Mix_Chunk *click_menu_sound, *complete_line_sound, *new_game_sound, *new_pieces_sound, *place_fail_sound, *place_success_sound;
+        Mix_Music *game_over_sound;
+        bool quit = false, sound_mode = true;
         int num_piece = NUM_FIGURE;
     public:
         /*!
@@ -156,13 +161,18 @@ class Game1010 {
             high_score.save();
             high_score.setCoordinate((gameboard.getX() - high_score.getDWidth() * SCORE_DIGITS) / 2, SCREEN_HEIGHT / 4 + gameboard.getX() / 6 - high_score.getDHeight() / 2);
 
-            for (int i = 1; i < pieces_rates.size(); ++i) pieces_rates[i] += pieces_rates[i - 1];
+            for (int i = 1; i < (int)pieces_rates.size(); ++i) pieces_rates[i] += pieces_rates[i - 1];
             gen_piece();
 
-            for (int i = 0; i < buttons.size(); ++i) {
+            for (int i = 0; i < (int)buttons.size(); ++i) {
                 button_list[i].setTitle(Font(FONT_SOURCE, buttons[i]));
                 button_list[i].setIcon(Image(ICON_TYPE, buttons[i], ICON_SOURCE));
             }
+            pause_button.setIcon(Image(ICON_TYPE, "Pause", ICON_SOURCE));
+            pause_button.setHeight(ICON_SIZE);
+            pause_button.setWidth(ICON_SIZE);
+            pause_button.setCoordinate(SCREEN_WIDTH - ICON_SIZE * 3 / 2 + 1, ICON_SIZE / 2);
+            window.render(new ButtonSurface(pause_button));
 
             Image logo("", "", IMG_LOGO_SOURCE);
             logo.setCoordinate(0, -gameboard.getX() / 4);
@@ -178,6 +188,35 @@ class Game1010 {
 
             for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]));
             window.present();
+
+            click_menu_sound = Mix_LoadWAV((SOUND_SOURCE + "click_menu." + SOUND_TYPE).c_str());
+            if (click_menu_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
+            complete_line_sound = Mix_LoadWAV((SOUND_SOURCE + "complete_line." + SOUND_TYPE).c_str());
+            if (complete_line_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
+            new_game_sound = Mix_LoadWAV((SOUND_SOURCE + "new_game." + SOUND_TYPE).c_str());
+            if (new_game_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
+            new_pieces_sound = Mix_LoadWAV((SOUND_SOURCE + "new_pieces." + SOUND_TYPE).c_str());
+            if (new_pieces_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
+            place_fail_sound = Mix_LoadWAV((SOUND_SOURCE + "place_fail." + SOUND_TYPE).c_str());
+            if (place_fail_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
+            place_success_sound = Mix_LoadWAV((SOUND_SOURCE + "place_success." + SOUND_TYPE).c_str());
+            if (place_success_sound == nullptr) window.logError("Mix_LoadWAV", Mix_GetError(), true);
+
+            game_over_sound = Mix_LoadMUS((SOUND_SOURCE + "game_over." + SOUND_TYPE).c_str());
+            if (game_over_sound == nullptr) window.logError("Mix_LoadMUS", Mix_GetError(), true);
+        }
+
+        /*!
+            \brief  destructor deleting pointers
+        */
+        ~Game1010() {
+            Mix_FreeChunk(click_menu_sound);
+            Mix_FreeChunk(complete_line_sound);
+            Mix_FreeChunk(new_game_sound);
+            Mix_FreeChunk(new_pieces_sound);
+            Mix_FreeChunk(place_fail_sound);
+            Mix_FreeChunk(place_success_sound);
+            Mix_FreeMusic(game_over_sound);
         }
 
         /*!
@@ -235,7 +274,7 @@ class Game1010 {
             window.render(new MenuSurface(*menu), false);  //! Show menu.
             window.present();
 
-            int last_button = -1;
+            //int last_button = -1;
             SDL_Event e;
             while (!quit) {
                 while (SDL_PollEvent(&e)) {
@@ -250,9 +289,22 @@ class Game1010 {
                         case SDL_MOUSEBUTTONDOWN:
                             if (button_cur != nullptr && button_cur->inside(mouse_x, mouse_y)) {
                                 /*!
+                                    Clicking on the "Resume" button resume the game:
+                              */
+                                if (button_cur->getTitle().getText() == buttons[3]) {
+                                    if (sound_mode) Mix_PlayChannel(-1, click_menu_sound, 0);
+                                    window.del({_gameboard.getX(), _gameboard.getY(), _gameboard.getWidth(), _gameboard.getHeight()});
+                                    for (int i = 0; i < NUM_FIGURE; ++i)
+                                        window.del({_piece_list[i].getX(), _piece_list[i].getY(), _piece_list[i].getWidth(), _piece_list[i].getHeight()});
+                                    window.del({menu->getX(), menu->getY(), menu->getWidth(), menu->getHeight()});
+                                    for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]), false);
+                                    return;
+                                }
+                                /*!
                                     Clicking on the "Retry" button restarts the game:
                               */
                                 if (button_cur->getTitle().getText() == buttons[0]) {
+                                    if (sound_mode) Mix_PlayChannel(-1, new_game_sound, 0);
                                     window.del({_gameboard.getX(), _gameboard.getY(), _gameboard.getWidth(), _gameboard.getHeight()});
                                     for (int i = 0; i < NUM_FIGURE; ++i)
                                         window.del({_piece_list[i].getX(), _piece_list[i].getY(), _piece_list[i].getWidth(), _piece_list[i].getHeight()});
@@ -269,6 +321,9 @@ class Game1010 {
                                     Clicking on the "Sound" button turn on/off game sounds.
                               */
                                 if (button_cur->getTitle().getText() == buttons[1]) {
+                                    if (sound_mode) Mix_PlayChannel(-1, click_menu_sound, 0);
+                                    sound_mode = !sound_mode;
+                                    if (!sound_mode && Mix_PlayingMusic()) Mix_HaltMusic();
                                     window.del({button_cur->getX(), button_cur->getY(), button_cur->getWidth(), button_cur->getHeight()});
                                     Font font(FONT_SOURCE, buttons[2]);
                                     font.setCoordinate(button_cur->getX() + button_cur->getHeight() * 2, button_cur->getY());
@@ -312,19 +367,47 @@ class Game1010 {
         }
 
         /*!
+            \sa     show_menu()
+        */
+        void gamePaused() {
+            if (sound_mode) Mix_PlayChannel(-1, click_menu_sound, 0);
+
+            window.del({pause_button.getX(), pause_button.getY(), pause_button.getWidth(), pause_button.getHeight()});
+
+            Menu game_paused_menu(Font(FONT_SOURCE, "GAME PAUSED"));
+            game_paused_menu.setCoordinate(856 + 50, 100);
+            game_paused_menu.setWidth(SCREEN_WIDTH - 856 - 100);
+            game_paused_menu.setHeight(400);
+            game_paused_menu.setButtonCoordinate(0, 150);
+            game_paused_menu.setColor({0xFF, 0xFF, 0xFF});
+            game_paused_menu.pushButton(button_list[3]);
+            game_paused_menu.pushButton(button_list[0]);
+            game_paused_menu.pushButton(button_list[1]);
+            show_menu(&game_paused_menu);
+
+            window.render(new ButtonSurface(pause_button));
+        }
+
+        /*!
             \brief  GAME OVER menu shows up when placing any piece on the board is not possible.
             \sa     show_menu()
         */
         void gameOver() {
-            Menu game_over(Font(FONT_SOURCE, "GAME OVER"));
-            game_over.setCoordinate(856 + 50, 200);
-            game_over.setWidth(SCREEN_WIDTH - 856 - 100);
-            game_over.setHeight(300);
-            game_over.setButtonCoordinate(0, 150);
-            game_over.setColor({0xFF, 0xFF, 0xFF});
-            game_over.pushButton(button_list[0]);
-            game_over.pushButton(button_list[1]);
-            show_menu(&game_over);
+            if (sound_mode && Mix_PlayingMusic() == 0) Mix_PlayMusic(game_over_sound, 1);
+
+            window.del({pause_button.getX(), pause_button.getY(), pause_button.getWidth(), pause_button.getHeight()});
+
+            Menu game_over_menu(Font(FONT_SOURCE, "GAME OVER"));
+            game_over_menu.setCoordinate(856 + 50, 200);
+            game_over_menu.setWidth(SCREEN_WIDTH - 856 - 100);
+            game_over_menu.setHeight(300);
+            game_over_menu.setButtonCoordinate(0, 150);
+            game_over_menu.setColor({0xFF, 0xFF, 0xFF});
+            game_over_menu.pushButton(button_list[0]);
+            game_over_menu.pushButton(button_list[1]);
+            show_menu(&game_over_menu);
+
+            window.render(new ButtonSurface(pause_button));
         }
 
         /*!
@@ -354,9 +437,13 @@ class Game1010 {
                             quit = true;
                             break;
                         /*!
-                            Check whether any piece is chosen.
+                            Check whether player pauses the game. If not, check whether any piece is chosen.
                        */
                         case SDL_MOUSEBUTTONDOWN:
+                            if (pause_button.inside(mouse_x, mouse_y)) {
+                                gamePaused();
+                                window.render(new BoardSurface(gameboard));
+                            }
                             for (int i = 0; i < NUM_FIGURE; ++i)
                                 if (piece_list[i].inside(mouse_x, mouse_y)) {
                                     chosen_piece = i;
@@ -366,10 +453,14 @@ class Game1010 {
                         case SDL_MOUSEBUTTONUP:
                             if (chosen_piece >= 0) {
                                 if (!gameboard.inside(mouse_x, mouse_y) || !gameboard.canPlaceShapeAtCoordinate(&piece_list[chosen_piece], mouse_x, mouse_y)) {
+                                    if (sound_mode) Mix_PlayChannel(-1, place_fail_sound, 0);
                                     window.render(new VisibleShapeSurface(piece_list[chosen_piece]), false);    //!Return the chosen piece to the list if it does not fit.
                                 } else {
                                                                                         //!Otherwise, place it on the board,
-                                    gameboard.placeMouse(&piece_list[chosen_piece], mouse_x, mouse_y, &current_score);
+                                    if (gameboard.placeMouse(&piece_list[chosen_piece], mouse_x, mouse_y, &current_score)) {
+                                        if (sound_mode) Mix_PlayChannel(-1, complete_line_sound, 0);
+                                    }
+                                    else if (sound_mode) Mix_PlayChannel(-1, place_success_sound, 0);
                                     window.render(new VisibleEncryptedNumSurface(current_score));
                                     if (current_score.cmp(&high_score) > 0) {           //!Update high score.
                                         high_score.setVal(current_score.val());
@@ -377,6 +468,7 @@ class Game1010 {
                                         high_score.save();
                                     }
                                     if (--num_piece == 0) {
+                                        if (sound_mode) Mix_PlayChannel(-1, new_pieces_sound, 0);
                                         num_piece = NUM_FIGURE;
                                         gen_piece();                                    //!Generate new ones when all pieces are in place.
                                         for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]), false);
