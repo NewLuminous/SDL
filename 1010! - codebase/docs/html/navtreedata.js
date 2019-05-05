@@ -47,7 +47,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_s_d_l__utils_8cpp.html",
-"classes.html"
+"class_visible_shape_surface.html#af516dd80787f73eb853800b9ac33a8d5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

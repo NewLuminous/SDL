@@ -40,7 +40,7 @@ bool Board::isAnySpacePlaceable(const Shape* piece) const {
     return false;
 }
 
-bool Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score) {
+std::pair<std::vector<int>, std::vector<int> > Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score) {
     for (int i = 0; i < piece->getRowNum(); ++i)
         for (int j = 0; j < piece->getColNum(); ++j)
             if (piece->getBit(i, j)) {
@@ -48,9 +48,8 @@ bool Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin,
                 setUnitSquareColor(i_origin + i, j_origin + j, piece->getColor());
                 ++mrow[i_origin + i];++mcol[j_origin + j];
             }
-    score->inc(piece->getNumBit());
     //!Clear lines when they are completed
-    int completed_line_count = 0;
+    std::pair<std::vector<int>, std::vector<int> > res;
     for (int i = i_origin; i < i_origin + piece->getRowNum(); ++i)
         if (mrow[i] == getColNum()) {
             mrow[i] = 0;
@@ -59,7 +58,7 @@ bool Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin,
                 setUnitSquareColor(i, j, getColor());
                 if (mcol[j] < getRowNum()) --mcol[j];
             }
-            ++completed_line_count;
+            res.first.push_back(i);
         }
     for (int j = j_origin; j < j_origin + piece->getColNum(); ++j)
         if (mcol[j] == getRowNum()) {
@@ -69,10 +68,11 @@ bool Board::place(VisibleShape* piece, const int &i_origin, const int &j_origin,
                 setUnitSquareColor(i, j, getColor());
                 if (mrow[i]) --mrow[i];
             }
-            ++completed_line_count;
+            res.second.push_back(j);
         }
+    score->inc(piece->getNumBit() * std::max(1, (int)res.first.size() * (int)res.first.size() + (int)res.second.size() * (int)res.second.size()));
     piece->del();
-    return (completed_line_count > 0);
+    return res;
 }
 
 std::pair<int, int> Board::getUnitSquarePos(int mouse_x, int mouse_y, const VisibleShape* piece) const {
@@ -92,7 +92,7 @@ bool Board::canPlaceShapeAtCoordinate(const VisibleShape* piece, const int &mous
     return canPlaceShapeAtPos(piece, pos.first, pos.second);
 }
 
-bool Board::placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score) {
+std::pair<std::vector<int>, std::vector<int> > Board::placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score) {
     std::pair<int, int> pos = getUnitSquarePos(mouse_x, mouse_y, piece);
     return place(piece, pos.first, pos.second, score);
 }
@@ -105,18 +105,22 @@ VisibleShape Board::preview(VisibleShape piece, const int &mouse_x, const int &m
     return piece;
 }
 
-Board Board::sub(const int &x, const int &y, const int &w, const int &h) const {
+Board Board::sub(const int &r1, const int &c1, const int &r2, const int &c2) const {
+    Board res(r2 - r1 + 1, c2 - c1 + 1);
+    res.setCoordinate(getX() + c1 * getUnitSquareSize(), getY() + r1 * getUnitSquareSize());
+    res.setUnitSquareImg(getUnitSquareImg());
+    res.setUnitSquareSize(getUnitSquareSize());
+    for (int i = r1; i <= r2; ++i)
+        for (int j = c1; j <= c2; ++j) res.setUnitSquareColor(i - r1, j - c1, getUnitSquareColor(i, j));
+    return res;
+}
+
+Board Board::subCoordinate(const int &x, const int &y, const int &w, const int &h) const {
     std::pair<int, int> pos1 = {(y - getY()) / getUnitSquareSize(), (x - getX()) / getUnitSquareSize()};
     pos1.first = std::min(std::max(pos1.first, 0), getRowNum() - 1);
     pos1.second = std::min(std::max(pos1.second, 0), getColNum() - 1);
     std::pair<int, int> pos2 = {(y + h - 1 - getY()) / getUnitSquareSize(), (x + w - 1 - getX()) / getUnitSquareSize()};
     pos2.first = std::min(std::max(pos2.first, 0), getRowNum() - 1);
     pos2.second = std::min(std::max(pos2.second, 0), getColNum() - 1);
-    Board res(pos2.first - pos1.first + 1, pos2.second - pos1.second + 1);
-    res.setCoordinate(getX() + pos1.second * getUnitSquareSize(), getY() + pos1.first * getUnitSquareSize());
-    res.setUnitSquareImg(getUnitSquareImg());
-    res.setUnitSquareSize(getUnitSquareSize());
-    for (int i = pos1.first; i <= pos2.first; ++i)
-        for (int j = pos1.second; j <= pos2.second; ++j) res.setUnitSquareColor(i - pos1.first, j - pos1.second, getUnitSquareColor(i, j));
-    return res;
+    return sub(pos1.first, pos1.second, pos2.first, pos2.second);
 }

@@ -13,7 +13,7 @@ var class_game1010 =
     [ "initSounds", "class_game1010.html#a995a153a4f9639b989d605078f6c1ac2", null ],
     [ "loadData", "class_game1010.html#a3dbbf957de5309f1e7f3d6008f948176", null ],
     [ "play", "class_game1010.html#afa18a3a81b8966417a228459a5bebf53", null ],
-    [ "randShape", "class_game1010.html#a9b86f7bf4ad3af111014ad33a781ffe5", null ],
+    [ "randShape", "class_game1010.html#a9af7a5b3b193d6edbefc969b1d756c94", null ],
     [ "saveData", "class_game1010.html#a72900d1043c4d40f953c584a9d9cb6c8", null ],
     [ "show_menu", "class_game1010.html#a99d6f53c3073861fe37ef67caa073840", null ]
 ];

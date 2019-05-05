@@ -2,7 +2,7 @@
     \file       main.cpp
     \brief      This file starts the game.
     \author     Nguyen Minh Tan
-    \version    1.4.0
+    \version    1.5.0
     \date       05/05/2019
     \pre        Add linker options: -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer.
                 Then search directories: Compiler for include\SDL2\ folder and Linker for lib\ folder.
@@ -320,12 +320,12 @@ class Game1010 {
         }
 
         /*!
-            \brief  Get a random piece from pieces[]
+            \brief  Get index of a random piece from pieces[]
         */
-        pair<vector<vector<bool> >, RGBColor> randShape() {
+        int randShape() {
             int i = 0, rand_num = rand() % pieces_rates[pieces_rates.size() - 1] + 1;
             while (rand_num > pieces_rates[i]) ++i;
-            return {pieces[i], pieces_colors[i]};
+            return i;
         }
 
         /*!
@@ -335,12 +335,13 @@ class Game1010 {
         void gen_piece() {
             num_piece = NUM_FIGURE;
             for (int i = 0; i < NUM_FIGURE; ++i) {
-                pair<vector<vector<bool> >, RGBColor> tmp = randShape();
-                piece_list[i].setBitMap(tmp.first);
+                int id = randShape();
+                piece_list[i].setBitMap(pieces[id]);
                 piece_list[i].setCoordinate(SCREEN_WIDTH - (gameboard.getX() - piece_list[i].getWidth()) / 2 - piece_list[i].getWidth(),
                                             (SCREEN_HEIGHT - (piece_list[i].getUnitSquareSize() * MAX_FIGURE_HEIGHT * NUM_FIGURE)) * (i + 1) / (NUM_FIGURE + 1)
                                             + piece_list[i].getUnitSquareSize() * (MAX_FIGURE_HEIGHT * (2 * i + 1) - piece_list[i].getRowNum()) / 2);
-                piece_list[i].setColor({tmp.second.getR(), tmp.second.getG(), tmp.second.getB()});
+                piece_list[i].setColor(pieces_colors[id]);
+                piece_list[i].inside(piece_list[i].getX(), piece_list[i].getY());
             }
         }
 
@@ -373,7 +374,8 @@ class Game1010 {
             window.render(new MenuSurface(*menu), false);  //! Show menu.
             window.present();
 
-            //int last_button = -1;
+            Button triggered_button;
+            Button* last_button = nullptr;
             SDL_Event e;
             while (!quit) {
                 while (SDL_PollEvent(&e)) {
@@ -434,7 +436,11 @@ class Game1010 {
                                     icon.setSize(button_cur->getHeight(), button_cur->getHeight());
                                     icon.setColor(button_cur->getColor());
                                     button_cur->setIcon(icon);
-                                    window.render(new ButtonSurface(*button_cur));
+                                    triggered_button = (*button_cur);
+                                    triggered_button.setHeight(triggered_button.getHeight() * 1.1);
+                                    triggered_button.setWidth(triggered_button.getWidth() * 1.1);
+                                    triggered_button.setColor({0, 0xFF, 0xFF});
+                                    window.render(new ButtonSurface(triggered_button));
                                     swap(buttons[1], buttons[2]);
                                     swap(button_list[1], button_list[2]);
                                     continue;
@@ -444,20 +450,22 @@ class Game1010 {
                         /*!
                             Highlight button that is being pointed at.
                        */
-                        /*
                         case SDL_MOUSEMOTION:
-                            if (last_button >= 0 && !menu->getButton(last_button)->inside(mouse_x, mouse_y)) {
-                                window.del({menu->getButton(last_button)->getX(), menu->getButton(last_button)->getY(),
-                                            menu->getButton(last_button)->getWidth(), menu->getButton(last_button)->getHeight()});
-                                window.render(new ButtonSurface(*menu->getButton(last_button)));
-                                last_button = -1;
-                            }
-                            if (last_button != index && button_cur != nullptr && button_cur->inside(mouse_x, mouse_y)) {
-                                last_button = index;
+                            if (last_button == nullptr && button_cur != nullptr && button_cur->inside(mouse_x, mouse_y)) {
+                                triggered_button = (*button_cur);
+                                triggered_button.setHeight(triggered_button.getHeight() * 1.1);
+                                triggered_button.setWidth(triggered_button.getWidth() * 1.1);
+                                triggered_button.setColor({0, 0xFF, 0xFF});
                                 window.del({button_cur->getX(), button_cur->getY(), button_cur->getWidth(), button_cur->getHeight()});
-                                window.render(new ButtonSurface(*button_cur));
+                                window.render(new ButtonSurface(triggered_button));
+                                last_button = button_cur;
                             }
-                            break;*/
+                            else if (last_button != nullptr && !triggered_button.inside(mouse_x, mouse_y)) {
+                                window.del({triggered_button.getX(), triggered_button.getY(), triggered_button.getWidth(), triggered_button.getHeight()});
+                                window.render(new ButtonSurface(*last_button), false);
+                                last_button = nullptr;
+                            }
+                            break;
                     }
                     window.present();
                 }
@@ -525,8 +533,9 @@ class Game1010 {
                     /*!
                         Redraw pieces in case the chosen piece overlaps them
                     */
-                    if (chosen_piece >= 0) {
+                    if ((e.type == SDL_MOUSEBUTTONUP || e.type == SDL_MOUSEMOTION) && chosen_piece >= 0) {
                         window.del({last_rendered.x, last_rendered.y, last_rendered.w, last_rendered.h});
+                        window.render(new BoardSurface(gameboard.subCoordinate(last_rendered.x, last_rendered.y, last_rendered.w, last_rendered.h)), false);
                         for (int i = 0; i < NUM_FIGURE; ++i)
                             if (i != chosen_piece) window.render(new VisibleShapeSurface(piece_list[i]), false);
                     }
@@ -554,8 +563,10 @@ class Game1010 {
                                     if (sound_mode) Mix_PlayChannel(-1, place_fail_sound, 0);
                                     window.render(new VisibleShapeSurface(piece_list[chosen_piece]), false);    //!Return the chosen piece to the list if it does not fit.
                                 } else {
+                                    window.render(new VisibleShapeSurface(gameboard.preview(piece_list[chosen_piece], mouse_x, mouse_y, IMG_GRID_SOURCE)), false);
                                                                                         //!Otherwise, place it on the board,
-                                    if (gameboard.placeMouse(&piece_list[chosen_piece], mouse_x, mouse_y, &current_score)) {
+                                    pair<vector<int>, vector<int> > completed_lines = gameboard.placeMouse(&piece_list[chosen_piece], mouse_x, mouse_y, &current_score);
+                                    if (completed_lines.first.size() + completed_lines.second.size()) {
                                         if (sound_mode) Mix_PlayChannel(-1, complete_line_sound, 0);
                                     }
                                     else if (sound_mode) Mix_PlayChannel(-1, place_success_sound, 0);
@@ -567,20 +578,37 @@ class Game1010 {
                                     if (--num_piece == 0) {
                                         if (sound_mode) Mix_PlayChannel(-1, new_pieces_sound, 0);
                                         gen_piece();                                    //!Generate new ones when all pieces are in place.
-                                        for (int i = 0; i < NUM_FIGURE; ++i) window.render(new VisibleShapeSurface(piece_list[i]), false);
                                     }
+                                    bool any_completed_line = (completed_lines.first.size() + completed_lines.second.size() > 0);
+                                    if (any_completed_line || num_piece == NUM_FIGURE)  //!Animations
+                                        for (int i = 0; i < BOARD_HEIGHT; ++i) {
+                                            if (any_completed_line) {
+                                                for (int j = 0; j < completed_lines.first.size(); ++j)
+                                                    window.render(new BoardSurface(gameboard.sub(completed_lines.first[j], i, completed_lines.first[j], i)), false);
+                                                for (int j = 0; j < completed_lines.second.size(); ++j)
+                                                    window.render(new BoardSurface(gameboard.sub(i, completed_lines.second[j], i, completed_lines.second[j])), false);
+                                            }
+                                            if (num_piece == NUM_FIGURE) {
+                                                for (int j = 0; j < NUM_FIGURE; ++j) {
+                                                    int x = piece_list[j].getX() + (BOARD_HEIGHT - 1 - i) * piece_list[j].getUnitSquareSize();
+                                                    window.del({x + piece_list[j].getUnitSquareSize(), piece_list[j].getY(), piece_list[j].getWidth(), piece_list[j].getHeight()});
+                                                    window.render(new VisibleShapeSurface(piece_list[j].clone(x, piece_list[j].getY())), false);
+                                                }
+                                            }
+                                            window.present();
+                                            SDL_Delay(20);
+                                        }
                                     bool can_continue = false;
                                     for (int i = 0; i < NUM_FIGURE; ++i)
                                         if (gameboard.isAnySpacePlaceable(&piece_list[i])) can_continue = true;
                                     if (!can_continue) gameOver();                      //!GAME OVER menu shows up when placing any piece on the board is not possible.
+                                    window.render(new BoardSurface(gameboard));
                                 }
                                 chosen_piece = -1;
-                                window.render(new BoardSurface(gameboard));
                             }
                             break;
                         case SDL_MOUSEMOTION:
                             if (chosen_piece >= 0) {
-                                window.render(new BoardSurface(gameboard.sub(last_rendered.x, last_rendered.y, last_rendered.w, last_rendered.h)), false);
                                 if (gameboard.inside(mouse_x, mouse_y)) {               //!Preview the position of the shape if it is placed
                                     last_rendered = window.render(new VisibleShapeSurface(gameboard.preview(piece_list[chosen_piece], mouse_x, mouse_y, IMG_GRID_REVERSE_SOURCE)), false);
                                 }

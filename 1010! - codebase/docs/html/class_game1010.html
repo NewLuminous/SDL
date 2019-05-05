@@ -31,7 +31,7 @@
   <td id="projectlogo"><img alt="Logo" src="1010!.ico"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">1010! (SDL)
-   &#160;<span id="projectnumber">1.4.0</span>
+   &#160;<span id="projectnumber">1.5.0</span>
    </div>
    <div id="projectbrief">A puzzle game using Simple DirectMedia Layer ver 2.0.9</div>
   </td>
@@ -123,9 +123,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abcdf29a3fb425ad389e247f241ee4ed5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game1010.html#abcdf29a3fb425ad389e247f241ee4ed5">~Game1010</a> ()</td></tr>
 <tr class="memdesc:abcdf29a3fb425ad389e247f241ee4ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">destructor which saves data and deletes pointers  <a href="#abcdf29a3fb425ad389e247f241ee4ed5">More...</a><br /></td></tr>
 <tr class="separator:abcdf29a3fb425ad389e247f241ee4ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b86f7bf4ad3af111014ad33a781ffe5"><td class="memItemLeft" align="right" valign="top">pair&lt; vector&lt; vector&lt; bool &gt; &gt;, <a class="el" href="class_r_g_b_color.html">RGBColor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game1010.html#a9b86f7bf4ad3af111014ad33a781ffe5">randShape</a> ()</td></tr>
-<tr class="memdesc:a9b86f7bf4ad3af111014ad33a781ffe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a random piece from pieces[].  <a href="#a9b86f7bf4ad3af111014ad33a781ffe5">More...</a><br /></td></tr>
-<tr class="separator:a9b86f7bf4ad3af111014ad33a781ffe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af7a5b3b193d6edbefc969b1d756c94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game1010.html#a9af7a5b3b193d6edbefc969b1d756c94">randShape</a> ()</td></tr>
+<tr class="memdesc:a9af7a5b3b193d6edbefc969b1d756c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get index of a random piece from pieces[].  <a href="#a9af7a5b3b193d6edbefc969b1d756c94">More...</a><br /></td></tr>
+<tr class="separator:a9af7a5b3b193d6edbefc969b1d756c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9576170947a355682c922cb648432b9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game1010.html#a9576170947a355682c922cb648432b9e">gen_piece</a> ()</td></tr>
 <tr class="memdesc:a9576170947a355682c922cb648432b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate new ones when all pieces are in place.  <a href="#a9576170947a355682c922cb648432b9e">More...</a><br /></td></tr>
 <tr class="separator:a9576170947a355682c922cb648432b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -279,7 +279,7 @@ SDLUtils::draw() </dd></dl>
 </div><div class="memdoc">
 
 <p>Generate new ones when all pieces are in place. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game1010.html#a9b86f7bf4ad3af111014ad33a781ffe5" title="Get a random piece from pieces[]. ">randShape()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_game1010.html#a9af7a5b3b193d6edbefc969b1d756c94" title="Get index of a random piece from pieces[]. ">randShape()</a> </dd></dl>
 
 </div>
 </div>
@@ -494,13 +494,14 @@ Board::set() </dd>
 <p>Otherwise, place it on the board,</p>
 <p>Update high score.</p>
 <p>Generate new ones when all pieces are in place.</p>
+<p>Animations</p>
 <p>GAME OVER menu shows up when placing any piece on the board is not possible.</p>
 <p>Preview the position of the shape if it is placed </p>
 
 </div>
 </div>
-<a id="a9b86f7bf4ad3af111014ad33a781ffe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b86f7bf4ad3af111014ad33a781ffe5">&#9670;&nbsp;</a></span>randShape()</h2>
+<a id="a9af7a5b3b193d6edbefc969b1d756c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af7a5b3b193d6edbefc969b1d756c94">&#9670;&nbsp;</a></span>randShape()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,7 +510,7 @@ Board::set() </dd>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">pair&lt;vector&lt;vector&lt;bool&gt; &gt;, <a class="el" href="class_r_g_b_color.html">RGBColor</a>&gt; Game1010::randShape </td>
+          <td class="memname">int Game1010::randShape </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -522,7 +523,7 @@ Board::set() </dd>
 </table>
 </div><div class="memdoc">
 
-<p>Get a random piece from pieces[]. </p>
+<p>Get index of a random piece from pieces[]. </p>
 
 </div>
 </div>

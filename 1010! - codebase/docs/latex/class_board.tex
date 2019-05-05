@@ -32,18 +32,20 @@ virtual bool \mbox{\hyperlink{class_board_a497025aedeebf35030eb7e99972de4e1}{can
 \begin{DoxyCompactList}\small\item\em Check whether the chosen piece can be placed at specific position. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_board_a0bf419d10b557cd2119ba7f2fcec7471}{is\+Any\+Space\+Placeable}} (const \mbox{\hyperlink{class_shape}{Shape}} $\ast$piece) const
 \begin{DoxyCompactList}\small\item\em Check whether the chosen piece can be placed onto the board. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{class_board_a55d44066a5889e487e7980d4478dfbb4}{place}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece, const int \&i\+\_\+origin, const int \&j\+\_\+origin, \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$score)
+virtual std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_board_ab78b22b75a90d251c605d014f65bbc9a}{place}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece, const int \&i\+\_\+origin, const int \&j\+\_\+origin, \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$score)
 \begin{DoxyCompactList}\small\item\em Place the piece onto the board and update the score. \end{DoxyCompactList}\item 
 virtual std\+::pair$<$ int, int $>$ \mbox{\hyperlink{class_board_a47fb67404ee45b4ad700a57e3849995b}{get\+Unit\+Square\+Pos}} (int mouse\+\_\+x, int mouse\+\_\+y, const \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece) const
 \begin{DoxyCompactList}\small\item\em Find the top-\/left unit square being overlapped by the piece. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{class_board_aa4001c8b1e2338fa0dfed7df6f5dcb6b}{can\+Place\+Shape\+At\+Coordinate}} (const \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y) const
 \begin{DoxyCompactList}\small\item\em Check whether the chosen piece can be placed with mouse at specific coordinate. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{class_board_a4158b0eca999819bec69fcf9a0bee00c}{place\+Mouse}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$score)
+virtual std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{class_board_a563e46d75b5050beb821cd4ba922ffc7}{place\+Mouse}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, \mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$score)
 \begin{DoxyCompactList}\small\item\em Place the piece onto the board by mouse and update the score. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} \mbox{\hyperlink{class_board_a51f08756175c14dd36acfcdf3b9ea356}{preview}} (\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} piece, const int \&mouse\+\_\+x, const int \&mouse\+\_\+y, const std\+::string \&path\+\_\+reverse) const
 \begin{DoxyCompactList}\small\item\em Preview the piece before it is placed. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_board_aeff7b135ffeea47ce26da75ce670807a}{sub}} (const int \&x, const int \&y, const int \&w, const int \&h) const
-\begin{DoxyCompactList}\small\item\em Get a part of the board. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_board_a158783746720e669c29fbaef379cf9ec}{sub}} (const int \&r1, const int \&c1, const int \&r2, const int \&c2) const
+\item 
+virtual \mbox{\hyperlink{class_board}{Board}} \mbox{\hyperlink{class_board_ae876d2d1e11732001af2cc7c667e6d0a}{sub\+Coordinate}} (const int \&x, const int \&y, const int \&w, const int \&h) const
+\begin{DoxyCompactList}\small\item\em Get a part of the board by rectangular selection. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_board_a280deeca2a39d227887ff2e13b009c0a}{Visible\+Shape}} ()
 \item 
 \mbox{\hyperlink{class_board_adc9d11f72af8b96fdb379330fd9de592}{Visible\+Shape}} (const unsigned int \&row, const unsigned int \&col)
@@ -161,11 +163,11 @@ Check whether the chosen piece can be placed onto the board.
 {\em piece} & The chosen piece \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_board_a55d44066a5889e487e7980d4478dfbb4}\label{class_board_a55d44066a5889e487e7980d4478dfbb4}} 
+\mbox{\Hypertarget{class_board_ab78b22b75a90d251c605d014f65bbc9a}\label{class_board_ab78b22b75a90d251c605d014f65bbc9a}} 
 \index{Board@{Board}!place@{place}}
 \index{place@{place}!Board@{Board}}
 \subsubsection{\texorpdfstring{place()}{place()}}
-{\footnotesize\ttfamily bool Board\+::place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$}]{piece,  }\item[{const int \&}]{i\+\_\+origin,  }\item[{const int \&}]{j\+\_\+origin,  }\item[{\mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ Board\+::place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$}]{piece,  }\item[{const int \&}]{i\+\_\+origin,  }\item[{const int \&}]{j\+\_\+origin,  }\item[{\mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -183,13 +185,13 @@ Place the piece onto the board and update the score.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if at least one line has been completed 
+indexes of completed rows and columns 
 \end{DoxyReturn}
-Clear lines when they are completed \mbox{\Hypertarget{class_board_a4158b0eca999819bec69fcf9a0bee00c}\label{class_board_a4158b0eca999819bec69fcf9a0bee00c}} 
+Clear lines when they are completed \mbox{\Hypertarget{class_board_a563e46d75b5050beb821cd4ba922ffc7}\label{class_board_a563e46d75b5050beb821cd4ba922ffc7}} 
 \index{Board@{Board}!place\+Mouse@{place\+Mouse}}
 \index{place\+Mouse@{place\+Mouse}!Board@{Board}}
 \subsubsection{\texorpdfstring{place\+Mouse()}{placeMouse()}}
-{\footnotesize\ttfamily bool Board\+::place\+Mouse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$}]{piece,  }\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y,  }\item[{\mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily std\+::pair$<$ std\+::vector$<$ int $>$, std\+::vector$<$ int $>$ $>$ Board\+::place\+Mouse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_visible_shape}{Visible\+Shape}} $\ast$}]{piece,  }\item[{const int \&}]{mouse\+\_\+x,  }\item[{const int \&}]{mouse\+\_\+y,  }\item[{\mbox{\hyperlink{class_encrypted_num}{Encrypted\+Num}} $\ast$}]{score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -207,7 +209,7 @@ Place the piece onto the board by mouse and update the score.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if at least one line has been completed 
+indexes of completed rows and columns 
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_board_a51f08756175c14dd36acfcdf3b9ea356}\label{class_board_a51f08756175c14dd36acfcdf3b9ea356}} 
 \index{Board@{Board}!preview@{preview}}
@@ -259,26 +261,54 @@ Reimplemented from \mbox{\hyperlink{class_visible_shape_a69ae0940d090fec376bee8d
 \begin{DoxySeeAlso}{See also}
 \mbox{\hyperlink{class_board_a6e6a947ec66c09bff4559fd9650b9b1d}{get\+Unit\+Square\+Color()}} 
 \end{DoxySeeAlso}
-\mbox{\Hypertarget{class_board_aeff7b135ffeea47ce26da75ce670807a}\label{class_board_aeff7b135ffeea47ce26da75ce670807a}} 
+\mbox{\Hypertarget{class_board_a158783746720e669c29fbaef379cf9ec}\label{class_board_a158783746720e669c29fbaef379cf9ec}} 
 \index{Board@{Board}!sub@{sub}}
 \index{sub@{sub}!Board@{Board}}
 \subsubsection{\texorpdfstring{sub()}{sub()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}} Board\+::sub (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y,  }\item[{const int \&}]{w,  }\item[{const int \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}} Board\+::sub (\begin{DoxyParamCaption}\item[{const int \&}]{r1,  }\item[{const int \&}]{c1,  }\item[{const int \&}]{r2,  }\item[{const int \&}]{c2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em r1} & upper row \\
+\hline
+{\em c1} & left column \\
+\hline
+{\em r2} & lower row \\
+\hline
+{\em c2} & right column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a part of the board 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_board_ae876d2d1e11732001af2cc7c667e6d0a}\label{class_board_ae876d2d1e11732001af2cc7c667e6d0a}} 
+\index{Board@{Board}!sub\+Coordinate@{sub\+Coordinate}}
+\index{sub\+Coordinate@{sub\+Coordinate}!Board@{Board}}
+\subsubsection{\texorpdfstring{sub\+Coordinate()}{subCoordinate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_board}{Board}} Board\+::sub\+Coordinate (\begin{DoxyParamCaption}\item[{const int \&}]{x,  }\item[{const int \&}]{y,  }\item[{const int \&}]{w,  }\item[{const int \&}]{h }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Get a part of the board. 
+Get a part of the board by rectangular selection. 
 
-\mbox{\Hypertarget{class_board_a280deeca2a39d227887ff2e13b009c0a}\label{class_board_a280deeca2a39d227887ff2e13b009c0a}} 
-\index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
-\index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
-\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape}
 
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate \\
+\hline
+{\em y} & The y coordinate \\
+\hline
+{\em w} & The width of selection \\
+\hline
+{\em h} & The height of selection \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_board_a158783746720e669c29fbaef379cf9ec}{sub()}} 
+\end{DoxySeeAlso}
 \mbox{\Hypertarget{class_board_a0efa89e218acbaeaf4f2453467d54cc9}\label{class_board_a0efa89e218acbaeaf4f2453467d54cc9}} 
 \index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
 \index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
-\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape}
 
 
@@ -296,7 +326,7 @@ constructor for any shape
 \mbox{\Hypertarget{class_board_adc9d11f72af8b96fdb379330fd9de592}\label{class_board_adc9d11f72af8b96fdb379330fd9de592}} 
 \index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
 \index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
-\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape}
 
 
@@ -310,6 +340,12 @@ constructor for filled rectangle
 {\em col} & The number of columns of the rectangle \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_board_a280deeca2a39d227887ff2e13b009c0a}\label{class_board_a280deeca2a39d227887ff2e13b009c0a}} 
+\index{Board@{Board}!Visible\+Shape@{Visible\+Shape}}
+\index{Visible\+Shape@{Visible\+Shape}!Board@{Board}}
+\subsubsection{\texorpdfstring{Visible\+Shape()}{VisibleShape()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Visible\+Shape\+::\+Visible\+Shape}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

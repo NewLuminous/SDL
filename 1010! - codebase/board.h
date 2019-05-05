@@ -66,9 +66,9 @@ class Board: public VisibleShape {
             \param      i_origin  The topmost row being placed onto
             \param      j_origin  The leftmost column begin placed onto
             \param      score Score being updated
-            \return     true if at least one line has been completed
+            \return     indexes of completed rows and columns
         */
-        virtual bool place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score);
+        virtual std::pair<std::vector<int>, std::vector<int> > place(VisibleShape* piece, const int &i_origin, const int &j_origin, EncryptedNum* score);
 
         /*!
             \brief      Find the top-left unit square being overlapped by the piece.
@@ -93,9 +93,9 @@ class Board: public VisibleShape {
             \param      mouse_x The x coordinate of the mouse
             \param      mouse_y The y coordinate of the mouse
             \param      score Score being updated
-            \return     true if at least one line has been completed
+            \return     indexes of completed rows and columns
         */
-        virtual bool placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score);
+        virtual std::pair<std::vector<int>, std::vector<int> > placeMouse(VisibleShape* piece, const int &mouse_x, const int &mouse_y, EncryptedNum* score);
 
         /*!
             \brief      Preview the piece before it is placed.
@@ -108,9 +108,23 @@ class Board: public VisibleShape {
         virtual VisibleShape preview(VisibleShape piece, const int &mouse_x, const int &mouse_y, const std::string &path_reverse) const;
 
         /*!
-            \brief      Get a part of the board
+            \param      r1 upper row
+            \param      c1 left column
+            \param      r2 lower row
+            \param      c2 right column
+            \return     a part of the board
         */
-        virtual Board sub(const int &x, const int &y, const int &w, const int &h) const;
+        virtual Board sub(const int &r1, const int &c1, const int &r2, const int &c2) const;
+
+        /*!
+            \brief      Get a part of the board by rectangular selection
+            \param      x The x coordinate
+            \param      y The y coordinate
+            \param      w The width of selection
+            \param      h The height of selection
+            \sa         sub()
+        */
+        virtual Board subCoordinate(const int &x, const int &y, const int &w, const int &h) const;
 };
 
 #endif

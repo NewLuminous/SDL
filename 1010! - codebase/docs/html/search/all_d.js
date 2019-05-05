@@ -28,5 +28,6 @@ var searchData=
   ['shape_2ecpp',['shape.cpp',['../shape_8cpp.html',1,'']]],
   ['shape_2eh',['shape.h',['../shape_8h.html',1,'']]],
   ['show_5fmenu',['show_menu',['../class_game1010.html#a99d6f53c3073861fe37ef67caa073840',1,'Game1010']]],
-  ['sub',['sub',['../class_board.html#aeff7b135ffeea47ce26da75ce670807a',1,'Board']]]
+  ['sub',['sub',['../class_board.html#a158783746720e669c29fbaef379cf9ec',1,'Board']]],
+  ['subcoordinate',['subCoordinate',['../class_board.html#ae876d2d1e11732001af2cc7c667e6d0a',1,'Board']]]
 ];
